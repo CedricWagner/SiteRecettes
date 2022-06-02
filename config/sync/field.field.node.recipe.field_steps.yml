@@ -1,0 +1,21 @@
+uuid: c0e2cc8f-5ed5-4d26-a33f-842de12bf93d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_steps
+    - node.type.recipe
+  module:
+    - text
+id: node.recipe.field_steps
+field_name: field_steps
+entity_type: node
+bundle: recipe
+label: Etapes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: b64c4a9d-ca64-4cb2-b8dd-7b23e819b46c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_ingredient_groups
+field_name: field_ingredient_groups
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

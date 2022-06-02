@@ -1,0 +1,19 @@
+uuid: edb387d9-a674-4a9a-bf89-b9788df48ece
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_details
+    - paragraphs.paragraphs_type.ingredient_line
+id: paragraph.ingredient_line.field_details
+field_name: field_details
+entity_type: paragraph
+bundle: ingredient_line
+label: Détails
+description: 'Informations additionnelles'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

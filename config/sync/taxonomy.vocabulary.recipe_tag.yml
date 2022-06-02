@@ -1,0 +1,8 @@
+uuid: 831c9e7d-bd59-491d-9195-1ffd0f7d2d63
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Tag de recette'
+vid: recipe_tag
+description: ''
+weight: 0

@@ -1,0 +1,45 @@
+uuid: 5af6e554-a3a1-4aee-8334-85a182c5bc6c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ingredient_group.field_ingredient_lines
+    - field.field.paragraph.ingredient_group.field_title
+    - paragraphs.paragraphs_type.ingredient_group
+  module:
+    - paragraphs
+id: paragraph.ingredient_group.default
+targetEntityType: paragraph
+bundle: ingredient_group
+mode: default
+content:
+  field_ingredient_lines:
+    type: paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ingredient_line
+      features:
+        add_above: add_above
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

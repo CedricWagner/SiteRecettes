@@ -1,0 +1,29 @@
+uuid: 6cd894e1-13bd-4032-830d-c4fd0a38454e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categories
+    - node.type.recipe
+    - taxonomy.vocabulary.recipe_category
+id: node.recipe.field_categories
+field_name: field_categories
+entity_type: node
+bundle: recipe
+label: Catégories
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      recipe_category: recipe_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: 4be83589-6ae4-4e0a-8bd5-c8cbf09eccc9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_heat
+field_name: field_heat
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: hot
+      label: Chaud
+    -
+      value: cold
+      label: Froid
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

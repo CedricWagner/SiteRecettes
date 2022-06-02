@@ -1,0 +1,53 @@
+uuid: c23d962f-dee2-4be4-bce7-c02f51e6d547
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ingredient_line.field_amount
+    - field.field.paragraph.ingredient_line.field_details
+    - field.field.paragraph.ingredient_line.field_ingredient
+    - field.field.paragraph.ingredient_line.field_unit
+    - paragraphs.paragraphs_type.ingredient_line
+id: paragraph.ingredient_line.default
+targetEntityType: paragraph
+bundle: ingredient_line
+mode: default
+content:
+  field_amount:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_details:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ingredient:
+    type: entity_reference_autocomplete_tags
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_unit:
+    type: entity_reference_autocomplete_tags
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

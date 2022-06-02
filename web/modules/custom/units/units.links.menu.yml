@@ -1,0 +1,14 @@
+
+# Unit menu items definition
+entity.unit.collection:
+  title: 'Unit list'
+  route_name: entity.unit.collection
+  description: 'List Unit entities'
+  parent: system.admin_structure
+  weight: 100
+
+unit.admin.structure.settings:
+  title: 'Unit settings'
+  description: 'Configure Unit entities'
+  route_name: unit.settings
+  parent: system.admin_structure

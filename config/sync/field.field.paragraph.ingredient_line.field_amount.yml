@@ -1,0 +1,23 @@
+uuid: aea90562-e751-42ec-8adc-f3ca15b9a268
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amount
+    - paragraphs.paragraphs_type.ingredient_line
+id: paragraph.ingredient_line.field_amount
+field_name: field_amount
+entity_type: paragraph
+bundle: ingredient_line
+label: 'Quantité par personne'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

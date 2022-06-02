@@ -1,0 +1,21 @@
+# Unit routing definition
+unit.settings_tab:
+  route_name: unit.settings
+  title: 'Settings'
+  base_route: unit.settings
+
+entity.unit.canonical:
+  route_name: entity.unit.canonical
+  base_route: entity.unit.canonical
+  title: 'View'
+
+entity.unit.edit_form:
+  route_name: entity.unit.edit_form
+  base_route: entity.unit.canonical
+  title: 'Edit'
+
+entity.unit.delete_form:
+  route_name:  entity.unit.delete_form
+  base_route:  entity.unit.canonical
+  title: Delete
+  weight: 10

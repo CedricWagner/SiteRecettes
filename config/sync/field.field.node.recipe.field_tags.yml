@@ -1,0 +1,29 @@
+uuid: 609c5544-9fb7-404e-8e67-11515522f570
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.recipe
+    - taxonomy.vocabulary.recipe_tag
+id: node.recipe.field_tags
+field_name: field_tags
+entity_type: node
+bundle: recipe
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      recipe_tag: recipe_tag
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

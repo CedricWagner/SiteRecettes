@@ -1,0 +1,34 @@
+uuid: b2374317-53d1-4d00-b6d4-108d05cf32a0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ingredient_groups
+    - node.type.recipe
+    - paragraphs.paragraphs_type.ingredient_group
+  module:
+    - entity_reference_revisions
+id: node.recipe.field_ingredient_groups
+field_name: field_ingredient_groups
+entity_type: node
+bundle: recipe
+label: 'Groupes d''ingrédient'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      ingredient_group: ingredient_group
+    negate: 0
+    target_bundles_drag_drop:
+      ingredient_group:
+        weight: 3
+        enabled: true
+      ingredient_line:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions
