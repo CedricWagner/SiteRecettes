@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_preparation_time
+    - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
     - field.field.node.recipe.field_seasons
     - field.field.node.recipe.field_steps
@@ -46,6 +47,7 @@ hidden:
   field_images: true
   field_ingredient_groups: true
   field_preparation_time: true
+  field_related_articles: true
   field_resting_time: true
   field_seasons: true
   field_steps: true

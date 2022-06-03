@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_preparation_time
+    - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
     - field.field.node.recipe.field_seasons
     - field.field.node.recipe.field_steps
@@ -93,6 +94,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_related_articles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
     region: content
   field_resting_time:
     type: number_integer
