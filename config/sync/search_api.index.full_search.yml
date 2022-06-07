@@ -1,0 +1,163 @@
+uuid: 17335cac-1c43-49cd-8044-4006a46b4511
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categories
+    - field.storage.node.body
+    - field.storage.node.field_ingredient_groups
+    - field.storage.paragraph.field_ingredient
+    - field.storage.paragraph.field_ingredient_lines
+    - field.storage.node.field_seasons
+    - field.storage.node.field_tags
+    - search_api.server.local
+  module:
+    - taxonomy
+    - node
+    - paragraphs
+    - search_api
+id: full_search
+name: 'Recherche recettes et articles'
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  category_name:
+    label: 'Catégories » Terme de taxonomie » Nom'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  ingredient_title:
+    label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Titre'
+    datasource_id: 'entity:node'
+    property_path: 'field_ingredient_groups:entity:field_ingredient_lines:entity:field_ingredient:entity:title'
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.field_ingredient_groups
+        - field.storage.paragraph.field_ingredient
+        - field.storage.paragraph.field_ingredient_lines
+      module:
+        - node
+        - paragraphs
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  season_name:
+    label: 'Saisons » Terme de taxonomie » Nom'
+    datasource_id: 'entity:node'
+    property_path: 'field_seasons:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_seasons
+      module:
+        - taxonomy
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  tag_name:
+    label: 'Tags » Terme de taxonomie » Nom'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+  title:
+    label: Titre
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 3
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Type de contenu'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - article
+        - recipe
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_type: {  }
+  html_filter:
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+    all_fields: false
+    fields:
+      - body
+    title: false
+    alt: false
+    tags:
+      b: 2
+      em: 1
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      u: 1
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: lifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: local

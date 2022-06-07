@@ -1,0 +1,11 @@
+uuid: baea05c3-0875-4835-b39c-d33f191689c3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.season
+id: taxonomy_term.season
+target_entity_type_id: taxonomy_term
+target_bundle: season
+default_langcode: site_default
+language_alterable: false

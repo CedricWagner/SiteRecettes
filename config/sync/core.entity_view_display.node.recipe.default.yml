@@ -113,11 +113,12 @@ content:
     weight: 7
     region: content
   field_seasons:
-    type: list_default
+    type: entity_reference_label
     label: inline
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_steps:
     type: text_default
@@ -132,7 +133,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   links:
     settings: {  }
@@ -141,3 +142,4 @@ content:
     region: content
 hidden:
   langcode: true
+  search_api_excerpt: true
