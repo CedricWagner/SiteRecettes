@@ -9,7 +9,7 @@ id: paragraph.ingredient_line.field_amount
 field_name: field_amount
 entity_type: paragraph
 bundle: ingredient_line
-label: 'Quantité par personne'
+label: Quantité
 description: ''
 required: false
 translatable: false
