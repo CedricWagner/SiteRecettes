@@ -14,9 +14,35 @@ dependencies:
     - image.style.thumbnail
     - node.type.ingredient
   module:
+    - field_group
     - image
     - path
     - text
+third_party_settings:
+  field_group:
+    group_units:
+      children:
+        - field_unit
+        - field_unit_g
+        - field_unit_cl
+        - field_unit_cup
+        - field_unit_cas
+        - field_unit_cac
+      label: Unités
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: unit
+        formatter: closed
+        description: ''
+        required_fields: true
+        open: false
+        weight: 0
+        effect: none
 id: node.ingredient.default
 targetEntityType: node
 bundle: ingredient
@@ -24,7 +50,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 15
+    weight: 16
     region: content
     settings:
       rows: 9
@@ -48,42 +74,42 @@ content:
     third_party_settings: {  }
   field_unit:
     type: number
-    weight: 9
+    weight: 10
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_unit_cac:
     type: number
-    weight: 14
+    weight: 15
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_unit_cas:
     type: number
-    weight: 13
+    weight: 14
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_unit_cl:
     type: number
-    weight: 11
+    weight: 12
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_unit_cup:
     type: number
-    weight: 12
+    weight: 13
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_unit_g:
     type: number
-    weight: 10
+    weight: 11
     region: content
     settings:
       placeholder: ''
