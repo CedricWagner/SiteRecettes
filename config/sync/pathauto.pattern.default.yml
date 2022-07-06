@@ -1,0 +1,25 @@
+uuid: b78e4ab6-876a-4b22-aa26-483ba2453724
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: default
+label: Default
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:title]'
+selection_criteria:
+  845b6257-d243-4e5a-8675-92fb9900d993:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 845b6257-d243-4e5a-8675-92fb9900d993
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+      ingredient: ingredient
+      page: page
+      recipe: recipe
+selection_logic: and
+weight: -5
+relationships: {  }
