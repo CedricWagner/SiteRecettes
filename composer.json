@@ -8,12 +8,16 @@
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
         "chat": "https://www.drupal.org/node/314178"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "tiz": {
+            "type": "composer",
+            "url": "https://packages.tiz.fr"
         }
-    ],
+    },
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.1",
@@ -95,5 +99,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "tiz/envoiz": "dev-release/3.0.0"
     }
 }
