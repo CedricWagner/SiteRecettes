@@ -10,10 +10,12 @@ dependencies:
     - field.field.node.recipe.field_image
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
+    - field.field.node.recipe.field_number_of_parts
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
     - field.field.node.recipe.field_seasons
+    - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
     - field.field.node.recipe.field_tags
     - node.type.recipe
@@ -86,6 +88,15 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
+  field_number_of_parts:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
   field_preparation_time:
     type: number_integer
     label: inline
@@ -119,6 +130,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_share_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
     region: content
   field_steps:
     type: text_default

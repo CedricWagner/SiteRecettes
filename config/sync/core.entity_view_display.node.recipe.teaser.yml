@@ -11,10 +11,12 @@ dependencies:
     - field.field.node.recipe.field_image
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
+    - field.field.node.recipe.field_number_of_parts
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
     - field.field.node.recipe.field_seasons
+    - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
     - field.field.node.recipe.field_tags
     - image.style.medium
@@ -48,10 +50,12 @@ hidden:
   field_heat: true
   field_images: true
   field_ingredient_groups: true
+  field_number_of_parts: true
   field_preparation_time: true
   field_related_articles: true
   field_resting_time: true
   field_seasons: true
+  field_share_type: true
   field_steps: true
   field_tags: true
   langcode: true

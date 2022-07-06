@@ -10,10 +10,12 @@ dependencies:
     - field.field.node.recipe.field_image
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
+    - field.field.node.recipe.field_number_of_parts
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
     - field.field.node.recipe.field_seasons
+    - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
     - field.field.node.recipe.field_tags
     - image.style.thumbnail
@@ -102,6 +104,13 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: '0'
     third_party_settings: {  }
+  field_number_of_parts:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_preparation_time:
     type: number
     weight: 15
@@ -127,6 +136,16 @@ content:
     weight: 9
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_share_type:
+    type: entity_reference_autocomplete_tags
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_steps:
     type: text_textarea

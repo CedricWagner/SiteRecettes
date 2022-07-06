@@ -1,0 +1,29 @@
+uuid: 8c92178c-421c-4335-8602-266373ea9ad4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_share_type
+    - node.type.recipe
+    - taxonomy.vocabulary.share_type
+id: node.recipe.field_share_type
+field_name: field_share_type
+entity_type: node
+bundle: recipe
+label: 'Type de part'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      share_type: share_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

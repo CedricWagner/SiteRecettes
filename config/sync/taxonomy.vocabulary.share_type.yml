@@ -1,0 +1,8 @@
+uuid: ad8258bc-b282-409e-8191-ef5d267f971f
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Type de part'
+vid: share_type
+description: ''
+weight: 0
