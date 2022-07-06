@@ -1,0 +1,23 @@
+uuid: 9bce1227-e868-4711-baac-8e9ceb2855b6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit_cl
+    - node.type.ingredient
+id: node.ingredient.field_unit_cl
+field_name: field_unit_cl
+entity_type: node
+bundle: ingredient
+label: 'Unité - centilitres'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: cl
+field_type: decimal

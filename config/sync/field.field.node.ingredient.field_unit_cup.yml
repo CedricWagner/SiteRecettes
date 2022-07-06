@@ -1,0 +1,23 @@
+uuid: 528dba5f-ec03-4742-9a62-b5cd58c654a4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit_cup
+    - node.type.ingredient
+id: node.ingredient.field_unit_cup
+field_name: field_unit_cup
+entity_type: node
+bundle: ingredient
+label: 'Unité - Cup'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: cup
+field_type: decimal

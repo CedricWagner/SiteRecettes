@@ -6,6 +6,12 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.ingredient.body
     - field.field.node.ingredient.field_picto
+    - field.field.node.ingredient.field_unit
+    - field.field.node.ingredient.field_unit_cac
+    - field.field.node.ingredient.field_unit_cas
+    - field.field.node.ingredient.field_unit_cl
+    - field.field.node.ingredient.field_unit_cup
+    - field.field.node.ingredient.field_unit_g
     - node.type.ingredient
   module:
     - text
@@ -30,4 +36,11 @@ content:
     region: content
 hidden:
   field_picto: true
+  field_unit: true
+  field_unit_cac: true
+  field_unit_cas: true
+  field_unit_cl: true
+  field_unit_cup: true
+  field_unit_g: true
   langcode: true
+  search_api_excerpt: true

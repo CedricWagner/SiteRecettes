@@ -1,0 +1,23 @@
+uuid: 0ffa7cf5-37af-469a-874a-d9c5dd757fb2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit_cas
+    - node.type.ingredient
+id: node.ingredient.field_unit_cas
+field_name: field_unit_cas
+entity_type: node
+bundle: ingredient
+label: 'Unité - c.a.s.'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: cas
+field_type: decimal

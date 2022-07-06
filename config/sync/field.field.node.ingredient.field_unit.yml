@@ -1,0 +1,23 @@
+uuid: b0689ac0-e69e-4ade-9b9c-528bd5bbf8a6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit
+    - node.type.ingredient
+id: node.ingredient.field_unit
+field_name: field_unit
+entity_type: node
+bundle: ingredient
+label: Unité
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: unité
+field_type: decimal
