@@ -215,7 +215,7 @@ content:
       delimiter: ''
       not_found_message_allow: false
       not_found_message: 'Le type ''@term'' sera ajouté'
-      new_terms: false
+      new_terms: true
       no_empty_message: 'Saisissez une valeur'
     third_party_settings: {  }
   field_steps:
