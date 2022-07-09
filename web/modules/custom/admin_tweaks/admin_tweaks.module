@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains admin_tweaks.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function admin_tweaks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the admin_tweaks module.
+    case 'help.page.admin_tweaks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Changes some aspects of the admin UI and behaviors') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function admin_tweaks_form_alter(&$form, $form_state, $form_id) {
+
+  switch ($form_id) {
+    
+    case 'node_recipe_edit_form':
+      foreach ($form['field_steps']['widget'] as $key => $widget) {
+        if (is_int($key)) {
+          $widget['#rows'] = 2; // doesnt work
+        }
+      }
+
+      break;
+  }
+}
