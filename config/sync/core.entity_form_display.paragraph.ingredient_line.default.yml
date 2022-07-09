@@ -8,6 +8,8 @@ dependencies:
     - field.field.paragraph.ingredient_line.field_ingredient
     - field.field.paragraph.ingredient_line.field_unit
     - paragraphs.paragraphs_type.ingredient_line
+  module:
+    - autocomplete_deluxe
 id: paragraph.ingredient_line.default
 targetEntityType: paragraph
 bundle: ingredient_line
@@ -29,14 +31,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_ingredient:
-    type: entity_reference_autocomplete_tags
+    type: autocomplete_deluxe
     weight: 0
     region: content
     settings:
       match_operator: CONTAINS
-      match_limit: 10
+      autocomplete_route_name: autocomplete_deluxe.autocomplete
       size: 60
-      placeholder: ''
+      selection_handler: default
+      limit: 10
+      min_length: 0
+      delimiter: ''
+      not_found_message_allow: true
+      not_found_message: 'L''ingrédient ''@term'' n''existe pas'
+      new_terms: false
+      no_empty_message: 'Saisissez un ingrédient existant'
     third_party_settings: {  }
   field_unit:
     type: options_select
