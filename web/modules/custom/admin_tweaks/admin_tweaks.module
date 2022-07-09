@@ -23,17 +23,8 @@ function admin_tweaks_help($route_name, RouteMatchInterface $route_match) {
   }
 }
 
-function admin_tweaks_form_alter(&$form, $form_state, $form_id) {
-
-  switch ($form_id) {
-    
-    case 'node_recipe_edit_form':
-      foreach ($form['field_steps']['widget'] as $key => $widget) {
-        if (is_int($key)) {
-          $widget['#rows'] = 2; // doesnt work
-        }
-      }
-
-      break;
-  }
+function admin_tweaks_preprocess_page(&$variables) {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $variables['#attached']['library'][] = 'admin_tweaks/admin_tweaks';
+   }
 }

@@ -1,0 +1,11 @@
+uuid: 8f0ea896-07db-448c-8a38-ad2d5488835d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.month
+id: taxonomy_term.month
+target_entity_type_id: taxonomy_term
+target_bundle: month
+default_langcode: site_default
+language_alterable: false

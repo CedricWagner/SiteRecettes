@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.ingredient.body
     - field.field.node.ingredient.field_picto
+    - field.field.node.ingredient.field_seasonality
     - field.field.node.ingredient.field_unit
     - field.field.node.ingredient.field_unit_cac
     - field.field.node.ingredient.field_unit_cas
@@ -36,6 +37,7 @@ content:
     region: content
 hidden:
   field_picto: true
+  field_seasonality: true
   field_unit: true
   field_unit_cac: true
   field_unit_cas: true

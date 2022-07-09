@@ -1,0 +1,3 @@
+admin_tweaks:
+  js:
+    js/admin_tweaks.js: {}

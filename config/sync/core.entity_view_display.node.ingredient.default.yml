@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.ingredient.body
     - field.field.node.ingredient.field_picto
+    - field.field.node.ingredient.field_seasonality
     - field.field.node.ingredient.field_unit
     - field.field.node.ingredient.field_unit_cac
     - field.field.node.ingredient.field_unit_cas
@@ -36,6 +37,14 @@ content:
       image_style: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_seasonality:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_unit:
     type: number_decimal
