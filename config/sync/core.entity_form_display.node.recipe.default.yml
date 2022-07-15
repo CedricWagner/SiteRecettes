@@ -6,12 +6,15 @@ dependencies:
     - field.field.node.recipe.body
     - field.field.node.recipe.field_categories
     - field.field.node.recipe.field_cooking_time
+    - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_heat
     - field.field.node.recipe.field_image
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_number_of_parts
     - field.field.node.recipe.field_preparation_time
+    - field.field.node.recipe.field_price_indicator
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
     - field.field.node.recipe.field_seasons
@@ -23,9 +26,9 @@ dependencies:
   module:
     - autocomplete_deluxe
     - field_group
-    - image
     - paragraphs
     - path
+    - svg_image
     - text
 third_party_settings:
   field_group:
@@ -66,9 +69,11 @@ third_party_settings:
         weight: 0
     group_durations:
       children:
-        - field_cooking_time
         - field_preparation_time
         - field_resting_time
+        - field_cooking_time
+        - field_heat
+        - field_cooking_types
       label: Durées
       region: content
       parent_name: ''
@@ -122,16 +127,29 @@ content:
     third_party_settings: {  }
   field_cooking_time:
     type: number
-    weight: 12
+    weight: 15
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_heat:
+  field_cooking_types:
     type: options_buttons
-    weight: 14
+    weight: 17
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_difficulty:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heat:
+    type: number
+    weight: 16
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_image:
     type: image_image
@@ -181,6 +199,12 @@ content:
     region: content
     settings:
       placeholder: ''
+    third_party_settings: {  }
+  field_price_indicator:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_related_articles:
     type: options_buttons

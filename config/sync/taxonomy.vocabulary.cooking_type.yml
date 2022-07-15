@@ -1,0 +1,8 @@
+uuid: 3e3dc81f-cd5e-4d51-afbe-813a4f000ccb
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Type de cuisson'
+vid: cooking_type
+description: ''
+weight: 0

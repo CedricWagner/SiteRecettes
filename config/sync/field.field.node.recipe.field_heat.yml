@@ -1,12 +1,10 @@
-uuid: f947b565-3abf-4451-bc21-bff6c438a3c5
+uuid: 58a82118-5472-44f6-a92d-27375bf41950
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_heat
     - node.type.recipe
-  module:
-    - options
 id: node.recipe.field_heat
 field_name: field_heat
 entity_type: node
@@ -17,5 +15,9 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: °C
+field_type: integer

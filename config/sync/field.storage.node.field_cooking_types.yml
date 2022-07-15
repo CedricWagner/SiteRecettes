@@ -1,19 +1,19 @@
-uuid: 5487ede1-399b-4496-a7e5-6879eac0342b
+uuid: 0d847ce8-474f-43b9-8dc8-9a1f041cb9ae
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: node.field_heat
-field_name: field_heat
+    - taxonomy
+id: node.field_cooking_types
+field_name: field_cooking_types
 entity_type: node
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

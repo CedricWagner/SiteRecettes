@@ -6,12 +6,15 @@ dependencies:
     - field.field.node.recipe.body
     - field.field.node.recipe.field_categories
     - field.field.node.recipe.field_cooking_time
+    - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_heat
     - field.field.node.recipe.field_image
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_number_of_parts
     - field.field.node.recipe.field_preparation_time
+    - field.field.node.recipe.field_price_indicator
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
     - field.field.node.recipe.field_seasons
@@ -21,8 +24,8 @@ dependencies:
     - node.type.recipe
   module:
     - entity_reference_revisions
-    - image
     - options
+    - svg_image
     - text
     - user
 id: node.recipe.default
@@ -54,12 +57,29 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_heat:
+  field_cooking_types:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_difficulty:
     type: list_default
-    label: inline
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 16
+    region: content
+  field_heat:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 18
     region: content
   field_image:
     type: image
@@ -105,6 +125,13 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_price_indicator:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
     region: content
   field_related_articles:
     type: entity_reference_label

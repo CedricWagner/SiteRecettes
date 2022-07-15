@@ -1,0 +1,31 @@
+uuid: bee1e914-8d19-46fd-ab0c-a873879e1711
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cooking_type.field_picto
+    - taxonomy.vocabulary.cooking_type
+  module:
+    - svg_image
+id: taxonomy_term.cooking_type.default
+targetEntityType: taxonomy_term
+bundle: cooking_type
+mode: default
+content:
+  field_picto:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true
