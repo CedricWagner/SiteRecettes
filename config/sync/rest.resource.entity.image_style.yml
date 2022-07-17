@@ -1,0 +1,18 @@
+uuid: c5007efd-c4dd-4ce2-a3bd-7b8b294b21ed
+langcode: fr
+status: true
+dependencies:
+  module:
+    - image
+    - serialization
+    - user
+id: entity.image_style
+plugin_id: 'entity:image_style'
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie
