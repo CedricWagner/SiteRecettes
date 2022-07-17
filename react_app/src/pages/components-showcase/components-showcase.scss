@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.showcase-square {
+    background-color: black;
+    width: 174px;
+    height: 174px;
+
+    &--primary {
+        background-color: $primary;
+    }
+    &--secondary {
+        background-color: $secondary;
+    }
+    &--terciary {
+        background-color: $darkgreen;
+    }
+    &--fourth {
+        background-color: $darkblue;
+    }
+}

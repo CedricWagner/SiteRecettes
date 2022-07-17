@@ -1,0 +1,70 @@
+// ----------------------------
+// Override bootstrap variables
+// ----------------------------
+
+// Color system
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$grullo:  #A89790;
+$palesilver:#C5BBB7;
+$blue:    #0d6efd;
+$darkblue:#5E666C;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$darkgreen:#62726C;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+
+$colors: (
+  "grullo":     $grullo,
+  "palesilver": $palesilver,
+  "blue":       $blue,
+  "darkblue":   $darkblue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "darkgreen":  $darkgreen,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+);
+
+$primary:       $grullo;
+$secondary:     $palesilver;
+$success:       $darkgreen;
+$info:          $darkblue;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-900;
+
+// Other
+$border-radius: 6px;
+
+// Buttons
+$btn-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+$btn-border-radius: 6px;
+
+
+// other variables

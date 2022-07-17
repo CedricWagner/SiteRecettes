@@ -1,0 +1,11 @@
+// default variables
+@import 'variables';
+
+// bootstrap imports
+@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/buttons';
+
+
+// overrides
+@import 'overrides/btn'
