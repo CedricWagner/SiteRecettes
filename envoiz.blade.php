@@ -22,7 +22,9 @@
     {{-- set maintenance mode --}}
     vendor/bin/drupal site:maintenance on
     {{-- dump database --}}
-    vendor/bin/drupal database:dump --file={{ $config['root_path'] }}/{{ $dump_name }}
+    @if ($dump)
+        vendor/bin/drupal database:dump --file={{ $config['root_path'] }}/{{ $dump_name }}
+    @endif
 @endtask
 
 {{-- git --}}
