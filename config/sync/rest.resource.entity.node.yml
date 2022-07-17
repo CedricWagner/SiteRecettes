@@ -1,0 +1,18 @@
+uuid: 783aed96-590b-460b-a322-13fea28377d6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - serialization
+    - user
+id: entity.node
+plugin_id: 'entity:node'
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

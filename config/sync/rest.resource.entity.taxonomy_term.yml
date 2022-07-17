@@ -1,0 +1,18 @@
+uuid: b0f26733-39c1-404f-ae8c-d7176b455bbc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - serialization
+    - taxonomy
+    - user
+id: entity.taxonomy_term
+plugin_id: 'entity:taxonomy_term'
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie
