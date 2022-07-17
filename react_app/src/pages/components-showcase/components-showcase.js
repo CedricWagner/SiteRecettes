@@ -3,7 +3,7 @@ import './components-showcase.scss';
 export default function ComponentsShowcase () {
 
     return (
-        <div class="container">
+        <div className="container">
             <h1>Couleurs</h1>
             <div className="row">
                 <div className="col-sm-3">

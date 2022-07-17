@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Caviar-Dreams';
+    src:url('../fonts/caviar-dreams/Caviar-Dreams.ttf.woff') format('woff'),
+        url('../fonts/caviar-dreams/Caviar-Dreams.ttf.svg#Caviar-Dreams') format('svg'),
+        url('../fonts/caviar-dreams/Caviar-Dreams.ttf.eot'),
+        url('../fonts/caviar-dreams/Caviar-Dreams.ttf.eot?#iefix') format('embedded-opentype'); 
+        font-weight: normal;
+        font-style: normal;
+}
+
 // default variables
 @import 'variables';
 
@@ -5,7 +15,9 @@
 @import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import '../../node_modules/bootstrap/scss/buttons';
+@import '../../node_modules/bootstrap/scss/reboot';
 
 
 // overrides
-@import 'overrides/btn'
+@import 'overrides/btn';
+@import 'overrides/type';
