@@ -5,13 +5,15 @@ import {
   Route,
 } from "react-router-dom";
 import ComponentsShowcase from './pages/components-showcase/components-showcase';
+import Logo from './components/logo/logo';
+import Menu from './components/menu/menu';
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="app">
       <BrowserRouter>
-        {/* <NavBar/> */}
+        <Logo/>
+        <Menu/>
         <Routes>
             <Route path="/" element={<ComponentsShowcase/>}/>
         </Routes>
