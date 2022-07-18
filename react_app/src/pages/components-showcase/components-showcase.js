@@ -1,10 +1,13 @@
 import './components-showcase.scss';
+import Card from '../../components/card/card'
+import picture from '../../images/showcase-picture.webp'
 
 export default function ComponentsShowcase () {
 
+    const cardTaxonomies = [{title: "Desserts", to: "/edze"}, {title: "Sucrés", to: "/edzdze"}]
+
     return (
-        <div className="container">
-            <h1>Couleurs</h1>
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-sm-3">
                     <div className="showcase-square showcase-square--primary"></div>
@@ -18,6 +21,18 @@ export default function ComponentsShowcase () {
                 <div className="col-sm-3">
                     <div className="showcase-square showcase-square--fourth"></div>
                 </div>
+            </div>
+            <div className="row">
+                <div className="col-md-4">
+                    <h1 className="mt-5">Titre</h1>
+                    <Card 
+                        image={picture} 
+                        title="Lorem ipsum dolor sit Amet" 
+                        taxonomies={cardTaxonomies}
+                        to="/sf35es4f3"
+                        />
+                </div>
+
             </div>
         </div>
     );
