@@ -1,3 +1,8 @@
 .btn {
     box-shadow: $box-shadow;
 }
+
+.btn-link {
+    box-shadow: none;
+    font-weight: bold;
+}

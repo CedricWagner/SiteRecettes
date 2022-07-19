@@ -2,6 +2,7 @@ import './components-showcase.scss';
 import Card from '../../components/card/card'
 import picture from '../../images/showcase-picture.webp'
 import SearchBar from '../../components/search-bar/search-bar';
+import { Link } from 'react-router-dom';
 
 export default function ComponentsShowcase () {
 
@@ -39,6 +40,7 @@ export default function ComponentsShowcase () {
                 </div>
                 <div className="col-md-8">
                     <SearchBar onSearch={onSearch}/>
+                    <Link to="/recherche-avancee" className="btn btn-link">Recherche avancée</Link>
                 </div>
             </div>
         </div>
