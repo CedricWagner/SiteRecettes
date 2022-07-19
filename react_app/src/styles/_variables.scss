@@ -65,6 +65,9 @@ $font-family-sans-serif:      'Caviar-Dreams', system-ui, -apple-system, "Segoe 
 $body-color:                  $black;
 
 $font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-xl:                $font-size-base * 1.5;
 
 $line-height-base:            1.5;
 $line-height-sm:              1.25;
@@ -91,3 +94,4 @@ $btn-border-radius: 6px;
 $btn-link-color: $black;
 
 // other variables
+$card-title-bg: rgba(0,0,0, .5);

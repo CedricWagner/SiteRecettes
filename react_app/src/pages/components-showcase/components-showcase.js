@@ -1,8 +1,10 @@
 import './components-showcase.scss';
 import Card from '../../components/card/card'
-import picture from '../../images/showcase-picture.webp'
+import Picture from '../../images/showcase-picture.webp'
+import NavPicture from '../../images/showcase-nav-picture.webp'
 import SearchBar from '../../components/search-bar/search-bar';
 import { Link } from 'react-router-dom';
+import NavCard from '../../components/nav-card/nav-card';
 
 export default function ComponentsShowcase () {
 
@@ -32,15 +34,23 @@ export default function ComponentsShowcase () {
                 <h1 className="mt-5">Titre</h1>
                 <div className="col-md-4">
                     <Card 
-                        image={picture} 
+                        image={Picture} 
                         title="Lorem ipsum dolor sit Amet" 
                         taxonomies={cardTaxonomies}
                         to="/sf35es4f3"
                         />
                 </div>
                 <div className="col-md-8">
-                    <SearchBar onSearch={onSearch}/>
-                    <Link to="/recherche-avancee" className="btn btn-link">Recherche avancée</Link>
+                    <div className="row">
+                        <div className="col-12">
+                            <SearchBar onSearch={onSearch}/>
+                            <Link to="/recherche-avancee" className="btn btn-link">Recherche avancée</Link>
+                        </div>
+                        <div className="col-12 mt-4">
+                            <NavCard to="/test" title="Recettes" image={NavPicture}/>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
