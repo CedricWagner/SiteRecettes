@@ -57,6 +57,7 @@ export default function ComponentsShowcase () {
             <div className="row mt-4">
                 <div className="col-md-8">
                     <CategoryList categories={[{title: "Desserts", to: '/desserts'}, {title: "Sucrés", to: '/sucres'}]} />
+                    <h1 className="text-center">Titre de la recette sit amet, version sans gluten</h1>
                 </div>
                 <div className="col-md-4"></div>
             </div>

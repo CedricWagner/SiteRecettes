@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './category-list.scss';
 import { Link } from 'react-router-dom';
+import { linkShape } from '../../utils/shapes/link-shape';
 
-const LinkShape = {
-  title: PropTypes.string,
-  to: PropTypes.string
-}
+
 
 const CategoryList = (props) => (
   <div className="category-list">
@@ -19,7 +17,7 @@ const CategoryList = (props) => (
 );
 
 CategoryList.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape(LinkShape)).isRequired
+  categories: PropTypes.arrayOf(PropTypes.shape(linkShape)).isRequired
 };
 
 CategoryList.defaultProps = {};
