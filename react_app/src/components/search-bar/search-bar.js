@@ -1,8 +1,9 @@
 import './search-bar.scss'
 import {ReactComponent as IconSearch} from '../../images/icons/svg/icon_search.svg';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function SearchBar (props) {
+function SearchBar (props) {
 
     const [value, setValue] = useState('')
 
@@ -30,3 +31,11 @@ export default function SearchBar (props) {
         </form>
     );
 }
+
+SearchBar.propTypes = {
+    onSearch: PropTypes.func.isRequired
+};
+  
+SearchBar.defaultProps = {};
+
+export default SearchBar;

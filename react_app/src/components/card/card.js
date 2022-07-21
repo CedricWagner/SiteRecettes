@@ -1,7 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './card.scss'
+import PropTypes from 'prop-types';
+import { linkShape } from '../../utils/shapes/link-shape';
 
-export default function Card (props) {
+function Card (props) {
     let navigate = useNavigate();
 
     function onCardClick () {
@@ -31,3 +33,13 @@ export default function Card (props) {
         </div>
     )
 }
+
+Card.propTypes = {
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    taxonomies: PropTypes.arrayOf(PropTypes.shape(linkShape))
+};
+  
+Card.defaultProps = {};
+
+export default Card; 

@@ -1,8 +1,10 @@
 import './menu-item.scss'
 import { Link, useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { linkShape } from '../../utils/shapes/link-shape';
  
 
-export default function MenuItem(props) {
+function MenuItem(props) {
     const location = useLocation();
     const isActive = location.pathname === props.to
 
@@ -21,3 +23,13 @@ export default function MenuItem(props) {
         </div>
     )
 }
+
+MenuItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
+    submenu: PropTypes.arrayOf(PropTypes.shape(linkShape))
+};
+  
+MenuItem.defaultProps = {};
+
+export default MenuItem;
