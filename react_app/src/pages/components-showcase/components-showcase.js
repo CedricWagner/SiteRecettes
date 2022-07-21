@@ -5,6 +5,7 @@ import NavPicture from '../../images/showcase-nav-picture.webp'
 import SearchBar from '../../components/search-bar/search-bar';
 import { Link } from 'react-router-dom';
 import NavCard from '../../components/nav-card/nav-card';
+import CategoryList from '../../components/category-list/category-list';
 
 export default function ComponentsShowcase () {
 
@@ -52,6 +53,12 @@ export default function ComponentsShowcase () {
                     </div>
 
                 </div>
+            </div>
+            <div className="row mt-4">
+                <div className="col-md-8">
+                    <CategoryList categories={[{title: "Desserts", to: '/desserts'}, {title: "Sucrés", to: '/sucres'}]} />
+                </div>
+                <div className="col-md-4"></div>
             </div>
         </div>
     );
