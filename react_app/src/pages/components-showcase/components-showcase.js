@@ -11,6 +11,8 @@ import CookingTimeIcon from '../../images/icons/svg/icon_hourglass.svg';
 import SteamIcon from '../../images/icons/svg/icon_steam.svg';
 import OvenIcon from '../../images/icons/svg/icon_oven.svg';
 import FlatwareIcon from '../../images/icons/svg/icon_flatware.svg';
+import QuantityControl from '../../components/quantity-control/quantity-control';
+import { useState } from 'react';
 
 export default function ComponentsShowcase () {
 
@@ -19,6 +21,10 @@ export default function ComponentsShowcase () {
     function onSearch(value) {
         alert("Valeur recherchée : " + value);
     }
+
+    const [currentQuantity, setCurrentQuantity] = useState(12)
+
+    function updateQuantity(newValue) { setCurrentQuantity(newValue) }
 
     return (
         <div className="container mt-5">
@@ -75,7 +81,7 @@ export default function ComponentsShowcase () {
                         </div>
                         <div className="col-md-3">
                             <RecipeFeature items={[{title: 'Nombre de parts', picto: FlatwareIcon}]}>
-                                + / -
+                                <QuantityControl current={currentQuantity} unity="pers." onUpdateQuantity={updateQuantity}/>
                             </RecipeFeature>
                         </div>
                     </div>
