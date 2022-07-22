@@ -13,6 +13,8 @@ import OvenIcon from '../../images/icons/svg/icon_oven.svg';
 import FlatwareIcon from '../../images/icons/svg/icon_flatware.svg';
 import QuantityControl from '../../components/quantity-control/quantity-control';
 import { useState } from 'react';
+import IngredientLine from '../../components/ingredient-line/ingredient-line';
+import IngredientPicto from '../../images/showcase-ingredient.png'
 
 export default function ComponentsShowcase () {
 
@@ -86,7 +88,12 @@ export default function ComponentsShowcase () {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4"></div>
+                <div className="col-md-4">
+                </div>
+                <div className="col-md-8">
+                    <h2 className="mt-5">Ingrédients</h2>
+                    <IngredientLine amount='50' name='Noix de coco' picto={IngredientPicto} unit="g."/>
+                </div>
             </div>
         </div>
     );
