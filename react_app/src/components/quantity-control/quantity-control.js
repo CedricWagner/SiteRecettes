@@ -11,12 +11,16 @@ const QuantityControl = (props) => {
   }
 
   function decreaseQuantity() {
+    if (props.current <= 1) {
+      return false;
+    }
+
     props.onUpdateQuantity(props.current - 1)
   }
 
   return (
     <div className="quantity-control">
-      <button className="btn btn-primary" title="Moins" onClick={decreaseQuantity}>
+      <button className="btn btn-primary" disabled={props.current === 1 ? true : false} title="Moins" onClick={decreaseQuantity}>
         <IconMinus/>
       </button>
       <div className="quantity-control__value">

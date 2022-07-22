@@ -36,3 +36,18 @@ test('should decrease current value on click decrease button', async () => {
 
     expect(value).toEqual(11);
 });
+
+test('should disable decrease button if quantity == 1', async () => {
+    
+    let value = 1;
+    
+    const onUpdate = (_value) => value = _value;
+    
+    render(<QuantityControl current={value} onUpdateQuantity={onUpdate}/>);
+    
+    const minusButton = screen.getByTitle("Moins");
+    fireEvent.click(minusButton);
+
+    expect(minusButton.disabled).toEqual(true);
+    expect(value).toEqual(1);
+});
