@@ -1,0 +1,11 @@
+.recipe-feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__picto {
+        height: 40px;
+        margin-right: 10px;
+    }
+}

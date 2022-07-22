@@ -6,6 +6,11 @@ import SearchBar from '../../components/search-bar/search-bar';
 import { Link } from 'react-router-dom';
 import NavCard from '../../components/nav-card/nav-card';
 import CategoryList from '../../components/category-list/category-list';
+import RecipeFeature from '../../components/recipe-feature/recipe-feature';
+import CookingTimeIcon from '../../images/icons/svg/icon_hourglass.svg';
+import SteamIcon from '../../images/icons/svg/icon_steam.svg';
+import OvenIcon from '../../images/icons/svg/icon_oven.svg';
+import FlatwareIcon from '../../images/icons/svg/icon_flatware.svg';
 
 export default function ComponentsShowcase () {
 
@@ -58,6 +63,22 @@ export default function ComponentsShowcase () {
                 <div className="col-md-8">
                     <CategoryList categories={[{title: "Desserts", to: '/desserts'}, {title: "Sucrés", to: '/sucres'}]} />
                     <h1 className="text-center">Titre de la recette sit amet, version sans gluten</h1>
+                    <div className="row">
+                        <div className="col-md-3">
+                            <RecipeFeature value="25 min" items={[{title: 'Temps de cuisson', picto: CookingTimeIcon}]}/>
+                        </div>
+                        <div className="col-md-3">
+                            <RecipeFeature items={[{title: 'Four', picto: OvenIcon}, {title: 'Vapeur', picto: SteamIcon}]}/>
+                        </div>
+                        <div className="col-md-3">
+                            <RecipeFeature value="25 min" items={[{title: 'Temps de cuisson', picto: CookingTimeIcon}]}/>
+                        </div>
+                        <div className="col-md-3">
+                            <RecipeFeature items={[{title: 'Nombre de parts', picto: FlatwareIcon}]}>
+                                + / -
+                            </RecipeFeature>
+                        </div>
+                    </div>
                 </div>
                 <div className="col-md-4"></div>
             </div>
