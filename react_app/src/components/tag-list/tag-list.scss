@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.tag-list {
+    &__item {
+        font-weight: bold;
+        color: $body-color;
+        text-decoration: none;
+
+        &::after {
+            content: ', ';
+        }
+        &:last-child::after {
+            display: none;
+        }
+    }
+}

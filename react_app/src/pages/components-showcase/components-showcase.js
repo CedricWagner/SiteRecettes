@@ -15,6 +15,7 @@ import QuantityControl from '../../components/quantity-control/quantity-control'
 import { useState } from 'react';
 import IngredientLine from '../../components/ingredient-line/ingredient-line';
 import IngredientPicto from '../../images/showcase-ingredient.png'
+import TagList from '../../components/tag-list/tag-list';
 
 export default function ComponentsShowcase () {
 
@@ -93,6 +94,9 @@ export default function ComponentsShowcase () {
                 <div className="col-md-8">
                     <h2 className="mt-5">Ingrédients</h2>
                     <IngredientLine amount='50' name='Noix de coco' picto={IngredientPicto} unit="g."/>
+                </div>
+                <div className="col-md-4">
+                    <TagList tags={[{title: "Tartine", to:"/tartine"}, {title: "Mozzarella", to:"/mozza"}]}/>
                 </div>
             </div>
         </div>
