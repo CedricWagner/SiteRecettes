@@ -16,13 +16,38 @@ import { useState } from 'react';
 import IngredientLine from '../../components/ingredient-line/ingredient-line';
 import IngredientPicto from '../../images/showcase-ingredient.png'
 import TagList from '../../components/tag-list/tag-list';
+import FilterGroup from '../../components/filter-group/filter-group';
 
 export default function ComponentsShowcase () {
 
     const cardTaxonomies = [{title: "Desserts", to: "/edze"}, {title: "Sucrés", to: "/edzdze"}]
+    const [filterItems] = useState([
+        {
+            id: 1,
+            title: "De saison",
+            children: [
+                {id: 4, title: "Ete"},
+                {id: 5, title: "Automne", isActive: true}
+            ],
+        },
+        {
+            id: 2,
+            title: "Salés",
+            children: [
+                {id: 6, title: "Apéritifs"},
+                {id: 7, title: "Plats"}
+            ],
+        },
+        { id: 3, title: "Sucrés" }
+    ])
+    const [activeFilters, setActiveFilters] = useState([4]);
 
     function onSearch(value) {
         alert("Valeur recherchée : " + value);
+    }
+    
+    function onFilter(filters) {
+        setActiveFilters([...filters])
     }
 
     const [currentQuantity, setCurrentQuantity] = useState(12)
@@ -90,6 +115,7 @@ export default function ComponentsShowcase () {
                     </div>
                 </div>
                 <div className="col-md-4">
+                    <FilterGroup title="Catégories" items={filterItems} onFilter={onFilter} activeFilters={activeFilters}/>
                 </div>
                 <div className="col-md-8">
                     <h2 className="mt-5">Ingrédients</h2>

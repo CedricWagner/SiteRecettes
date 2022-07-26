@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.filter-group {
+    text-align: center;
+    text-transform: uppercase;
+    &__title {
+        font-size: $h3-font-size;
+    }
+}

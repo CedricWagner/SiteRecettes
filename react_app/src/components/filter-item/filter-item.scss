@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+
+.filter-item {
+    &__title {
+        font-size: $font-size-base * 1.25;
+    }
+    &--parent > &__title {
+        font-size: $font-size-base * 1.5;
+        font-weight: bold;
+    }
+    &--parent {
+        margin-bottom: 20px;
+    }
+    &--all {
+        margin-bottom: 20px;
+    }
+    &--active > &__title {
+        color: $primary;
+    }
+    &--parent > &__title {
+        color: $black;
+    }
+    &__children {
+        display: none;
+    }
+    &--open > &__children {
+        display: block;
+    }
+}
