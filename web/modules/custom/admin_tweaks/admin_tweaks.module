@@ -5,7 +5,10 @@
  * Contains admin_tweaks.module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\node\NodeForm;
 
 /**
  * Implements hook_help().
@@ -27,4 +30,31 @@ function admin_tweaks_preprocess_page(&$variables) {
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $variables['#attached']['library'][] = 'admin_tweaks/admin_tweaks';
    }
+}
+
+function admin_tweaks_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (get_class($form_state->getFormObject()) === 'Drupal\node\NodeForm') {
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'admin_tweaks_node_form_submit';
+      }
+    }
+  }
+}
+
+function admin_tweaks_node_form_submit($form, FormStateInterface $form_state) {
+  /** @var NodeForm $form_object */
+  $form_object = $form_state->getFormObject();
+  $node = $form_object->getEntity();
+  $type = $node->type->entity->get('type');
+
+  // force ignoring destination (?destination=...)
+  $form_state->ignoreDestination();
+
+  $params['query'] = [
+    'type' => $type,
+  ];
+  $url = Url::fromRoute('system.admin_content');
+  $url->setOptions($params);
+  $form_state->setRedirectUrl($url);
 }

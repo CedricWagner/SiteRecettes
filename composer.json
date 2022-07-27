@@ -111,7 +111,8 @@
         },
         "patches": {
             "drupal/core": {
-              "fix error on REST Views": "https://www.drupal.org/files/issues/2858814-13.patch"
+              "fix error on REST Views": "https://www.drupal.org/files/issues/2858814-13.patch",
+              "enable to ignore destination redirect": "https://www.drupal.org/files/issues/2021-12-07/2950883-43.patch"
             }
         }
     },
