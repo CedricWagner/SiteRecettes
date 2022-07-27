@@ -42,9 +42,9 @@ content:
       limit: 10
       min_length: 0
       delimiter: ''
-      not_found_message_allow: true
-      not_found_message: 'L''ingrédient ''@term'' n''existe pas'
-      new_terms: false
+      not_found_message_allow: false
+      not_found_message: 'L''ingrédient ''@term'' sera créé'
+      new_terms: true
       no_empty_message: 'Saisissez un ingrédient existant'
     third_party_settings: {  }
   field_unit:
