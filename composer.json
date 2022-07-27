@@ -30,6 +30,8 @@
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
         "drupal/field_group": "^3.2",
+        "drupal/gin": "^3.0@beta",
+        "drupal/gin_toolbar": "^1.0@beta",
         "drupal/paragraphs": "^1.14",
         "drupal/pathauto": "^1.10",
         "drupal/restui": "^1.20",
