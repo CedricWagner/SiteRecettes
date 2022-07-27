@@ -1,22 +1,27 @@
+import { useEffect, useState } from 'react'
 import MenuItem from '../menu-item/menu-item'
+import getMenuItems from './menu.api'
 import './menu.scss'
 
 export default function Menu() {
+    const [items, setItems] = useState([{title: "Accueil", to: "./"}])
 
-    const categoriesSubmenu = [
-        {title: 'Salé', to: 'sale'},
-        {title: 'Sucré', to: 'sucre'},
-        {title: 'Apéritifs', to: 'aperitifs'}
-    ]
-
+    useEffect(() => {
+        getMenuItems().then((items) => 
+            setItems(items.map((item) => {
+                return {
+                    title: item.title,
+                    to: item.relative
+                }}
+            ))
+        );
+    },[])
+    
     return (
         <div className="menu">
-            <MenuItem title="Accueil" to="/"/>
-            <MenuItem title="Recettes" to="/recettes" submenu={categoriesSubmenu}/>
-            <MenuItem title="Zéro déchet" to="/zero-dechet"/>
-            <MenuItem title="Articles" to="/articles"/>
-            <MenuItem title="Convertisseur" to="/convertisseur"/>
-            <MenuItem title="Recherche" to="/recherche"/>
+            {items.map((item, key) => 
+                <MenuItem title={item.title} to={item.to} key={key}/>
+            )}
         </div>
     )
 }
