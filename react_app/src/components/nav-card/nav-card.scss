@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.nav-card {
+    padding: 80px 45px;
+    background-position: center;
+    &__title {
+        text-align: center;
+        background-color: $card-title-bg;
+        width: 100%;
+        display: block;
+        padding: 12px;
+        color: $white;
+        text-transform: uppercase;
+        font-size: $font-size-xl;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+            color: $secondary;
+        }
+    }
+}

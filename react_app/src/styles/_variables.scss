@@ -1,0 +1,97 @@
+// ----------------------------
+// Override bootstrap variables
+// ----------------------------
+
+// Color system
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #686868;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$grullo:  #A89790;
+$palesilver:#C5BBB7;
+$blue:    #0d6efd;
+$darkblue:#5E666C;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$darkgreen:#62726C;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+
+$colors: (
+  "grullo":     $grullo,
+  "palesilver": $palesilver,
+  "blue":       $blue,
+  "darkblue":   $darkblue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "darkgreen":  $darkgreen,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+);
+
+$primary:       $grullo;
+$secondary:     $palesilver;
+$success:       $darkgreen;
+$info:          $darkblue;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-900;
+
+// Font
+$font-family-sans-serif:      'Caviar-Dreams', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$body-color:                  $black;
+
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-xl:                $font-size-base * 1.5;
+
+$line-height-base:            1.5;
+$line-height-sm:              1.25;
+$line-height-lg:              2;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 1.875;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$headings-margin-bottom:      30px;
+$headings-font-weight:        700;
+$headings-line-height:        1.2;
+
+// Other
+$border-radius: 6px;
+$box-shadow: 4px 4px 4px rgba($black, .25);
+
+// Buttons
+$btn-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+$btn-border-radius: 6px;
+$btn-link-color: $black;
+
+// other variables
+$card-title-bg: rgba(0,0,0, .5);

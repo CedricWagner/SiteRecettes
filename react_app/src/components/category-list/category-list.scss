@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.category-list {
+    text-align: center;
+    &__item {
+        color: $body-color;
+        text-decoration: none;
+        &::after {
+            content: ' · '
+        }
+        &:last-child::after {
+            display: none;
+        }
+    }
+}

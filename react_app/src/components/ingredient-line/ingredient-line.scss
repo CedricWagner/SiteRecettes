@@ -1,0 +1,17 @@
+.ingredient-line {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__image {
+        height: 30px;
+        width: auto;
+    }
+
+    &__text {
+        margin-bottom: 0px;
+        > span {
+            padding-left: 10px;
+        }
+    }
+}

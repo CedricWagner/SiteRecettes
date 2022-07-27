@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+
+.menu-item {
+    $base: &;
+    position: relative;
+    &__link {
+        padding-left: 15px;
+        padding-right: 15px;
+        
+        font-size: $font-size-base * 1.5;
+        line-height: 60px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $body-color;
+        &:focus {
+            color: $secondary;
+        }
+        &--active {
+            color: $primary;
+        }
+    }
+    &__submenu {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: $white;
+        border: 1px solid $gray-600;
+        border-top: none;
+
+        #{$base} {
+            line-height: 40px;
+
+        }
+        #{$base}__link {
+            font-size: $font-size-base * 1.25;
+        }
+        
+        transition: opacity 0.5s;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    &:hover #{$base}__submenu {
+        opacity: 1;
+        height: auto;  
+    }
+}
