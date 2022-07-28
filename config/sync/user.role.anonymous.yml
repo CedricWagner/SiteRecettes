@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
+    - rest.resource.rest_menu_item
   module:
     - comment
     - contact
     - filter
+    - rest
     - search
     - system
+    - taxonomy
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
@@ -20,5 +23,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'access taxonomy overview'
+  - 'restful get rest_menu_item'
   - 'search content'
   - 'use text format restricted_html'

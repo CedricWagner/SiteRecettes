@@ -1,4 +1,4 @@
-import Api from "../../utils/api";
+import Api from "../../utils/api/api";
 
 export const mainMenuUrl = "/api/menu_items/main";
 

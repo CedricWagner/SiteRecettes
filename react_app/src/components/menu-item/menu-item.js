@@ -13,7 +13,7 @@ function MenuItem(props) {
             <Link className={`menu-item__link ${isActive ? 'menu-item__link--active' : ''}`} to={props.to}>
                 {props.title}
             </Link>
-            {props.submenu && (
+            {props.submenu && props.submenu.length > 0 && (
                 <div className="menu-item__submenu">
                     {props.submenu.map((item, key) => {
                         return <MenuItem key={key} title={item.title} to={item.to} />

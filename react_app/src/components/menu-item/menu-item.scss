@@ -28,11 +28,16 @@
         border-top: none;
 
         #{$base} {
-            line-height: 40px;
-
+            line-height: normal;
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            
         }
         #{$base}__link {
             font-size: $font-size-base * 1.25;
+            line-height: normal;
+            display: block;
         }
         
         transition: opacity 0.5s;
