@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {
   BrowserRouter,
   Routes,
@@ -7,6 +7,7 @@ import {
 import ComponentsShowcase from './pages/components-showcase/components-showcase';
 import Logo from './components/logo/logo';
 import Menu from './components/menu/menu';
+import Home from './pages/home/home';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Logo/>
         <Menu/>
         <Routes>
-            <Route path="/" element={<ComponentsShowcase/>}/>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/components" element={<ComponentsShowcase/>}/>
         </Routes>
       </BrowserRouter>
     </div>

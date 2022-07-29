@@ -1,0 +1,15 @@
+uuid: fef5be1d-1a00-4312-b947-d1bb0e161d3b
+langcode: fr
+status: true
+dependencies: {  }
+name: nav_card
+label: 'Nav Card'
+effects:
+  80f5c178-170e-4ccd-81e1-1cfed7429606:
+    uuid: 80f5c178-170e-4ccd-81e1-1cfed7429606
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 685
+      height: 213
+      anchor: center-center

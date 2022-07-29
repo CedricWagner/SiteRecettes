@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './nav-card.scss';
 
 function NavCard (props) {
@@ -13,5 +14,13 @@ function NavCard (props) {
   )
 
 }
+
+NavCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
+};
+
+NavCard.defaultProps = {};
 
 export default NavCard;

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getCategories } from '../../utils/api/common.api'
+import { parseMenuLink } from '../../utils/api/helpers'
 import MenuItem from '../menu-item/menu-item'
-import getMainMenuItems, { parseMenuLink } from './menu.api'
+import getMainMenuItems from './menu.api'
 import './menu.scss'
 
 export default function Menu() {
@@ -11,12 +12,12 @@ export default function Menu() {
     useEffect(() => {
         getMainMenuItems().then((items) => 
             setItems(items
-                .filter(item => item.attributes.enabled)
+                .filter(item => item.enabled)
                 .map((item) => {
                     return {
-                        title: item.attributes.title,
-                        to: parseMenuLink(item.attributes.link),
-                        slug: item.attributes.field_slug,
+                        title: item.title,
+                        to: parseMenuLink(item.link),
+                        slug: item.field_slug,
                     }
                 }
             ))
@@ -29,8 +30,8 @@ export default function Menu() {
             getCategories().then((items) => 
                 setCategories(items.map((item) => {
                     return {
-                        title: item.attributes.name,
-                        to: item.attributes.path.alias ? item.attributes.path.alias : '/categorie/' + item.attributes.drupal_internal__nid
+                        title: item.name,
+                        to: item.path.alias ? item.path.alias : '/categorie/' + item.drupal_internal__nid
                     }}
                 ))
             );

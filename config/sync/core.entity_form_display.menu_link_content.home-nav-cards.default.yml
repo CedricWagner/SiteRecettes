@@ -1,0 +1,47 @@
+uuid: d0dcb980-5fc5-4af0-92e7-b55db7d37a6d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.home-nav-cards.field_image
+    - image.style.nav_card
+    - system.menu.home-nav-cards
+  module:
+    - link
+    - menu_item_extras
+    - svg_image
+id: menu_link_content.home-nav-cards.default
+targetEntityType: menu_link_content
+bundle: home-nav-cards
+mode: default
+content:
+  field_image:
+    type: image_image
+    weight: 21
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: nav_card
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

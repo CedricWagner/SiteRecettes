@@ -32,6 +32,8 @@ module:
   history: 0
   image: 0
   jsonapi: 0
+  jsonapi_image_styles: 0
+  jsonapi_include: 0
   language: 0
   link: 0
   locale: 0
