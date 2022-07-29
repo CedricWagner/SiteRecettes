@@ -8,7 +8,7 @@ import { mainMenuUrl } from './menu.api';
 import { mockCategoriesData, mockMenuData } from './menu.data';
 import { categoriesUrl } from '../../utils/api/common.api';
 
-const menuResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + mainMenuUrl, (req, res, ctx) => {
+const menuResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsonapi' + mainMenuUrl, (req, res, ctx) => {
     return res(ctx.json(mockMenuData))
 })
 
@@ -28,6 +28,14 @@ test("it should have the \"Recette\" menu item", async () => {
     const recetteItem = await screen.findByText("Les Articles");
 
     expect(recetteItem).toBeVisible();
+})
+
+test("it should not render disabled items", async () => {
+    render(<BrowserRouter><Menu /></BrowserRouter>)
+
+    const links = await screen.findAllByRole('link');
+
+    expect(links).toHaveLength(5)
 })
 
 test("it should have the \"Sans-Gluten\" submenu item", async () => {

@@ -6,6 +6,7 @@ dependencies:
     - filter.format.restricted_html
     - rest.resource.rest_menu_item
   module:
+    - admin_tweaks
     - comment
     - contact
     - filter
@@ -22,6 +23,7 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access menu items'
   - 'access site-wide contact form'
   - 'access taxonomy overview'
   - 'restful get rest_menu_item'

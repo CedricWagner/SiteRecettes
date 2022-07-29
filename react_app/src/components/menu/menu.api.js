@@ -1,8 +1,18 @@
-import Api from "../../utils/api/api";
+import JsonApi from "../../utils/api/jsonapi";
 
-export const mainMenuUrl = "/api/menu_items/main";
+export const mainMenuUrl = "/menu_link_content/main";
 
-export default function getMenuItems() {
-    const api = new Api();
-    return api.get(mainMenuUrl);
+export default function getMainMenuItems() {
+    const api = new JsonApi();
+    return api.get(mainMenuUrl, ['sort=weight']);
+}
+
+/** 
+ * Parse the uri returned by drupal into a relative url
+ * 
+ * @param string linkAttribute
+ * @return string
+ */
+export function parseMenuLink(linkAttribute) {
+    return linkAttribute.uri.replace('internal:', '');
 }

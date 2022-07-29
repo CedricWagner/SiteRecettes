@@ -5,6 +5,7 @@
  * Contains admin_tweaks.module.
  */
 
+use Drupal\admin_tweaks\Access\CustomMenuLinkContentAccessControlHandler;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
@@ -57,4 +58,10 @@ function admin_tweaks_node_form_submit($form, FormStateInterface $form_state) {
   $url = Url::fromRoute('system.admin_content');
   $url->setOptions($params);
   $form_state->setRedirectUrl($url);
+}
+
+function admin_tweaks_entity_type_alter(array &$entity_types) {
+  /** @var Drupal\Core\Entity\ContentEntityType $menu_link_content */
+  $menu_link_content = $entity_types['menu_link_content'];
+  $menu_link_content->setHandlerClass('access', CustomMenuLinkContentAccessControlHandler::class);
 }
