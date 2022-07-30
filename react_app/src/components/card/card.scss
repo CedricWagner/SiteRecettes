@@ -1,6 +1,8 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .card {
+    @include card-hover-animation;
     position: relative;
     box-shadow: $box-shadow;
     

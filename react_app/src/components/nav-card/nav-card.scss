@@ -1,8 +1,12 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .nav-card {
+    @include card-hover-animation;
     padding: 80px 45px;
     background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: $box-shadow;
     &__title {
         text-align: center;
         background-color: $card-title-bg;
@@ -15,7 +19,7 @@
         font-weight: bold;
         text-decoration: none;
         &:hover {
-            color: $secondary;
+            color: $white;
         }
     }
 }

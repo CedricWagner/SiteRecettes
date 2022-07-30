@@ -11,9 +11,9 @@ function Card (props) {
     }
 
     return (
-        <div className="card">
+        <div className="card" onClick={onCardClick}>
             <div className="card__upper">
-                <img className="card__image" src={props.image} alt={props.title} onClick={onCardClick}/>
+                <img className="card__image" src={props.image} alt={props.title}/>
                 {props.taxonomies && (
                     <div className="card__taxonomies">
                         {props.taxonomies.map((term, key) => {
