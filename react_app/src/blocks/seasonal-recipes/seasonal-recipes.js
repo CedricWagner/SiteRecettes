@@ -16,7 +16,7 @@ const SeasonalRecipes = (props) => {
 				.map((item) => {
 					return {
 						title: item.title,
-						image: item.field_image.image_style_uri.card,
+						image: item.field_image.image_style_uri ? item.field_image.image_style_uri.card : null,
 						to: item.path.alias,
 						taxonomies: item.field_categories.filter(term => term.status).map((term) => {
 							return {
