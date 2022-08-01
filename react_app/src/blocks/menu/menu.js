@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getCategories } from '../../utils/api/common.api'
 import { parseMenuLink } from '../../utils/api/helpers'
-import MenuItem from '../menu-item/menu-item'
+import MenuItem from '../../components/menu-item/menu-item'
 import getMainMenuItems from './menu.api'
 import './menu.scss'
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './nav-cards-container.scss';
 import getNavCardsMenuItems from './nav-cards-container.api';
 import { parseMenuLink } from '../../utils/api/helpers';
-import NavCard from '../nav-card/nav-card';
+import NavCard from '../../components/nav-card/nav-card';
 
 const NavCardsContainer = () => {
   

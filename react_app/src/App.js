@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import ComponentsShowcase from './pages/components-showcase/components-showcase';
 import Logo from './components/logo/logo';
-import Menu from './components/menu/menu';
+import Menu from './blocks/menu/menu';
 import Home from './pages/home/home';
 
 function App() {

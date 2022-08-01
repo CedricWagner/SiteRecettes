@@ -22,7 +22,7 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test("it should have the \"Recette\" menu item", async () => {
+test("it should have the \"Les Articles\" menu item", async () => {
     render(<BrowserRouter><Menu /></BrowserRouter>)
 
     const recetteItem = await screen.findByText("Les Articles");
