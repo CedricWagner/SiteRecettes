@@ -1,11 +1,11 @@
-uuid: de172578-184d-47ae-a65a-685257bcfdf5
+uuid: 211f6bcf-f196-4aa9-9a97-bc2451f8f8a3
 langcode: fr
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_starting_month
-field_name: field_starting_month
+id: taxonomy_term.field_number
+field_name: field_number
 entity_type: taxonomy_term
 type: integer
 settings:

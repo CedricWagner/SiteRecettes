@@ -2,9 +2,10 @@ import React from 'react';
 import './home.scss';
 import NavCardsContainer from '../../blocks/nav-cards-container/nav-cards-container';
 import SearchBar from '../../components/search-bar/search-bar';
+import CardsGroupWrapper from '../../blocks/cards-group-wrapper/cards-group-wrapper';
+import SeasonalRecipes from '../../blocks/seasonal-recipes/seasonal-recipes';
 
 const Home = () => {
-  
   
   return (
     <div className="home">
@@ -15,8 +16,9 @@ const Home = () => {
         <SearchBar onSearch={(value) => alert('TODO')} />
       </div>
       <div className="container">
-        <h1>Recettes de saison</h1>
-        
+        <CardsGroupWrapper title="Recettes de saison" link="/recettes">
+          <SeasonalRecipes />
+        </CardsGroupWrapper>
       </div>
     </div>
   )

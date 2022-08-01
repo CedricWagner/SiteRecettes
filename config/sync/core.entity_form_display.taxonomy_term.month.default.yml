@@ -1,35 +1,36 @@
-uuid: 1a7e949c-f89f-4a47-aed6-3e47539ceed1
+uuid: 91f53812-bcac-409f-89d8-895faad34455
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.season.field_months
-    - taxonomy.vocabulary.season
+    - field.field.taxonomy_term.month.field_number
+    - taxonomy.vocabulary.month
   module:
     - path
     - text
-id: taxonomy_term.season.default
+id: taxonomy_term.month.default
 targetEntityType: taxonomy_term
-bundle: season
+bundle: month
 mode: default
 content:
   description:
     type: text_textarea
-    weight: 3
+    weight: 2
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_months:
-    type: options_buttons
-    weight: 7
+  field_number:
+    type: number
+    weight: 1
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 4
+    weight: 3
     region: content
     settings:
       include_locked: true
@@ -44,13 +45,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true

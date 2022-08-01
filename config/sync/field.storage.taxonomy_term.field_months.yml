@@ -1,19 +1,18 @@
-uuid: 168ae1ee-fc8e-47ea-bf62-483d925b9b42
+uuid: 860cdeea-c2ee-4731-b414-9fcc892a597c
 langcode: fr
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_ending_month
-field_name: field_ending_month
+id: taxonomy_term.field_months
+field_name: field_months
 entity_type: taxonomy_term
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

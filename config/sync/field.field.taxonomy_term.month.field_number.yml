@@ -1,0 +1,23 @@
+uuid: 1589b9e4-e467-4da8-af24-2b41e07d6c66
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_number
+    - taxonomy.vocabulary.month
+id: taxonomy_term.month.field_number
+field_name: field_number
+entity_type: taxonomy_term
+bundle: month
+label: Numéro
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

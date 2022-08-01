@@ -37,6 +37,7 @@ function Card (props) {
 Card.propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
     taxonomies: PropTypes.arrayOf(PropTypes.shape(linkShape))
 };
   
