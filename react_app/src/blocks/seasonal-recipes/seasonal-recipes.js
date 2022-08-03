@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './seasonal-recipes.scss';
-import { parseMenuLink } from '../../utils/api/helpers';
 import getSeasonalRecipes from './season-recipes.api';
 import Card from '../../components/card/card';
+import MultipleLoader from '../../components/multiple-loader/multiple-loader';
 
 const SeasonalRecipes = (props) => {
   
@@ -32,7 +32,10 @@ const SeasonalRecipes = (props) => {
 
 	return (
 		<div className="seasonal-recipes row">
-			{recipes.map((item, key) => 
+			{recipes.length === 0 && 
+				<MultipleLoader count={props.count}/>
+			}
+			{recipes && recipes.map((item, key) => 
 				<div className="col-md-3" key={key}>
 					<Card title={item.title} image={item.image} to={item.to} taxonomies={item.taxonomies}></Card>
 				</div>

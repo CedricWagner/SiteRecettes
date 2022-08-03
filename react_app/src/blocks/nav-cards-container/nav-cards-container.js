@@ -3,6 +3,7 @@ import './nav-cards-container.scss';
 import getNavCardsMenuItems from './nav-cards-container.api';
 import { parseMenuLink } from '../../utils/api/helpers';
 import NavCard from '../../components/nav-card/nav-card';
+import MultipleLoader from '../../components/multiple-loader/multiple-loader';
 
 const NavCardsContainer = () => {
   
@@ -25,6 +26,12 @@ const NavCardsContainer = () => {
 
   return (
     <div className="nav-cards-container row">
+      {cards.length === 0 && 
+        <>
+          <MultipleLoader count={2}/>
+          <MultipleLoader count={2}/>
+        </>
+      }
       {cards && cards.map((card, key) => 
         <div className="col-md-6 col" key={key}>
           <NavCard title={card.title} to={card.to} image={card.image} />

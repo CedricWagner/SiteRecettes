@@ -4,7 +4,7 @@ import QuantityControl from './quantity-control';
 test('should trigger "onUpdateQuantity" function on click', async () => {
     const onUpdate = jest.fn();
     
-    render(<QuantityControl current="12" onUpdateQuantity={onUpdate}/>);
+    render(<QuantityControl current={12} onUpdateQuantity={onUpdate}/>);
     
     fireEvent.click(screen.getByTitle("Plus"));
 

@@ -17,6 +17,7 @@ import IngredientLine from '../../components/ingredient-line/ingredient-line';
 import IngredientPicto from '../../images/showcase-ingredient.png'
 import TagList from '../../components/tag-list/tag-list';
 import FilterGroup from '../../components/filter-group/filter-group';
+import MultipleLoader from '../../components/multiple-loader/multiple-loader';
 
 export default function ComponentsShowcase () {
 
@@ -93,6 +94,7 @@ export default function ComponentsShowcase () {
 
                 </div>
             </div>
+            <MultipleLoader count={4}/>
             <div className="row mt-4">
                 <div className="col-md-8">
                     <CategoryList categories={[{title: "Desserts", to: '/desserts'}, {title: "Sucrés", to: '/sucres'}]} />
