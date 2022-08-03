@@ -20,13 +20,13 @@ const QuantityControl = (props) => {
 
   return (
     <div className="quantity-control">
-      <button className="btn btn-primary" disabled={props.current === 1 ? true : false} title="Moins" onClick={decreaseQuantity}>
+      <button className="btn btn-secondary" disabled={props.current === 1 ? true : false} title="Moins" onClick={decreaseQuantity}>
         <IconMinus/>
       </button>
       <div className="quantity-control__value">
         {props.current} {props.unity}
       </div>
-      <button className="btn btn-primary" title="Plus" onClick={increaseQuantity}>
+      <button className="btn btn-secondary" title="Plus" onClick={increaseQuantity}>
         <IconPlus/>
       </button> 
     </div>

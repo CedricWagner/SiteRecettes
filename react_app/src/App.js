@@ -9,6 +9,7 @@ import Logo from './components/logo/logo';
 import Menu from './blocks/menu/menu';
 import Home from './pages/home/home';
 import Footer from './blocks/footer/footer';
+import GoToTopButton from './components/go-to-top-button/go-to-top-button';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/components" element={<ComponentsShowcase/>}/>
         </Routes>
+        <GoToTopButton />
         <Footer/>
       </BrowserRouter>
     </div>
