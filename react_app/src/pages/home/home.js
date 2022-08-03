@@ -12,7 +12,7 @@ const Home = () => {
       <div className="container">
         <NavCardsContainer />
       </div> 
-      <div className="container-small mt-4 mb-4">
+      <div className="container-small mt-5 mb-6">
         <SearchBar onSearch={(value) => alert('TODO')} />
       </div>
       <div className="container">
