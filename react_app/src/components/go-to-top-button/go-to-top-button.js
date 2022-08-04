@@ -9,7 +9,7 @@ const GoToTopButton = () => {
   }
 
   return (
-    <button href="#" className="go-to-top-button btn btn-secondary" onClick={goToTop}>
+    <button href="#" className="go-to-top-button btn btn-terciary" onClick={goToTop}>
       <IconUp />
     </button>
   )

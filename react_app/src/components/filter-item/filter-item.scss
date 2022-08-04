@@ -2,10 +2,10 @@
 
 .filter-item {
     &__title {
-        font-size: $font-size-base * 1.25;
+        font-size: $font-size-base;
     }
     &--parent > &__title {
-        font-size: $font-size-base * 1.5;
+        font-size: $font-size-base * 1.25;
         font-weight: bold;
     }
     &--parent {

@@ -5,6 +5,7 @@
     @include card-hover-animation;
     position: relative;
     box-shadow: $box-shadow;
+    background-color: $white;
     
     &__upper {
         position: relative;

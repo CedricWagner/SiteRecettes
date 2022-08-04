@@ -3,12 +3,14 @@
 .menu-item {
     $base: &;
     position: relative;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     &__link {
         padding-left: 15px;
         padding-right: 15px;
         
-        font-size: $font-size-base * 1.5;
-        line-height: 60px;
+        font-size: $font-size-base * 1.25;
         text-decoration: none;
         text-transform: uppercase;
         color: $body-color;
@@ -22,7 +24,9 @@
     &__submenu {
         position: absolute;
         top: 100%;
-        width: 100%;
+        left: 0px;
+        width: auto;
+        min-width: 100%;
         z-index: 3;
         background-color: $white;
         border: 1px solid $gray-600;
@@ -31,12 +35,12 @@
         #{$base} {
             line-height: normal;
             width: 100%;
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-top: 8px;
+            padding-bottom: 8px;
             
         }
         #{$base}__link {
-            font-size: $font-size-base * 1.25;
+            font-size: $font-size-base;
             line-height: normal;
             display: block;
         }
