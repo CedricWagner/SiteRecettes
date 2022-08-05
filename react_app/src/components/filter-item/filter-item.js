@@ -8,13 +8,13 @@ const FilterItem = (props) => {
   const activeChildren = (props.children && props.children.length > 0) && props.children.filter((item) => props.activeFilters.includes(item.id)).length > 0
 
   function selectItem(e) {
-    let filters = [...props.activeFilters, parseInt(e.target.dataset.id)]
+    let filters = [...props.activeFilters, e.target.dataset.id]
     props.onSelect(filters)
   }
 
   function unselectItem(e) {
     let filters = [...props.activeFilters]
-    props.onSelect(filters.filter((id) => id !== parseInt(e.target.dataset.id)))
+    props.onSelect(filters.filter((id) => id !== e.target.dataset.id))
   }
 
   return (
@@ -33,14 +33,14 @@ const FilterItem = (props) => {
 );}
 
 FilterItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   isActive: PropTypes.bool,
   children: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     isActive: PropTypes.bool
   })),
-  activeFilters: PropTypes.arrayOf(PropTypes.number.isRequired),
+  activeFilters: PropTypes.arrayOf(PropTypes.string.isRequired),
   onSelect: PropTypes.func.isRequired
 };
 

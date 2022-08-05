@@ -30,13 +30,13 @@ const FilterGroup = (props) => {
 FilterGroup.propTypes = {
   title: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     children: PropTypes.arrayOf(PropTypes.shape({
       title: PropTypes.string.isRequired,
     }))
   })),
-  activeFilters: PropTypes.arrayOf(PropTypes.number.isRequired),
+  activeFilters: PropTypes.arrayOf(PropTypes.string.isRequired),
   onFilter: PropTypes.func.isRequired
 };
 

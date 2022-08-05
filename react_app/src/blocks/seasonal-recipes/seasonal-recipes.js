@@ -4,6 +4,7 @@ import './seasonal-recipes.scss';
 import getSeasonalRecipes from './season-recipes.api';
 import Card from '../../components/card/card';
 import MultipleLoader from '../../components/multiple-loader/multiple-loader';
+import { parseRecipe } from '../../utils/api/helpers';
 
 const SeasonalRecipes = (props) => {
   
@@ -14,17 +15,7 @@ const SeasonalRecipes = (props) => {
 			setRecipes(items
 				.filter(item => item.status)
 				.map((item) => {
-					return {
-						title: item.title,
-						image: item.field_image.image_style_uri ? item.field_image.image_style_uri.card : null,
-						to: item.path.alias,
-						taxonomies: item.field_categories.filter(term => term.status).map((term) => {
-							return {
-								title: term.name,
-								to: term.path.alias ? term.path.alias : '/categories/' + term.id
-							}
-						})
-					}
+					return parseRecipe(item)
 				}
 			))
 		);
