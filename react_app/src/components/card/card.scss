@@ -5,7 +5,8 @@
     @include card-hover-animation;
     position: relative;
     box-shadow: $box-shadow;
-    background-color: $white;
+    background-color: rgba($color: $white, $alpha: 0.5);
+    height: 100%;
     
     &__upper {
         position: relative;
@@ -32,6 +33,7 @@
     }
     
     &__term {
+        display: inline-block;
         font-weight: bold;
         a {
             color: $white;
@@ -53,6 +55,7 @@
         text-transform: uppercase;
         text-align: center;
         min-height: 90px;
+        max-height: 98px;
         font-size: $font-size-base * 1.25;
         line-height: 26px;
         cursor: pointer;

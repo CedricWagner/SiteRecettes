@@ -29,7 +29,7 @@ function Card (props) {
                 )}
             </div>
             <div className="card__title" onClick={onCardClick}>
-                {props.title}
+                {props.title.length > 40 ? props.title.substring(0, 40) + '...' : props.title}
             </div>
         </div>
     )
