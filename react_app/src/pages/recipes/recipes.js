@@ -10,7 +10,7 @@ import OrderBySelector from '../../components/order-by-selector/order-by-selecto
 
 const Recipes = () => {
   
-	const [recipes, setRecipes] = useState([])
+	const [recipes, setRecipes] = useState(false)
 	const [page, setPage] = useState(0);
     const [activeFilters, setActiveFilters] = useState([]);
     const [filters, setFilters] = useState([]);
@@ -54,7 +54,8 @@ const Recipes = () => {
 				if (page === 0) {
 					setRecipes([...newRecipes]);
 				} else {
-					setRecipes([...recipes, ...newRecipes]);
+					const oldRecipes = recipes ? recipes : [];
+					setRecipes([...oldRecipes, ...newRecipes]);
 				}
 			}
 		);
@@ -82,10 +83,13 @@ const Recipes = () => {
 				<div className="col-md-9">
 					<OrderBySelector orderBys={orderBys} orderBy={orderBy} align="right" onChange={onUpdateOrder}/>
 					<div className="row">
-						{recipes.length === 0 && 
+						{!recipes && 
 							<MultipleLoader count={3} />
 						}
-						{recipes.map((item, key) => 
+						{recipes.length === 0 && 
+							<p>Aucun résultat...</p>
+						}
+						{recipes && recipes.map((item, key) => 
 							<div className="col-md-4 mb-4" key={key}>
 								<Card title={item.title} image={item.image} to={item.to} taxonomies={item.taxonomies}/>						
 							</div>

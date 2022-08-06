@@ -4,5 +4,8 @@ export const mainMenuUrl = "/menu_link_content/main";
 
 export default function getMainMenuItems() {
     const api = new JsonApi();
-    return api.get(mainMenuUrl, ['sort=weight']);
+
+    api.params.addSort('weight');
+
+    return api.get(mainMenuUrl);
 }

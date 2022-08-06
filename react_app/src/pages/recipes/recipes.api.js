@@ -4,21 +4,17 @@ export const recipesUrl = "/node/recipe";
 
 export default function getRecipes(sort="-created", count=12, offset=0, activeFilters=[]) {
     const api = new JsonApi();
-    const filters = [
-        'sort=' + sort,
-        'page[limit]=' + count,
-        'page[offset]=' + offset,
-        'filter[status][value]=1',
-        // includes
-        'include=field_image,field_categories',
-    ];
-    if (activeFilters.length > 0) {
-        filters.push('filter[season][condition][path]=field_categories.id');
-        filters.push('filter[season][condition][operator]=IN');
-    }
-    activeFilters.forEach(id => {
-        filters.push('filter[season][condition][value][]=' + id)
+
+    api.params.addSort(sort);
+    api.params.addPageLimit(count);
+    api.params.addPageOffset(offset);
+    api.params.addFilter('status', '1');
+    api.params.addInclude(['field_image', 'field_categories']);
+
+    activeFilters.forEach((id, index) => {
+        api.params.addGroup('category-' + index, 'AND');
+        api.params.addFilter('field_categories.id', id, 'IN', 'category-' + index);
     })
-    
-    return api.get(recipesUrl, filters);
+
+    return api.get(recipesUrl);
 }
