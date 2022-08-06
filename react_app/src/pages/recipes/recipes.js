@@ -96,7 +96,7 @@ const Recipes = () => {
 					</div>
 				</div>
 				<div className="col-md-3">
-					<FilterGroup title="Catégorie" activeFilters={activeFilters} onFilter={onFilterCategories} items={filters} />
+					<FilterGroup title="Catégories" activeFilters={activeFilters} onFilter={onFilterCategories} items={filters} />
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,14 @@
 .filter-group {
     text-align: center;
     text-transform: uppercase;
+    padding: 0 2.625rem;
     &__title {
         font-size: $h2-font-size;
+    }
+    &__separator {
+        text-align: center;
+        svg {
+            max-width: 100%;
+        }
     }
 }

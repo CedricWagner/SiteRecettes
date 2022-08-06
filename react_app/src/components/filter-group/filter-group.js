@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './filter-group.scss';
 import FilterItem from '../filter-item/filter-item';
+import {ReactComponent as IconLine} from '../../images/icons/svg/lvdd_icon_line.svg';
 
 const FilterGroup = (props) => {
   
@@ -12,19 +13,22 @@ const FilterGroup = (props) => {
   return (
     <div className="filter-group">
       <div className="filter-group__title">
-      {props.title}
-    </div>
-    <div className="filter-group__content">
-      <div className={`filter-item filter-item--all ${props.activeFilters.length === 0 ? "filter-item--active" : ""}`}>
-        <div className="filter-item__title" role="button" onClick={selectAll}>
-          Toutes
-        </div>
+        {props.title}
       </div>
-      {props.items.map((item) => 
-        <FilterItem key={item.id} id={item.id} title={item.title} children={item.children} activeFilters={props.activeFilters} onSelect={props.onFilter}/>
-      )}
+      <div className="filter-group__separator">
+        <IconLine />
+      </div>
+      <div className="filter-group__content">
+        <div className={`filter-item filter-item--all ${props.activeFilters.length === 0 ? "filter-item--active" : ""}`}>
+          <div className="filter-item__title" role="button" onClick={selectAll}>
+            Toutes
+          </div>
+        </div>
+        {props.items.map((item) => 
+          <FilterItem key={item.id} id={item.id} title={item.title} children={item.children} activeFilters={props.activeFilters} onSelect={props.onFilter}/>
+        )}
+      </div>
     </div>
-  </div>
 )};
 
 FilterGroup.propTypes = {
