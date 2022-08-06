@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../src/styles/style.scss';
+import '../node_modules/bootstrap/js/src/dropdown';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

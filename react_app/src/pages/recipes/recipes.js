@@ -62,10 +62,21 @@ const Recipes = () => {
 			<h1>Toutes les recettes</h1>
 			<div className="row">
 				<div className="col-md-9">
-					{recipes.length === 0 && 
-						<MultipleLoader count={3} />
-					}
+					<div class="dropdown">
+						<button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							Trier par
+						</button>
+
+						<ul class="dropdown-menu">
+							<li><button class="dropdown-item">Plus Récent</button></li>
+							<li><button class="dropdown-item">Plus Ancien</button></li>
+							<li><button class="dropdown-item">Alphabétique</button></li>
+						</ul>
+					</div>
 					<div className="row">
+						{recipes.length === 0 && 
+							<MultipleLoader count={3} />
+						}
 						{recipes.map((item, key) => 
 							<div className="col-md-4 mb-4" key={key}>
 								<Card title={item.title} image={item.image} to={item.to} taxonomies={item.taxonomies}/>						

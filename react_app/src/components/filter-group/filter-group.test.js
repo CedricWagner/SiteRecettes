@@ -3,26 +3,26 @@ import FilterGroup from "./filter-group";
 
 const filterItems = [
     {
-        id: '531315-5436513',
+        id: 'de-saison',
         title: "De saison",
         children: [
-            {id: '53d1315-5436513', title: "Ete"},
-            {id: '531315-5436ty5513', title: "Automne", isActive: true}
+            {id: 'ete', title: "Ete"},
+            {id: 'automne', title: "Automne", isActive: true}
         ],
     },
     {
-        id: '5353553-fez135zfe',
+        id: 'sales',
         title: "Salés",
         children: [
-            {id: 'zzeffzfzeg57-fzefz', title: "Apéritifs"},
-            {id: 'zefzef25-543544556513', title: "Plats"}
+            {id: 'aperitifs', title: "Apéritifs"},
+            {id: 'plats', title: "Plats"}
         ],
     },
-    { id: '35f4z35ef4-36z41ef53', title: "Sucrés" }
+    { id: 'sucres', title: "Sucrés" }
 
 ]
 
-const activeFilters = ['53d1315-5436513', '5353553-fez135zfe'];
+const activeFilters = ['ete', 'sales'];
 
 
 test('should trigger "onFilter" function on select', async () => {
@@ -46,7 +46,7 @@ test('should add the new filter to the list of filters', async () => {
     
     fireEvent.click(screen.getByText("Automne"));
 
-    expect(filters).toEqual(['53d1315-5436513', '5353553-fez135zfe', '531315-5436ty5513']);
+    expect(filters).toEqual(['ete', 'sales', 'automne']);
 });
 
 test('should remove the target filter from the list of filters', async () => {
@@ -60,7 +60,7 @@ test('should remove the target filter from the list of filters', async () => {
     
     fireEvent.click(screen.getByText("Ete"));
 
-    expect(filters).toEqual(['5353553-fez135zfe']);
+    expect(filters).toEqual(['sales']);
 });
 
 test('should remove all filters on select "All"', async () => {
