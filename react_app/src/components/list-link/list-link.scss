@@ -1,7 +1,10 @@
+@import '../../styles/variables';
+
 .list-link {
     margin-top: 30px;
     text-align: right;
     &__link {
         font-weight: bold;
+        color: $primary !important;
     }
 }

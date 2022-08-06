@@ -6,6 +6,7 @@ import MultipleLoader from '../../components/multiple-loader/multiple-loader';
 import Card from '../../components/card/card';
 import FilterGroup from '../../components/filter-group/filter-group';
 import { getCategories } from '../../utils/api/common.api';
+import OrderBySelector from '../../components/order-by-selector/order-by-selector';
 
 const Recipes = () => {
   
@@ -13,6 +14,17 @@ const Recipes = () => {
 	const [page, setPage] = useState(0);
     const [activeFilters, setActiveFilters] = useState([]);
     const [filters, setFilters] = useState([]);
+    const [orderBy, setOrderBy] = useState('-created');
+	const orderBys = [
+		{value: '-created',
+		name: 'Plus récent'},
+		{value: 'created',
+		name: 'Plus ancien'},
+		{value: 'title',
+		name: 'Alphabétique'},
+		{value: '-title',
+		name: 'Alphabétique inversé'}
+	];
 	const count = 12;
 
 	useEffect(() => {
@@ -32,7 +44,7 @@ const Recipes = () => {
 	}, [])
 
 	useEffect(() => {
-		getRecipes('-created', count, page*count, activeFilters).then((items) => 
+		getRecipes(orderBy, count, page*count, activeFilters).then((items) => 
 			{
 				const newRecipes = items
 					.map((item) => {
@@ -46,7 +58,8 @@ const Recipes = () => {
 				}
 			}
 		);
-	}, [page, activeFilters])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [page, activeFilters, orderBy])
 
 	function loadMore() {
 		setPage(page + 1);
@@ -57,22 +70,17 @@ const Recipes = () => {
         setActiveFilters([..._activeFilters]);
     }
 
+	function onUpdateOrder(order) {
+		setPage(0);
+		setOrderBy(order);
+	}
+
 	return (
 		<div className="container recipes">
 			<h1>Toutes les recettes</h1>
 			<div className="row">
 				<div className="col-md-9">
-					<div class="dropdown">
-						<button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Trier par
-						</button>
-
-						<ul class="dropdown-menu">
-							<li><button class="dropdown-item">Plus Récent</button></li>
-							<li><button class="dropdown-item">Plus Ancien</button></li>
-							<li><button class="dropdown-item">Alphabétique</button></li>
-						</ul>
-					</div>
+					<OrderBySelector orderBys={orderBys} orderBy={orderBy} align="right" onChange={onUpdateOrder}/>
 					<div className="row">
 						{recipes.length === 0 && 
 							<MultipleLoader count={3} />
