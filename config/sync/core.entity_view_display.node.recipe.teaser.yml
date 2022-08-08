@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_number_of_parts
+    - field.field.node.recipe.field_path
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_price_indicator
     - field.field.node.recipe.field_related_articles
@@ -38,12 +39,12 @@ content:
     settings:
       image_link: ''
       image_style: medium
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -62,6 +63,7 @@ hidden:
   field_images: true
   field_ingredient_groups: true
   field_number_of_parts: true
+  field_path: true
   field_preparation_time: true
   field_price_indicator: true
   field_related_articles: true

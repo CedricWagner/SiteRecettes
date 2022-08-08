@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.ingredient.body
+    - field.field.node.ingredient.field_path
     - field.field.node.ingredient.field_picto
     - field.field.node.ingredient.field_seasonality
     - field.field.node.ingredient.field_unit
@@ -36,6 +37,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_path: true
   field_picto: true
   field_seasonality: true
   field_unit: true

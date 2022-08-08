@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_number_of_parts
+    - field.field.node.recipe.field_path
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_price_indicator
     - field.field.node.recipe.field_related_articles
@@ -319,5 +320,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_path: true
   promote: true
   sticky: true

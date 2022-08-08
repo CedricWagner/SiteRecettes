@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image
+    - field.field.node.article.field_path
     - field.field.node.article.field_tags
     - image.style.large
     - node.type.article
   module:
+    - fieldable_path
     - svg_image
     - text
     - user
@@ -41,6 +43,13 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_path:
+    type: fieldable_path_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_tags:
     type: entity_reference_label
