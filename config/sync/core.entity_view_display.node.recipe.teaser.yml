@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.recipe.field_categories
     - field.field.node.recipe.field_cooking_time
     - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_description
     - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_heat
     - field.field.node.recipe.field_image
@@ -58,6 +59,7 @@ hidden:
   field_categories: true
   field_cooking_time: true
   field_cooking_types: true
+  field_description: true
   field_difficulty: true
   field_heat: true
   field_images: true

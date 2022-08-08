@@ -1,3 +1,5 @@
+import DOMPurify from "dompurify";
+
 /** 
  * Parse the uri returned by drupal into a relative url
  * 
@@ -6,6 +8,10 @@
  */
 export function parseMenuLink(linkAttribute) {
     return linkAttribute.uri.replace('internal:', '');
+}
+
+function purifyHTML (dirtyHTML) {
+    return DOMPurify.sanitize(dirtyHTML, {USE_PROFILES: { html: true }})
 }
 
 /** 
@@ -26,4 +32,18 @@ export function parseRecipe(item) {
             }
         })
     }
+}
+
+/** 
+ * Parse the recipe from the drupal api into an full object
+ * 
+ * @param object item
+ * @return object
+ */
+export function parseRecipeDetails(item) {
+    let recipe = parseRecipe(item);
+    recipe.description = purifyHTML(item.field_description?.processed);
+
+
+    return recipe;
 }
