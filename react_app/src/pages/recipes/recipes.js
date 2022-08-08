@@ -15,6 +15,7 @@ const Recipes = () => {
     const [activeFilters, setActiveFilters] = useState([]);
     const [filters, setFilters] = useState([]);
     const [orderBy, setOrderBy] = useState('-created');
+    const [displayLoadMore, setDisplayLoadMore] = useState(true);
 	const orderBys = [
 		{value: '-created',
 		name: 'Plus récent'},
@@ -57,6 +58,8 @@ const Recipes = () => {
 					const oldRecipes = recipes ? recipes : [];
 					setRecipes([...oldRecipes, ...newRecipes]);
 				}
+
+				setDisplayLoadMore(newRecipes.length > 0);
 			}
 		);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -95,9 +98,11 @@ const Recipes = () => {
 							</div>
 						)}
 					</div>
-					<div className="list-link">
-						<button className="list-link__link btn btn-link" onClick={loadMore}>Voir plus</button>
-					</div>
+					{displayLoadMore && 
+						<div className="list-link">
+							<button className="list-link__link btn btn-link" onClick={loadMore}>Voir plus</button>
+						</div>
+					}
 				</div>
 				<div className="col-md-3">
 					<FilterGroup title="Catégories" activeFilters={activeFilters} onFilter={onFilterCategories} items={filters} />
