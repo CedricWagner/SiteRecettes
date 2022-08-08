@@ -10,6 +10,7 @@ import Menu from './blocks/menu/menu';
 import Home from './pages/home/home';
 import Footer from './blocks/footer/footer';
 import GoToTopButton from './components/go-to-top-button/go-to-top-button';
+import Recipes from './pages/recipes/recipes';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/components" element={<ComponentsShowcase/>}/>
+            <Route path="/recettes" element={<Recipes/>}/>
         </Routes>
         <GoToTopButton />
         <Footer/>

@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './cards-group-wrapper.scss';
-import { Link } from 'react-router-dom';
+import ListLink from '../../components/list-link/list-link';
 
 const CardsGroupWrapper = (props) => (
   <div className="cards-group-wrapper">
 		<h1>{props.title}</h1>
 		{props.children}
-		<div className="cards-group-wrapper__link-container">
-			<Link to={props.link} className="cards-group-wrapper__link">
-				Voir plus...
-			</Link>
-		</div>
+		<ListLink to={props.link}/>
   </div>
 );
 

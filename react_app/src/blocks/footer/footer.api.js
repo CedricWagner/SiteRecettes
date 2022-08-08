@@ -4,5 +4,8 @@ export const footerMenuUrl = "/menu_link_content/footer";
 
 export default function getFooterMenuItems() {
     const api = new JsonApi();
-    return api.get(footerMenuUrl, ['sort=weight']);
+
+    api.params.addSort('weight');
+
+    return api.get(footerMenuUrl);
 }

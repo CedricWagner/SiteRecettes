@@ -24,24 +24,24 @@ export default function ComponentsShowcase () {
     const cardTaxonomies = [{title: "Desserts", to: "/edze"}, {title: "Sucrés", to: "/edzdze"}]
     const [filterItems] = useState([
         {
-            id: 1,
+            id: '531315-5436513',
             title: "De saison",
             children: [
-                {id: 4, title: "Ete"},
-                {id: 5, title: "Automne", isActive: true}
+                {id: '53d1315-5436513', title: "Ete"},
+                {id: '531315-5436ty5513', title: "Automne", isActive: true}
             ],
         },
         {
-            id: 2,
+            id: '5353553-fez135zfe',
             title: "Salés",
             children: [
-                {id: 6, title: "Apéritifs"},
-                {id: 7, title: "Plats"}
+                {id: 'zzeffzfzeg57-fzefz', title: "Apéritifs"},
+                {id: 'zefzef25-543544556513', title: "Plats"}
             ],
         },
-        { id: 3, title: "Sucrés" }
+        { id: '35f4z35ef4-36z41ef53', title: "Sucrés" }
     ])
-    const [activeFilters, setActiveFilters] = useState([4]);
+    const [activeFilters, setActiveFilters] = useState(['53d1315-5436513']);
 
     function onSearch(value) {
         alert("Valeur recherchée : " + value);

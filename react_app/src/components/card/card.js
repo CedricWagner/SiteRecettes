@@ -12,7 +12,7 @@ function Card (props) {
     }
 
     return (
-        <div className="card" onClick={onCardClick}>
+        <div className="card" onClick={onCardClick} role="article">
             <div className="card__upper">
                 <img className="card__image" src={props.image ? props.image : missingImage} alt={props.title}/>
                 {props.taxonomies && (

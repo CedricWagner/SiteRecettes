@@ -3,26 +3,26 @@ import FilterGroup from "./filter-group";
 
 const filterItems = [
     {
-        id: 1,
+        id: 'de-saison',
         title: "De saison",
         children: [
-            {id: 4, title: "Ete"},
-            {id: 5, title: "Automne"}
+            {id: 'ete', title: "Ete"},
+            {id: 'automne', title: "Automne", isActive: true}
         ],
     },
     {
-        id: 2,
+        id: 'sales',
         title: "Salés",
         children: [
-            {id: 6, title: "Apéritifs"},
-            {id: 7, title: "Plats"}
+            {id: 'aperitifs', title: "Apéritifs"},
+            {id: 'plats', title: "Plats"}
         ],
     },
-    { id: 3, title: "Sucrés" }
+    { id: 'sucres', title: "Sucrés" }
 
 ]
 
-const activeFilters = [4, 2];
+const activeFilters = ['ete', 'sales'];
 
 
 test('should trigger "onFilter" function on select', async () => {
@@ -46,7 +46,7 @@ test('should add the new filter to the list of filters', async () => {
     
     fireEvent.click(screen.getByText("Automne"));
 
-    expect(filters).toEqual([4,2,5]);
+    expect(filters).toEqual(['ete', 'sales', 'automne']);
 });
 
 test('should remove the target filter from the list of filters', async () => {
@@ -60,7 +60,7 @@ test('should remove the target filter from the list of filters', async () => {
     
     fireEvent.click(screen.getByText("Ete"));
 
-    expect(filters).toEqual([2]);
+    expect(filters).toEqual(['sales']);
 });
 
 test('should remove all filters on select "All"', async () => {

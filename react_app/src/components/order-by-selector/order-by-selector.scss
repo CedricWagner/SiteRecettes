@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.order-by-selector {
+    &--center {
+        text-align: center;
+    }
+    &--right {
+        text-align: right;
+    }
+    .btn-link {
+        color: $primary;
+    }
+}
