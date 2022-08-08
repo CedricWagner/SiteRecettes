@@ -23,8 +23,7 @@ RecipeFeature.propTypes = {
     title: PropTypes.string.isRequired,
     picto: PropTypes.string.isRequired
   })).isRequired,
-  value: PropTypes.string,
-  embededComponent: PropTypes.any // (opt) a component to embed
+  value: PropTypes.string
 };
 
 RecipeFeature.defaultProps = {};

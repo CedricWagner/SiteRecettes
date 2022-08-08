@@ -43,7 +43,19 @@ export function parseRecipe(item) {
 export function parseRecipeDetails(item) {
     let recipe = parseRecipe(item);
     recipe.description = purifyHTML(item.field_description?.processed);
-
+    recipe.numberOfParts = item.field_number_of_parts;
+    recipe.shareType = item.field_share_type?.name;
+    recipe.preparationTime = item.field_preparation_time;
+    recipe.cookingTime = item.field_cooking_time;
+    recipe.restingTime = item.field_resting_time;
+    if (Array.isArray(item.field_cooking_types)) {
+        recipe.cookingTypes = item.field_cooking_types.map(term => { return {
+            title: term.name,
+            picto: process.env.REACT_APP_API_ENDPOINT + term.field_picto.uri.url
+        }});
+    }
+    recipe.heat = item.field_heat;
+    
 
     return recipe;
 }

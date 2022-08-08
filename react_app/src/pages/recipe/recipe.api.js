@@ -7,7 +7,13 @@ export default function getRecipeByAlias(alias) {
     api.params.addPageLimit(1);
     api.params.addPageOffset(0);
     api.params.addFilter('field_path', alias);
-    api.params.addInclude(['field_image', 'field_categories']);
+    api.params.addInclude([
+        'field_image', 
+        'field_categories', 
+        'field_share_type', 
+        'field_cooking_types', 
+        'field_cooking_types.field_picto'
+    ]);
 
     return api.get(recipesUrl);
 }
