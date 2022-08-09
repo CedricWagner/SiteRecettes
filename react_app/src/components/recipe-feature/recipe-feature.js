@@ -7,7 +7,9 @@ const RecipeFeature = (props) => {
   return (
     <div className="recipe-feature">
       {props.items.map((item, key) => 
-        <img src={item.picto} alt={item.title} title={item.title} key={key} className="recipe-feature__picto" />
+        <div key={key} className="recipe-feature__picto-container">
+          <img src={item.picto} alt={item.title} title={item.title} className="recipe-feature__picto" />
+        </div>
       )}
       {props.value && (
         <div className="recipe-feature__label">
@@ -23,8 +25,7 @@ RecipeFeature.propTypes = {
     title: PropTypes.string.isRequired,
     picto: PropTypes.string.isRequired
   })).isRequired,
-  value: PropTypes.string,
-  embededComponent: PropTypes.any // (opt) a component to embed
+  value: PropTypes.string
 };
 
 RecipeFeature.defaultProps = {};

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.ingredient.body
+    - field.field.node.ingredient.field_path
     - field.field.node.ingredient.field_picto
     - field.field.node.ingredient.field_seasonality
     - field.field.node.ingredient.field_unit
@@ -16,8 +17,8 @@ dependencies:
     - node.type.ingredient
   module:
     - field_group
-    - image
     - path
+    - svg_image
     - text
 third_party_settings:
   field_group:
@@ -156,5 +157,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_path: true
   promote: true
   sticky: true

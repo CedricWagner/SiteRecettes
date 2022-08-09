@@ -6,7 +6,7 @@
         color: $body-color;
         text-decoration: none;
         &::after {
-            content: ' · '
+            content: ', '
         }
         &:last-child::after {
             display: none;

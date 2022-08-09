@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.ingredient.body
+    - field.field.node.ingredient.field_path
     - field.field.node.ingredient.field_picto
     - field.field.node.ingredient.field_seasonality
     - field.field.node.ingredient.field_unit
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.ingredient.field_unit_g
     - node.type.ingredient
   module:
+    - fieldable_path
     - svg_image
     - text
     - user
@@ -29,18 +31,25 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_path:
+    type: fieldable_path_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
   field_picto:
     type: image
     label: above
     settings:
       image_link: ''
       image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
     third_party_settings: {  }
     weight: 102
     region: content

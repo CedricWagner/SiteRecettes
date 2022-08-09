@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.recipe.field_categories
     - field.field.node.recipe.field_cooking_time
     - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_description
     - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_heat
     - field.field.node.recipe.field_image
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_number_of_parts
+    - field.field.node.recipe.field_path
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_price_indicator
     - field.field.node.recipe.field_related_articles
@@ -40,7 +42,7 @@ third_party_settings:
       label: Catégorisation
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -57,7 +59,7 @@ third_party_settings:
       label: Photos
       region: content
       parent_name: ''
-      weight: 7
+      weight: 8
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -77,7 +79,7 @@ third_party_settings:
       label: Durées
       region: content
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -94,7 +96,7 @@ third_party_settings:
       label: Indicateurs
       region: content
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -111,7 +113,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 14
+    weight: 15
     region: content
     settings:
       rows: 9
@@ -121,7 +123,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -155,6 +157,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_difficulty:
     type: options_select
     weight: 16
@@ -186,7 +196,7 @@ content:
     third_party_settings: {  }
   field_ingredient_groups:
     type: paragraphs
-    weight: 10
+    weight: 11
     region: content
     settings:
       title: Paragraph
@@ -205,7 +215,7 @@ content:
     third_party_settings: {  }
   field_number_of_parts:
     type: number
-    weight: 8
+    weight: 9
     region: content
     settings:
       placeholder: ''
@@ -225,7 +235,7 @@ content:
     third_party_settings: {  }
   field_related_articles:
     type: options_buttons
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -244,7 +254,7 @@ content:
     third_party_settings: {  }
   field_share_type:
     type: autocomplete_deluxe
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -261,7 +271,7 @@ content:
     third_party_settings: {  }
   field_steps:
     type: text_textarea
-    weight: 13
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -286,20 +296,20 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 1
+    weight: 2
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -314,10 +324,11 @@ content:
     third_party_settings: {  }
   uid:
     type: options_select
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_path: true
   promote: true
   sticky: true
