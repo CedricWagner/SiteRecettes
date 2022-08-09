@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+
+.carousel {
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: rgba($color: $black, $alpha: 0.5);
+    } 
+}

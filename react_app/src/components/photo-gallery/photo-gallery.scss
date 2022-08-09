@@ -1,0 +1,7 @@
+@import '../../styles/_variables.scss';
+
+.photo-gallery {
+    &__item {
+        margin-bottom: $grid-gutter-width;
+    }
+}

@@ -1,0 +1,15 @@
+uuid: 0bc58065-7dd4-4a07-98fd-69e4a513dbd7
+langcode: fr
+status: true
+dependencies: {  }
+name: gallery_thumb
+label: 'Vignette galerie '
+effects:
+  2129ba82-7b43-4ad9-8bf5-29c095aed7c4:
+    uuid: 2129ba82-7b43-4ad9-8bf5-29c095aed7c4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 220
+      height: 220
+      anchor: center-center

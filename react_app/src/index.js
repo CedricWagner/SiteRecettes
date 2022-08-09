@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../src/styles/style.scss';
 import '../node_modules/bootstrap/js/src/dropdown';
+import '../node_modules/bootstrap/js/src/modal';
+import '../node_modules/bootstrap/js/src/carousel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
