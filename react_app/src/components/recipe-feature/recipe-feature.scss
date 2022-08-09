@@ -5,8 +5,13 @@
     justify-content: flex-start;
     margin-bottom: 10px;
 
+    &__picto-container {
+        width: 75px;   
+        text-align: center;
+    }
     &__picto {
         height: 40px;
+        max-width: 55px;
         margin-right: 10px;
     }
 }

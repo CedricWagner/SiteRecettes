@@ -1,5 +1,12 @@
 import DOMPurify from "dompurify";
 
+import Difficulty1Icon from '../../images/icons/svg/icon_difficulty-1.svg';
+import Difficulty2Icon from '../../images/icons/svg/icon_difficulty-2.svg';
+import Difficulty3Icon from '../../images/icons/svg/icon_difficulty-3.svg';
+import Price1Icon from '../../images/icons/svg/icon_cost-1.svg';
+import Price2Icon from '../../images/icons/svg/icon_cost-2.svg';
+import Price3Icon from '../../images/icons/svg/icon_cost-3.svg';
+
 /** 
  * Parse the uri returned by drupal into a relative url
  * 
@@ -55,6 +62,60 @@ export function parseRecipeDetails(item) {
         }});
     }
     recipe.heat = item.field_heat;
+    if (item.field_difficulty) {
+        switch (item.field_difficulty) {
+            case 1:
+                recipe.difficulty = {
+                    id: 1,
+                    title: 'Facile',
+                    picto: Difficulty1Icon
+                }
+                break;
+            case 2:
+                recipe.difficulty = {
+                    id: 2,
+                    title: 'Moyen',
+                    picto: Difficulty2Icon
+                }
+                break;
+            case 3:
+                recipe.difficulty = {
+                    id: 3,
+                    title: 'Difficile',
+                    picto: Difficulty3Icon
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    if (item.field_price_indicator) {
+        switch (item.field_price_indicator) {
+            case 1:
+                recipe.priceIndicator = {
+                    id: 1,
+                    title: 'Economique',
+                    picto: Price1Icon
+                }
+                break;
+            case 2:
+                recipe.priceIndicator = {
+                    id: 2,
+                    title: 'Moyen',
+                    picto: Price2Icon
+                }
+                break;
+            case 3:
+                recipe.priceIndicator = {
+                    id: 3,
+                    title: 'Cher',
+                    picto: Price3Icon
+                }
+                break;
+            default:
+                break;
+        }
+    }
     
 
     return recipe;

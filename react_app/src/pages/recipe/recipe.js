@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import RecipeFeaturesList from '../../blocks/recipe-features-list/recipe-features-list';
 import CategoryList from '../../components/category-list/category-list';
 import Loader from '../../components/loader/loader';
 import RecipeFeature from '../../components/recipe-feature/recipe-feature';
@@ -7,11 +8,6 @@ import { parseRecipeDetails } from '../../utils/api/helpers';
 import getRecipeByAlias from './recipe.api';
 import './recipe.scss';
 
-import FlatwareIcon from '../../images/icons/svg/icon_flatware.svg';
-import TimerIcon from '../../images/icons/svg/icon_timer.svg';
-import CuttingIcon from '../../images/icons/svg/icon_cutting.svg';
-import HourglassWaitIcon from '../../images/icons/svg/icon_hourglass-wait.svg';
-import HeatIcon from '../../images/icons/svg/icon_heat.svg';
 
 const Recipe = () => {
 	
@@ -40,32 +36,9 @@ const Recipe = () => {
 							<CategoryList categories={recipe.taxonomies} />
 							<h1 className="recipe__title text-center">{recipe.title}</h1>
 
-							<p className="recipe__description" dangerouslySetInnerHTML={{ __html: recipe.description }}></p>
+							<div className="recipe__description" dangerouslySetInnerHTML={{ __html: recipe.description }}></div>
 
-							<div className="row recipe__features">
-                        		<div className="col-md-3">
-									<RecipeFeature items={[{title: 'Nombre de parts', picto: FlatwareIcon}]} value={recipe.numberOfParts + ' ' + recipe.shareType} />
-								</div>
-                        		<div className="col-md-3">
-									<RecipeFeature items={[{title: 'Temps de préparation', picto: CuttingIcon}]} value={recipe.preparationTime.join('-') + ' min'} />
-								</div>
-                        		<div className="col-md-3">
-									<RecipeFeature items={[{title: 'Temps de cuisson', picto: TimerIcon}]} value={recipe.cookingTime.join('-') + ' min'} />
-								</div>
-                        		<div className="col-md-3">
-									<RecipeFeature items={[{title: 'Temps de repos', picto: HourglassWaitIcon}]} value={recipe.restingTime.join('-') + ' min'} />
-								</div>
-								{recipe.cookingTypes && 
-									<div className="col-md-3">
-										<RecipeFeature items={recipe.cookingTypes} />
-									</div>
-								}
-                        		{recipe.heat && 
-									<div className="col-md-3">
-										<RecipeFeature items={[{title: 'Température', picto: HeatIcon}]} value={recipe.heat + '°C'} />
-									</div>
-								}
-							</div>
+							<RecipeFeaturesList recipe={recipe}/>
 						</div>
 						{recipe.image && 
 							<div className="col-md-4">
