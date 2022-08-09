@@ -4,7 +4,11 @@ import './ingredient-line.scss';
 
 const IngredientLine = (props) => (
   <div className="ingredient-line">
-    <img src={props.picto} alt={props.name} className="ingredient-line__image" />
+    <div className="ingredient-line__image-container">
+      {props.picto && 
+        <img src={props.picto} alt={props.name} className="ingredient-line__image" />
+      }
+    </div>
     <p className="ingredient-line__text">
       <span className="ingledient-line__amount">
         {props.amount}
@@ -23,7 +27,7 @@ const IngredientLine = (props) => (
 );
 
 IngredientLine.propTypes = {
-  picto: PropTypes.string.isRequired,
+  picto: PropTypes.string,
   amount: PropTypes.string.isRequired,
   unit: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

@@ -94,7 +94,7 @@ export function parseRecipeDetails(item) {
             case 1:
                 recipe.priceIndicator = {
                     id: 1,
-                    title: 'Economique',
+                    title: 'Économique',
                     picto: Price1Icon
                 }
                 break;
@@ -116,6 +116,20 @@ export function parseRecipeDetails(item) {
                 break;
         }
     }
+    recipe.ingredientGroups = item.field_ingredient_groups.map(group => {
+        return {
+            title: group.field_title,
+            ingredients: group.field_ingredient_lines.map(ingredientLine => {
+                return {
+                    name: ingredientLine.field_ingredient.title,
+                    picto: ingredientLine.field_ingredient.field_picto.image_style_uri?.thumbnail,
+                    amount: ingredientLine.field_amount,
+                    details: ingredientLine.field_details,
+                    unit: ingredientLine.field_unit.name
+                }
+            })
+        }
+    })
     
 
     return recipe;

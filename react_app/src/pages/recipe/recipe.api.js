@@ -12,7 +12,12 @@ export default function getRecipeByAlias(alias) {
         'field_categories', 
         'field_share_type', 
         'field_cooking_types', 
-        'field_cooking_types.field_picto'
+        'field_cooking_types.field_picto',
+        'field_ingredient_groups',
+        'field_ingredient_groups.field_ingredient_lines',
+        'field_ingredient_groups.field_ingredient_lines.field_ingredient',
+        'field_ingredient_groups.field_ingredient_lines.field_ingredient.field_picto',
+        'field_ingredient_groups.field_ingredient_lines.field_unit',
     ]);
 
     return api.get(recipesUrl);
