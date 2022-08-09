@@ -30,6 +30,9 @@
 {{-- git --}}
 @task('hook_git_before', ['on' => 'web'])
     echo "==> Start git"
+    echo "reset changes in .lock file"
+    cd {{ absPath($config, 'app_path') }}
+    git checkout -- ./react_app/package-lock.json
 @endtask
 
 @task('hook_git_after', ['on' => 'web'])

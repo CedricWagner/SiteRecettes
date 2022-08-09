@@ -30,4 +30,4 @@ stage:
   root_path: /var/www/subdomains/les-veganeries-de-dodo
   # path of the composer.phar that should be used
   composer_path: /usr/bin/composer
-  branch: develop
+  branch: staging
