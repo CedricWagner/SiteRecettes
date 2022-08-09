@@ -130,6 +130,7 @@ export function parseRecipeDetails(item) {
             })
         }
     })
+    recipe.steps = item.field_steps.map(step => purifyHTML(step.processed))
     
 
     return recipe;

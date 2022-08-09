@@ -54,7 +54,14 @@ const Recipe = () => {
 							<h2>Ingrédients</h2>
 							<IngredientsList ingredients={recipe.ingredientGroups} />
 						</div>
-						<div className="col-md-8"></div>
+						<div className="col-md-8">
+							<h2>Etapes</h2>
+							<ol className="recipe__steps">
+								{recipe.steps.map((step, key) =>
+									<li className="recipe__step" key={key} dangerouslySetInnerHTML={{ __html: step }}></li>
+								)}
+							</ol>
+						</div>
 					</div>
 					{/* Ingredients & Steps --/> */}
 				</div>
