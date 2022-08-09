@@ -10,16 +10,16 @@ const IngredientLine = (props) => (
       }
     </div>
     <p className="ingredient-line__text">
-      <span className="ingledient-line__amount">
-        {props.amount}
+      <span className="ingredient-line__amount">
+        {parseFloat(props.amount)}
       </span>
-      <span className="ingledient-line__unit">
+      <span className="ingredient-line__unit">
         {props.unit}
       </span>
-      <span className="ingledient-line__name">
+      <span className="ingredient-line__name">
         {props.name}
       </span>
-      <span className="ingledient-line__details">
+      <span className="ingredient-line__details">
         {props.details}
       </span>
     </p>
