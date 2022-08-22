@@ -31,7 +31,7 @@ export default function Menu() {
                 setCategories(items.map((item) => {
                     return {
                         title: item.name,
-                        to: item.path.alias ? item.path.alias : '/categorie/' + item.drupal_internal__nid
+                        to: '/categories?filters=' + item.id
                     }}
                 ))
             );

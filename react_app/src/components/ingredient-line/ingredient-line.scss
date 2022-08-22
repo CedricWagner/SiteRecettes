@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .ingredient-line {
     display: flex;
     align-items: center;
@@ -20,5 +22,9 @@
             padding-left: 10px;
             display: inline-block;
         }
+    }
+
+    &__details {
+        color: $gray-600;
     }
 }

@@ -23,7 +23,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/components" element={<ComponentsShowcase/>}/>
-            <Route path="/recettes" element={<Recipes/>}/>
+            <Route path="/categories" element={<Recipes/>}/>
             <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
         </Routes>
         <GoToTopButton />

@@ -35,7 +35,7 @@ export function parseRecipe(item) {
         taxonomies: item.field_categories.filter(term => term.status).map((term) => {
             return {
                 title: term.name,
-                to: term.path.alias ? term.path.alias : '/categories/' + term.id
+                to: '/categories?filters=' + term.id
             }
         })
     }
@@ -122,7 +122,7 @@ export function parseRecipeDetails(item) {
             ingredients: group.field_ingredient_lines.map(ingredientLine => {
                 return {
                     name: ingredientLine.field_ingredient.title,
-                    picto: ingredientLine.field_ingredient.field_picto.image_style_uri?.thumbnail,
+                    picto: ingredientLine.field_ingredient.field_picto.image_style_uri?.picto_ingredient,
                     amount: ingredientLine.field_amount,
                     details: ingredientLine.field_details,
                     unit: ingredientLine.field_unit.name
@@ -130,8 +130,25 @@ export function parseRecipeDetails(item) {
             })
         }
     })
-    recipe.steps = item.field_steps.map(step => purifyHTML(step.processed))
-    
+    recipe.steps = item.field_steps.map(step => purifyHTML(step.processed));
+    recipe.remark = item.body?.processed;
+    recipe.tags = item.field_tags.map(tag => {
+        return {
+            title: tag.name,
+            to: tag.path.alias ? tag.path.alias : '/tags/' + tag.id 
+        }
+    })
+    if (Array.isArray(item.field_images)) {
+        recipe.images = item.field_images.map(image => {
+            return {
+                title: image.meta.alt,
+                thumb: image.image_style_uri.gallery_thumb,
+                wide: image.image_style_uri.wide
+            }
+        })
+    } else {
+        recipe.images = [];
+    }
 
     return recipe;
 }

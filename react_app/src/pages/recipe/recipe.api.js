@@ -18,6 +18,8 @@ export default function getRecipeByAlias(alias) {
         'field_ingredient_groups.field_ingredient_lines.field_ingredient',
         'field_ingredient_groups.field_ingredient_lines.field_ingredient.field_picto',
         'field_ingredient_groups.field_ingredient_lines.field_unit',
+        'field_tags',
+        'field_images',
     ]);
 
     return api.get(recipesUrl);

@@ -4,6 +4,8 @@ import IngredientsList from '../../blocks/ingredients-list/ingredients-list';
 import RecipeFeaturesList from '../../blocks/recipe-features-list/recipe-features-list';
 import CategoryList from '../../components/category-list/category-list';
 import Loader from '../../components/loader/loader';
+import PhotoGallery from '../../components/photo-gallery/photo-gallery';
+import TagList from '../../components/tag-list/tag-list';
 import { parseRecipeDetails } from '../../utils/api/helpers';
 import getRecipeByAlias from './recipe.api';
 import './recipe.scss';
@@ -49,7 +51,7 @@ const Recipe = () => {
 					</div>
 					{/* Head --/> */}
 					{/* <-- Ingredients & Steps */}
-					<div className="row">
+					<div className="row mb-4">
 						<div className="col-md-4">
 							<h2>Ingrédients</h2>
 							<IngredientsList ingredients={recipe.ingredientGroups} />
@@ -64,6 +66,27 @@ const Recipe = () => {
 						</div>
 					</div>
 					{/* Ingredients & Steps --/> */}
+					{/* <-- Remarks & tags */}
+					<div className="row mb-5">
+						<div className="col-12">
+							<h2>Remarques</h2>
+							<div dangerouslySetInnerHTML={{ __html: recipe.remark }}></div>
+						</div>
+						<div className="col-12">
+							<TagList tags={recipe.tags}/>
+						</div>
+					</div>
+					{/* Remarks & tags --/> */}
+					{/* <-- Photo gallery */}
+					{recipe.images && recipe.images.length > 0 &&
+						<div className="row">
+							<div className="col-12">
+								<h2>Galerie photo</h2>
+								<PhotoGallery images={recipe.images}/>
+							</div>
+						</div>
+					}
+					{/* Photo gallery --/> */}
 				</div>
 			}
 			{!recipe && !isNotFound && 
@@ -72,7 +95,7 @@ const Recipe = () => {
 				</div>
 			}
 			{isNotFound && 
-				<p>Recette introuvable... <Link to="/recettes">Retourner à la liste des recettes</Link></p>
+				<p>Recette introuvable... <Link to="/categories">Retourner à la liste des recettes</Link></p>
 			}
 		</div>
 )};

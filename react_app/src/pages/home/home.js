@@ -16,7 +16,7 @@ const Home = () => {
         <SearchBar onSearch={(value) => alert('TODO')} />
       </div>
       <div className="container">
-        <CardsGroupWrapper title="Recettes de saison" link="/recettes">
+        <CardsGroupWrapper title="Recettes de saison" link="/categories">
           <SeasonalRecipes />
         </CardsGroupWrapper>
       </div>
