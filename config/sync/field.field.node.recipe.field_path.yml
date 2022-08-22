@@ -1,0 +1,23 @@
+uuid: f6c09ad4-3ce0-42ea-a337-915ffde4c26d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_path
+    - node.type.recipe
+  module:
+    - fieldable_path
+id: node.recipe.field_path
+field_name: field_path
+entity_type: node
+bundle: recipe
+label: Chemin
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: fieldable_path

@@ -59,7 +59,7 @@ const Recipes = () => {
 					setRecipes([...oldRecipes, ...newRecipes]);
 				}
 
-				setDisplayLoadMore(newRecipes.length > 0);
+				setDisplayLoadMore(newRecipes.length === count);
 			}
 		);
 		// eslint-disable-next-line react-hooks/exhaustive-deps

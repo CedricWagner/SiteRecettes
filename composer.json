@@ -30,6 +30,7 @@
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
         "drupal/field_group": "^3.2",
+        "drupal/fieldable_path": "^1.0@RC",
         "drupal/gin": "^3.0@beta",
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/jsonapi_image_styles": "^3.0",

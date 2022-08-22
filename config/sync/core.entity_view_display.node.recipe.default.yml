@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.recipe.field_categories
     - field.field.node.recipe.field_cooking_time
     - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_description
     - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_heat
     - field.field.node.recipe.field_image
     - field.field.node.recipe.field_images
     - field.field.node.recipe.field_ingredient_groups
     - field.field.node.recipe.field_number_of_parts
+    - field.field.node.recipe.field_path
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_price_indicator
     - field.field.node.recipe.field_related_articles
@@ -24,6 +26,7 @@ dependencies:
     - node.type.recipe
   module:
     - entity_reference_revisions
+    - fieldable_path
     - options
     - svg_image
     - text
@@ -65,6 +68,13 @@ content:
     third_party_settings: {  }
     weight: 19
     region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
   field_difficulty:
     type: list_default
     label: above
@@ -87,12 +97,12 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
     third_party_settings: {  }
     weight: 4
     region: content
@@ -102,12 +112,12 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
     third_party_settings: {  }
     weight: 11
     region: content
@@ -128,6 +138,13 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_path:
+    type: fieldable_path_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
     region: content
   field_preparation_time:
     type: number_integer
