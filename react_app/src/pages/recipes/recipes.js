@@ -7,9 +7,11 @@ import Card from '../../components/card/card';
 import FilterGroup from '../../components/filter-group/filter-group';
 import { getCategories } from '../../utils/api/common.api';
 import OrderBySelector from '../../components/order-by-selector/order-by-selector';
+import { useSearchParams } from 'react-router-dom';
 
 const Recipes = () => {
   
+	const [searchParams, setSearchParams] = useSearchParams();
 	const [recipes, setRecipes] = useState(false)
 	const [page, setPage] = useState(0);
     const [activeFilters, setActiveFilters] = useState([]);
@@ -37,7 +39,6 @@ const Recipes = () => {
 							id: item.id,
 							title: item.name
 						}
-						
 					}
 				))
 			}
@@ -60,10 +61,16 @@ const Recipes = () => {
 				}
 
 				setDisplayLoadMore(newRecipes.length === count);
+				setSearchParams({filters: activeFilters});
 			}
 		);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [page, activeFilters, orderBy])
+
+	useEffect(() => {
+		setActiveFilters(searchParams.getAll('filters'));
+	}, [searchParams])
+
 
 	function loadMore() {
 		setPage(page + 1);

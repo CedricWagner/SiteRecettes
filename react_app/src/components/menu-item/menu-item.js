@@ -6,7 +6,7 @@ import { linkShape } from '../../utils/shapes/link-shape';
 
 function MenuItem(props) {
     const location = useLocation();
-    const isActive = location.pathname === props.to
+    const isActive = location.pathname  + location.search === props.to;
 
     return (
         <div className="menu-item">

@@ -95,7 +95,7 @@ const Recipe = () => {
 				</div>
 			}
 			{isNotFound && 
-				<p>Recette introuvable... <Link to="/recettes">Retourner à la liste des recettes</Link></p>
+				<p>Recette introuvable... <Link to="/categories">Retourner à la liste des recettes</Link></p>
 			}
 		</div>
 )};

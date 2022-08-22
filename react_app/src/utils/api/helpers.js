@@ -35,7 +35,7 @@ export function parseRecipe(item) {
         taxonomies: item.field_categories.filter(term => term.status).map((term) => {
             return {
                 title: term.name,
-                to: term.path.alias ? term.path.alias : '/categories/' + term.id
+                to: '/categories?filters=' + term.id
             }
         })
     }
