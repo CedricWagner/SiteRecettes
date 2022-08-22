@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './photo-gallery.scss';
-import Carousel from '../carousel/carousel';
+import ImageGallery from 'react-image-gallery';
 
 const PhotoGallery = ({images}) => {
 	
 	const [selectedImage, setSelectedImage] = useState(false)
 
 	function selectImage(e) {
-		const image = e.target.dataset.key;
+		const image = parseInt(e.target.dataset.key);
 		setSelectedImage(image);
 	}
+
+	const galleryImages = images.map((image) => {
+		return {
+			original: image.wide,
+			thumbnail: image.thumb,
+			originalAlt: image.title,
+			thumbnailAlt: image.title,
+			originalTitle: image.title,
+			description: image.title,
+		}
+	})
 
 	return (
 	<div className="photo-gallery">
@@ -29,7 +40,7 @@ const PhotoGallery = ({images}) => {
 						<button type="button" className="btn btn-link btn-close" data-bs-dismiss="modal" aria-label="Close">Fermer</button>
 					</div>
 					<div className="modal-body text-center">
-						<Carousel images={images} initialIndex={selectedImage}/>
+						<ImageGallery items={galleryImages} startIndex={selectedImage ? selectedImage : 0}/>
 					</div>
 				</div>
 			</div>

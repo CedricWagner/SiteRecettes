@@ -82,7 +82,6 @@ $utilities: map-get-multiple(
 @import '../../node_modules/bootstrap/scss/spinners';
 @import '../../node_modules/bootstrap/scss/images';
 @import '../../node_modules/bootstrap/scss/modal';
-@import '../../node_modules/bootstrap/scss/carousel';
 @import '../../node_modules/bootstrap/scss/helpers/visually-hidden';
 @import '../../node_modules/bootstrap/scss/reboot';
 
@@ -92,4 +91,5 @@ $utilities: map-get-multiple(
 @import 'overrides/type';
 
 // others
-@import 'layout'
+@import 'layout';
+@import "~react-image-gallery/styles/scss/image-gallery.scss";

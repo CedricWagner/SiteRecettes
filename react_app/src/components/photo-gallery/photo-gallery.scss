@@ -3,5 +3,8 @@
 .photo-gallery {
     &__item {
         margin-bottom: $grid-gutter-width;
+        img {
+            cursor: pointer;
+        }
     }
 }
