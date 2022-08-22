@@ -78,12 +78,14 @@ const Recipe = () => {
 					</div>
 					{/* Remarks & tags --/> */}
 					{/* <-- Photo gallery */}
-					<div className="row">
-						<div className="col-12">
-							<h2>Galerie photo</h2>
-							<PhotoGallery images={recipe.images}/>
+					{recipe.images && recipe.images.length > 0 &&
+						<div className="row">
+							<div className="col-12">
+								<h2>Galerie photo</h2>
+								<PhotoGallery images={recipe.images}/>
+							</div>
 						</div>
-					</div>
+					}
 					{/* Photo gallery --/> */}
 				</div>
 			}

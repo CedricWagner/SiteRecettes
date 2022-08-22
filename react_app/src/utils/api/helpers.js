@@ -138,13 +138,17 @@ export function parseRecipeDetails(item) {
             to: tag.path.alias ? tag.path.alias : '/tags/' + tag.id 
         }
     })
-    recipe.images = item.field_images.map(image => {
-        return {
-            title: image.meta.alt,
-            thumb: image.image_style_uri.gallery_thumb,
-            wide: image.image_style_uri.wide
-        }
-    })
+    if (Array.isArray(item.field_images)) {
+        recipe.images = item.field_images.map(image => {
+            return {
+                title: image.meta.alt,
+                thumb: image.image_style_uri.gallery_thumb,
+                wide: image.image_style_uri.wide
+            }
+        })
+    } else {
+        recipe.images = [];
+    }
 
     return recipe;
 }
