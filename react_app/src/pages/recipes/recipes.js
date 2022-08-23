@@ -14,7 +14,8 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [recipes, setRecipes] = useState(false)
 	const [page, setPage] = useState(0);
-    const [activeFilters, setActiveFilters] = useState([]);
+    const [activeFilters, setActiveFilters] = useState(searchParams.getAll('filters'));
+    // const [activeFilters, setActiveFilters] = useState([]);
     const [orderBy, setOrderBy] = useState('-created');
     const [displayLoadMore, setDisplayLoadMore] = useState(true);
 	const orderBys = [
@@ -60,7 +61,7 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 		setPage(page + 1);
 	}
 
-    function onFilterCategories(_activeFilters) {
+    function onFilter(_activeFilters) {
 		setPage(0);
         setActiveFilters([..._activeFilters]);
     }
@@ -96,7 +97,7 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 					}
 				</div>
 				<div className="col-md-3">
-					<FilterGroup title={filterTitle} activeFilters={activeFilters} onFilter={onFilterCategories} items={filters} />
+					<FilterGroup title={filterTitle} activeFilters={activeFilters} onFilter={onFilter} items={filters} />
 				</div>
 			</div>
 		</div>

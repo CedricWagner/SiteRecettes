@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import './recipes-by-tag.scss';
 import { getTags } from '../../utils/api/common.api';
 import Recipes from '../recipes/recipes';
@@ -31,9 +30,5 @@ const RecipesByTag = () => {
 			>
 		</Recipes>
 )};
-
-RecipesByTag.propTypes = {};
-
-RecipesByTag.defaultProps = {};
 
 export default RecipesByTag;
