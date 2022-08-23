@@ -5,17 +5,16 @@ import { parseRecipe } from '../../utils/api/helpers';
 import MultipleLoader from '../../components/multiple-loader/multiple-loader';
 import Card from '../../components/card/card';
 import FilterGroup from '../../components/filter-group/filter-group';
-import { getCategories } from '../../utils/api/common.api';
+import PropTypes from 'prop-types';
 import OrderBySelector from '../../components/order-by-selector/order-by-selector';
 import { useSearchParams } from 'react-router-dom';
 
-const Recipes = () => {
+const Recipes = ({filterTitle, filters, filterField}) => {
   
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [recipes, setRecipes] = useState(false)
 	const [page, setPage] = useState(0);
     const [activeFilters, setActiveFilters] = useState([]);
-    const [filters, setFilters] = useState([]);
     const [orderBy, setOrderBy] = useState('-created');
     const [displayLoadMore, setDisplayLoadMore] = useState(true);
 	const orderBys = [
@@ -31,22 +30,7 @@ const Recipes = () => {
 	const count = 12;
 
 	useEffect(() => {
-		getCategories().then((items) => 
-			{
-				setFilters(items.map(item =>
-					{
-						return {
-							id: item.id,
-							title: item.name
-						}
-					}
-				))
-			}
-		);
-	}, [])
-
-	useEffect(() => {
-		getRecipes(orderBy, count, page*count, activeFilters).then((items) => 
+		getRecipes(orderBy, count, page*count, activeFilters, filterField).then((items) => 
 			{
 				const newRecipes = items
 					.map((item) => {
@@ -112,10 +96,17 @@ const Recipes = () => {
 					}
 				</div>
 				<div className="col-md-3">
-					<FilterGroup title="Catégories" activeFilters={activeFilters} onFilter={onFilterCategories} items={filters} />
+					<FilterGroup title={filterTitle} activeFilters={activeFilters} onFilter={onFilterCategories} items={filters} />
 				</div>
 			</div>
 		</div>
 )};
+
+
+Recipes.propTypes = {
+	filterTitle: PropTypes.string.isRequired,
+	filters: PropTypes.arrayOf(PropTypes.object),
+	filterField: PropTypes.string.isRequired
+};
 
 export default Recipes;

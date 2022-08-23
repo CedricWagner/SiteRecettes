@@ -10,8 +10,9 @@ import Menu from './blocks/menu/menu';
 import Home from './pages/home/home';
 import Footer from './blocks/footer/footer';
 import GoToTopButton from './components/go-to-top-button/go-to-top-button';
-import Recipes from './pages/recipes/recipes';
 import Recipe from './pages/recipe/recipe';
+import RecipesByCategory from './pages/recipes-by-category/recipes-by-category';
+import RecipesByTag from './pages/recipes-by-tag/recipes-by-tag';
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/components" element={<ComponentsShowcase/>}/>
-            <Route path="/categories" element={<Recipes/>}/>
+            <Route path="/categories" element={<RecipesByCategory/>}/>
+            <Route path="/tags" element={<RecipesByTag/>}/>
             <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
         </Routes>
         <GoToTopButton />
