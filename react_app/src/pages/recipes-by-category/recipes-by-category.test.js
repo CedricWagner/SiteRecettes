@@ -1,13 +1,13 @@
-import  {render, screen } from '@testing-library/react'
-import Recipes from "./recipes";
+import  {render, screen } from '@testing-library/react';
 
 import {rest} from "msw";
 import {setupServer} from "msw/node";
 import { BrowserRouter } from 'react-router-dom';
-import { recipesUrl } from './recipes.api';
-import { mockRecipesData } from './recipes.data';
+import { recipesUrl } from '../recipes/recipes.api';
+import { mockRecipesData } from './recipes-by-category.data';
 import { mockCategoriesData } from '../../blocks/menu/menu.data';
 import { categoriesUrl } from '../../utils/api/common.api';
+import RecipesByCategory from './recipes-by-category';
 
 
 const recipesResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsonapi' + recipesUrl, (req, res, ctx) => {
@@ -25,7 +25,7 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test('should display the 9 items', async () => {
-    render(<BrowserRouter><Recipes /></BrowserRouter>);
+    render(<BrowserRouter><RecipesByCategory /></BrowserRouter>);
 
     const recipes = await screen.findAllByRole("article");
 
@@ -33,7 +33,7 @@ test('should display the 9 items', async () => {
 });
 
 test('should have a "Sauce salsa roja !" item', async () => {
-    render(<BrowserRouter><Recipes /></BrowserRouter>);
+    render(<BrowserRouter><RecipesByCategory /></BrowserRouter>);
 
     const recipeItem = await screen.findByText("Sauce salsa roja !");
 

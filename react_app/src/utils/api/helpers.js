@@ -135,7 +135,7 @@ export function parseRecipeDetails(item) {
     recipe.tags = item.field_tags.map(tag => {
         return {
             title: tag.name,
-            to: tag.path.alias ? tag.path.alias : '/tags/' + tag.id 
+            to: '/tags?filters=' + tag.id 
         }
     })
     if (Array.isArray(item.field_images)) {
