@@ -5,6 +5,7 @@ import RecipeFeaturesList from '../../blocks/recipe-features-list/recipe-feature
 import CategoryList from '../../components/category-list/category-list';
 import Loader from '../../components/loader/loader';
 import PhotoGallery from '../../components/photo-gallery/photo-gallery';
+import QuantityControl from '../../components/quantity-control/quantity-control';
 import TagList from '../../components/tag-list/tag-list';
 import { parseRecipeDetails } from '../../utils/api/helpers';
 import getRecipeByAlias from './recipe.api';
@@ -16,6 +17,17 @@ const Recipe = () => {
 	let params = useParams();
 	const [recipe, setRecipe] = useState(false);
 	const [isNotFound, setNotFound] = useState(false);
+	const [quantity, setQuantity] = useState({
+		initial: 0,
+		current: 0
+	});
+
+	function updateQuantity(newValue) {
+		setQuantity({
+			initial: quantity.initial,
+			current: newValue
+		});
+	}
   
 	useEffect(() => {
 		getRecipeByAlias('/recette/' + params.recipeSlug).then((items) => {
@@ -28,6 +40,15 @@ const Recipe = () => {
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
+
+	useEffect(() => {
+		// init quantity
+		console.log(recipe.numberOfParts)
+		setQuantity({
+			initial: recipe.numberOfParts,
+			current: recipe.numberOfParts,
+		});
+	}, [recipe])
 
 	return (
 		<div className="container">
@@ -53,7 +74,16 @@ const Recipe = () => {
 					{/* <-- Ingredients & Steps */}
 					<div className="row mb-4">
 						<div className="col-md-4">
-							<h2>Ingrédients</h2>
+							<div className="row">
+								<div className="col-md-6">
+									<h2>Ingrédients</h2>
+								</div>
+								<div className="col-md-6">
+									{quantity.current && 
+										<QuantityControl current={quantity.current} unity={recipe.shareType} onUpdateQuantity={updateQuantity}/>
+									}
+								</div>
+							</div>
 							<IngredientsList ingredients={recipe.ingredientGroups} />
 						</div>
 						<div className="col-md-8">
