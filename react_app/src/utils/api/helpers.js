@@ -17,8 +17,24 @@ export function parseMenuLink(linkAttribute) {
     return linkAttribute.uri.replace('internal:', '');
 }
 
-function purifyHTML (dirtyHTML) {
+function purifyHTML(dirtyHTML) {
     return DOMPurify.sanitize(dirtyHTML, {USE_PROFILES: { html: true }})
+}
+
+/**
+ * Return the new quantity according to the current ratio
+ * 
+ * @param {Decimal} initialQty 
+ * @param {Number} initialShares 
+ * @param {Number} currentShares 
+ * @returns {Decimal} quantity with ratio
+ */
+export function qtyWithRatio(initialQty, initialShares, currentShares) {
+    if (initialQty === 0) {
+        return 0;
+    }
+    let result = parseFloat(initialQty) * parseInt(currentShares) / parseInt(initialShares);
+    return Math.round(result * 100) / 100;
 }
 
 /** 
