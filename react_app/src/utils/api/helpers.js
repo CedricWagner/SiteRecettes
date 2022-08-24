@@ -27,9 +27,14 @@ function purifyHTML(dirtyHTML) {
  * @param {Decimal} initialQty 
  * @param {Number} initialShares 
  * @param {Number} currentShares 
+ * @returns {Decimal} quantity with ratio
  */
 export function qtyWithRatio(initialQty, initialShares, currentShares) {
-    return parseFloat(initialQty) * parseInt(initialShares) / parseInt(currentShares);
+    if (initialQty === 0) {
+        return 0;
+    }
+    let result = parseFloat(initialQty) * parseInt(currentShares) / parseInt(initialShares);
+    return Math.round(result * 100) / 100;
 }
 
 /** 
