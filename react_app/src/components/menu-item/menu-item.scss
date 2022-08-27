@@ -6,6 +6,8 @@
     letter-spacing: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
+    display: flex;
+    align-items: center;
     &__link {
         padding-left: 15px;
         padding-right: 15px;
@@ -20,6 +22,9 @@
         &--active {
             color: $primary;
         }
+    }
+    &__picto {
+        max-height: 40px;
     }
     &__submenu {
         position: absolute;

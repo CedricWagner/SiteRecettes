@@ -3,16 +3,27 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.menu_link_content.main.field_picto
     - field.field.menu_link_content.main.field_slug
+    - image.style.thumbnail
     - system.menu.main
   module:
     - link
     - menu_item_extras
+    - svg_image
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main
 mode: default
 content:
+  field_picto:
+    type: image_image
+    weight: 22
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_slug:
     type: string_textfield
     weight: 21

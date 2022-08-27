@@ -18,6 +18,7 @@ export default function Menu() {
                         title: item.title,
                         to: parseMenuLink(item.link),
                         slug: item.field_slug,
+                        picto: item.field_picto.uri ? process.env.REACT_APP_API_ENDPOINT + item.field_picto.uri.url : false
                     }
                 }
             ))
@@ -41,7 +42,7 @@ export default function Menu() {
     return (
         <div className="menu">
             {items.map((item, key) => 
-                <MenuItem title={item.title} to={item.to} key={key} submenu={item.slug === "recipe_categories" ? categories : []}/>
+                <MenuItem title={item.title} to={item.to} key={key} picto={item.picto} submenu={item.slug === "recipe_categories" ? categories : []}/>
             )}
         </div>
     )

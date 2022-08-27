@@ -11,7 +11,13 @@ function MenuItem(props) {
     return (
         <div className="menu-item">
             <Link className={`menu-item__link ${isActive ? 'menu-item__link--active' : ''}`} to={props.to}>
-                {props.title}
+                {props.picto && 
+                    <>
+                        <img src={props.picto} alt={props.title} className="menu-item__picto d-none d-md-block d-lg-none" />
+                        <span className="d-md-none d-lg-block">{props.title}</span>
+                    </>
+                }
+                {!props.picto && props.title}
             </Link>
             {props.submenu && props.submenu.length > 0 && (
                 <div className="menu-item__submenu">
@@ -27,7 +33,8 @@ function MenuItem(props) {
 MenuItem.propTypes = {
     title: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
-    submenu: PropTypes.arrayOf(PropTypes.shape(linkShape))
+    submenu: PropTypes.arrayOf(PropTypes.shape(linkShape)),
+    picto: PropTypes.string
 };
   
 MenuItem.defaultProps = {};
