@@ -6,6 +6,7 @@ export default function getMainMenuItems() {
     const api = new JsonApi();
 
     api.params.addSort('weight');
+    api.params.addInclude('field_picto');
 
     return api.get(mainMenuUrl);
 }
