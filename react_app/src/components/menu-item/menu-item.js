@@ -34,7 +34,10 @@ MenuItem.propTypes = {
     title: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
     submenu: PropTypes.arrayOf(PropTypes.shape(linkShape)),
-    picto: PropTypes.string
+    picto: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool
+      ]),
 };
   
 MenuItem.defaultProps = {};
