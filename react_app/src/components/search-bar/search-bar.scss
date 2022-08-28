@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/breakpoints';
 
 .searchbar {
     position: relative;
@@ -12,6 +13,9 @@
             color: $primary;
             font-style: italic;
             font-size: $font-size-lg;
+            @include media-breakpoint-down(md) {
+                font-size: $font-size-sm;
+            }
         }
     }
 
