@@ -33,7 +33,7 @@ const NavCardsContainer = () => {
         </>
       }
       {cards && cards.map((card, key) => 
-        <div className="col-md-6 col" key={key}>
+        <div className="col-md-6 col-12" key={key}>
           <NavCard title={card.title} to={card.to} image={card.image} />
         </div>
       )}

@@ -27,7 +27,7 @@ const SeasonalRecipes = (props) => {
 				<MultipleLoader count={props.count}/>
 			}
 			{recipes && recipes.map((item, key) => 
-				<div className="col-md-3" key={key}>
+				<div className="col-lg-3 col-md-6" key={key}>
 					<Card title={item.title} image={item.image} to={item.to} taxonomies={item.taxonomies}></Card>
 				</div>
 			)}
