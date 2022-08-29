@@ -1,5 +1,35 @@
 @import '../../styles/variables';
+@import '../../styles/breakpoints';
+@import '../../../node_modules/bootstrap/scss/mixins/caret';
 
 .recipes {
     margin-bottom: 3.75rem;
+
+    &__items-column {
+        order: 1;
+        @include media-breakpoint-down(lg) {
+            order: 2;
+        }
+    }
+    &__filters-column {
+        order: 2;
+        @include media-breakpoint-down(lg) {
+            order: 1;
+        }
+    }
+    &__filters-toggle {
+        display: none;
+        @include media-breakpoint-down(lg) {
+            display: flex;
+            justify-content: center;
+        }
+        .btn {
+            @include caret(down);
+        }
+    }
+    &__filters-container {
+        @include media-breakpoint-up(lg) {
+            display: block !important;
+        }
+    }
 }
