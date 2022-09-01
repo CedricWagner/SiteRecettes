@@ -13,6 +13,7 @@ import GoToTopButton from './components/go-to-top-button/go-to-top-button';
 import Recipe from './pages/recipe/recipe';
 import RecipesByCategory from './pages/recipes-by-category/recipes-by-category';
 import RecipesByTag from './pages/recipes-by-tag/recipes-by-tag';
+import NotFoundPage from './pages/not-found-page/not-found-page';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/categories" element={<RecipesByCategory/>}/>
             <Route path="/tags" element={<RecipesByTag/>}/>
             <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <GoToTopButton />
         <Footer/>
