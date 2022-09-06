@@ -14,24 +14,29 @@ import Recipe from './pages/recipe/recipe';
 import RecipesByCategory from './pages/recipes-by-category/recipes-by-category';
 import RecipesByTag from './pages/recipes-by-tag/recipes-by-tag';
 import NotFoundPage from './pages/not-found-page/not-found-page';
+import { Fragment } from 'react';
+import ScrollToTop from './utils/hooks/ScrollToTop';
 
 function App() {
 
   return (
     <div className="app">
       <BrowserRouter>
-        <Logo/>
-        <Menu/>
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/components" element={<ComponentsShowcase/>}/>
-            <Route path="/categories" element={<RecipesByCategory/>}/>
-            <Route path="/tags" element={<RecipesByTag/>}/>
-            <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
-            <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-        <GoToTopButton />
-        <Footer/>
+        <Fragment>
+          <ScrollToTop />
+          <Logo/>
+          <Menu/>
+          <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/components" element={<ComponentsShowcase/>}/>
+              <Route path="/categories" element={<RecipesByCategory/>}/>
+              <Route path="/tags" element={<RecipesByTag/>}/>
+              <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
+              <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+          <GoToTopButton />
+          <Footer/>
+        </Fragment>
       </BrowserRouter>
     </div>
   );
