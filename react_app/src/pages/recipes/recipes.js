@@ -15,7 +15,6 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 	const [recipes, setRecipes] = useState(false)
 	const [page, setPage] = useState(0);
     const [activeFilters, setActiveFilters] = useState(searchParams.getAll('filters'));
-    // const [activeFilters, setActiveFilters] = useState([]);
     const [orderBy, setOrderBy] = useState('-created');
     const [displayLoadMore, setDisplayLoadMore] = useState(true);
 	const orderBys = [
@@ -75,7 +74,7 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 		<div className="container recipes">
 			<h1>Toutes les recettes</h1>
 			<div className="row">
-				<div className="col-md-9">
+				<div className="col-lg-9 recipes__items-column">
 					<OrderBySelector orderBys={orderBys} orderBy={orderBy} align="right" onChange={onUpdateOrder}/>
 					<div className="row">
 						{!recipes && 
@@ -96,8 +95,16 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 						</div>
 					}
 				</div>
-				<div className="col-md-3">
-					<FilterGroup title={filterTitle} activeFilters={activeFilters} onFilter={onFilter} items={filters} />
+				<div className="col-lg-3 recipes__filters-column">
+					<div className="recipes__filters-toggle">
+						<button className="btn btn-link" 
+							type="button" data-bs-toggle="collapse" data-bs-target="#filtersCollapse" aria-expanded="false" aria-controls="filtersCollapse">
+							Filtres
+						</button>
+					</div>
+					<div className="recipes__filters-container collapse" id="filtersCollapse">
+						<FilterGroup title={filterTitle} activeFilters={activeFilters} onFilter={onFilter} items={filters} />
+					</div>
 				</div>
 			</div>
 		</div>

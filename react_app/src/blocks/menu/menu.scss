@@ -1,10 +1,37 @@
-@import '../../styles/variables';
+@import '../../styles/breakpoints';
 
 .menu {
     box-shadow: 0px 0px 20px $gray-600;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
     margin-bottom: 60px;
+
+
+    @include media-breakpoint-down(md) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &__container {
+        flex-direction: row;
+        justify-content: center;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+        @include media-breakpoint-up(md) {
+            display: flex !important;
+        }
+    }
+
+    &__burger {
+        display: none;
+        
+        @include media-breakpoint-down(md) {
+            display: block;
+            height: 20px;
+            text-align: center;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+    }
 }

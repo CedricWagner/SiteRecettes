@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import '../../styles/breakpoints';
 
 .menu-item {
     $base: &;
@@ -6,11 +6,19 @@
     letter-spacing: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+        justify-content: center;
+    }
     &__link {
         padding-left: 15px;
         padding-right: 15px;
         
         font-size: $font-size-base * 1.25;
+        @include media-breakpoint-down(lg) {
+            font-size: $font-size-base;
+        }
         text-decoration: none;
         text-transform: uppercase;
         color: $body-color;
@@ -20,6 +28,9 @@
         &--active {
             color: $primary;
         }
+    }
+    &__picto {
+        max-height: 40px;
     }
     &__submenu {
         position: absolute;
@@ -31,6 +42,10 @@
         background-color: $white;
         border: 1px solid $gray-600;
         border-top: none;
+
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
 
         #{$base} {
             line-height: normal;

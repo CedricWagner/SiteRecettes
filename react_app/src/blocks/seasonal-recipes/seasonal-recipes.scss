@@ -1,1 +1,7 @@
-.seasonal-recipes {}
+@import "../../styles/variables";
+
+.seasonal-recipes {
+    > * {
+        margin-bottom: $grid-gutter-width;
+    }
+}

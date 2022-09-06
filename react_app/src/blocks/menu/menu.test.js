@@ -42,6 +42,6 @@ test("it should have the \"Sans-Gluten\" submenu item", async () => {
     render(<BrowserRouter><Menu /></BrowserRouter>)
 
     const sansGlutenItem = await screen.findByText("Sans-Gluten");
-
+    console.log(sansGlutenItem)
     expect(sansGlutenItem).toBeVisible();
 })

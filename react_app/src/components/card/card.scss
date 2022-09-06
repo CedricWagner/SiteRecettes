@@ -1,5 +1,6 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
+@import '../../styles/breakpoints';
 
 .card {
     @include card-hover-animation;
@@ -30,6 +31,13 @@
         
         padding: 10px;
         text-align: center;
+        @include media-breakpoint-down(lg) {
+            font-size: 0.875rem;
+            line-height: 1rem;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: $font-size-sm;
+        }
     }
     
     &__term {
@@ -59,5 +67,11 @@
         font-size: $font-size-base * 1.25;
         line-height: 26px;
         cursor: pointer;
+        @include media-breakpoint-down(lg) {
+            font-size: 1.125rem;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: $font-size-base;
+        }
     }
 }

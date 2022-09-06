@@ -1,10 +1,14 @@
 @import '../../styles/variables';
+@import '../../styles/breakpoints';
 
 .ingredient-line {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 10px;
+    @include media-breakpoint-down (lg) {
+        margin-bottom: 0px;
+    }
 
     &__image {
         max-height: 100%;

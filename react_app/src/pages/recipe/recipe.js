@@ -67,20 +67,21 @@ const Recipe = () => {
 								<RecipeFeaturesList recipe={recipe}/>
 							</div>
 							{recipe.image && 
-								<div className="col-md-4">
+								<div className="col-lg-4 col-md-6 text-center">
 									<img src={recipe.image} alt={recipe.title} className="recipe__image" />
 								</div>
 							}
+							<div className="recipe__description--mobile" dangerouslySetInnerHTML={{ __html: recipe.description }}></div>
 						</div>
 						{/* Head --/> */}
 						{/* <-- Ingredients & Steps */}
 						<div className="row mb-4">
 							<div className="col-md-4">
-								<div className="row">
-									<div className="col-md-6">
-										<h2>Ingrédients</h2>
+								<div className="row mb-4">
+									<div className="col-lg-6 col">
+										<h2 className="mb-2">Ingrédients</h2>
 									</div>
-									<div className="col-md-6">
+									<div className="col">
 										{quantity.current && 
 											<QuantityControl current={quantity.current} unity={recipe.shareType} onUpdateQuantity={updateQuantity}/>
 										}
