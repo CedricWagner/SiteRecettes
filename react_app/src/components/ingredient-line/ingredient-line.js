@@ -10,12 +10,16 @@ const IngredientLine = (props) => (
       }
     </div>
     <p className="ingredient-line__text">
-      <span className="ingredient-line__amount">
-        {parseFloat(props.amount)}
-      </span>
-      <span className="ingredient-line__unit">
-        {props.unit}
-      </span>
+      {props.amount !== "0" && 
+        <span className="ingredient-line__amount">
+          {parseFloat(props.amount)}
+        </span>
+      }
+      {props.unit && 
+        <span className="ingredient-line__unit">
+          {props.unit}
+        </span>
+      }
       <span className="ingredient-line__name">
         {props.name}
       </span>
@@ -29,7 +33,7 @@ const IngredientLine = (props) => (
 IngredientLine.propTypes = {
   picto: PropTypes.string,
   amount: PropTypes.string.isRequired,
-  unit: PropTypes.string.isRequired,
+  unit: PropTypes.string,
   name: PropTypes.string.isRequired,
   details: PropTypes.string,
 };
