@@ -30,7 +30,7 @@ function purifyHTML(dirtyHTML) {
  * @returns {Decimal} quantity with ratio
  */
 export function qtyWithRatio(initialQty, initialShares, currentShares) {
-    if (initialQty === 0) {
+    if (initialQty === 0 || !initialQty) {
         return 0;
     }
     let result = parseFloat(initialQty) * parseInt(currentShares) / parseInt(initialShares);

@@ -44,10 +44,10 @@ const Recipe = () => {
 
 	useEffect(() => {
 		// init quantity
-		console.log(recipe.numberOfParts)
+		const numberOfParts = recipe.numberOfParts ? recipe.numberOfParts : 1;
 		setQuantity({
-			initial: recipe.numberOfParts,
-			current: recipe.numberOfParts,
+			initial: numberOfParts,
+			current: numberOfParts,
 		});
 	}, [recipe])
 
