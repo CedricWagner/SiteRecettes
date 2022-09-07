@@ -101,10 +101,12 @@ const Recipe = () => {
 						{/* Ingredients & Steps --/> */}
 						{/* <-- Remarks & tags */}
 						<div className="row mb-5">
-							<div className="col-12">
-								<h2>Remarques</h2>
-								<div dangerouslySetInnerHTML={{ __html: recipe.remark }}></div>
-							</div>
+							{recipe.remark && 
+								<div className="col-12">
+									<h2>Remarques</h2>
+									<div dangerouslySetInnerHTML={{ __html: recipe.remark }}></div>
+								</div>
+							}
 							<div className="col-12">
 								<TagList tags={recipe.tags}/>
 							</div>

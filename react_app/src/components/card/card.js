@@ -15,7 +15,7 @@ function Card (props) {
         <div className="card" onClick={onCardClick} role="article">
             <div className="card__upper">
                 <img className="card__image" src={props.image ? props.image : missingImage} alt={props.title}/>
-                {props.taxonomies && (
+                {props.taxonomies && props.taxonomies.length !== 0 && (
                     <div className="card__taxonomies">
                         {props.taxonomies.map((term, key) => {
                             return (
