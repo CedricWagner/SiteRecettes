@@ -2,7 +2,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import './card.scss'
 import PropTypes from 'prop-types';
 import { linkShape } from '../../utils/shapes/link-shape';
-import missingImage from '../../images/missing-picture--recipe'
+import missingImage1 from '../../images/missing-picture--recipe--01.jpg';
+import missingImage2 from '../../images/missing-picture--recipe--02.jpg';
+import missingImage3 from '../../images/missing-picture--recipe--03.jpg';
 
 function Card (props) {
     let navigate = useNavigate();
@@ -10,11 +12,21 @@ function Card (props) {
     function onCardClick () {
         navigate(props.to);
     }
+    
+    function getMissingImage() {
+        const images = [
+            missingImage1,
+            missingImage2,
+            missingImage3,
+        ];
+        const num = Math.floor(Math.random() * 3);
+        return images[num];
+    }
 
     return (
         <div className="card" onClick={onCardClick} role="article">
             <div className="card__upper">
-                <img className="card__image" src={props.image ? props.image : missingImage} alt={props.title}/>
+                <img className={"card__image " + (props.image ? '' : 'card__image--missing')} src={props.image ? props.image : getMissingImage()} alt={props.title}/>
                 {props.taxonomies && props.taxonomies.length !== 0 && (
                     <div className="card__taxonomies">
                         {props.taxonomies.map((term, key) => {
