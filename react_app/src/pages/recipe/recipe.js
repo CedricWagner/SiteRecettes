@@ -6,6 +6,7 @@ import CategoryList from '../../components/category-list/category-list';
 import Loader from '../../components/loader/loader';
 import PhotoGallery from '../../components/photo-gallery/photo-gallery';
 import QuantityControl from '../../components/quantity-control/quantity-control';
+import Step from '../../components/step/step';
 import TagList from '../../components/tag-list/tag-list';
 import { parseRecipeDetails } from '../../utils/api/helpers';
 import { QuantityContext } from '../../utils/contexts/quantity';
@@ -93,7 +94,7 @@ const Recipe = () => {
 								<h2>Etapes</h2>
 								<ol className="recipe__steps">
 									{recipe.steps.map((step, key) =>
-										<li className="recipe__step" key={key} dangerouslySetInnerHTML={{ __html: step }}></li>
+										<Step key={key} text={step}/>
 									)}
 								</ol>
 							</div>
