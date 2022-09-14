@@ -9,10 +9,10 @@
         border: solid 1px $black;
         padding: 14px 60px 14px 14px;
         width: 100%;
+        font-size: $font-size-lg;
         &::placeholder {
             color: $primary;
             font-style: italic;
-            font-size: $font-size-lg;
             @include media-breakpoint-down(md) {
                 // font-size: $font-size-sm;
             }
@@ -22,10 +22,14 @@
     &__icon {
         position: absolute;
         right: 10px;
-        top: 5px;
+        top: 0px;
         cursor: pointer;
-        background-color: $white;
+        background-color: transparent;
         border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
 
         svg {
             width: 40px;
