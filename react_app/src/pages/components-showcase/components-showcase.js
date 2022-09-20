@@ -18,6 +18,7 @@ import IngredientPicto from '../../images/showcase-ingredient.png'
 import TagList from '../../components/tag-list/tag-list';
 import FilterGroup from '../../components/filter-group/filter-group';
 import MultipleLoader from '../../components/multiple-loader/multiple-loader';
+import SelectedFiltersList from '../../blocks/selected-filters-list/selected-filters-list';
 
 export default function ComponentsShowcase () {
 
@@ -48,7 +49,7 @@ export default function ComponentsShowcase () {
     }
     
     function onFilter(filters) {
-        setActiveFilters([...filters])
+        setActiveFilters([...filters]);
     }
 
     const [currentQuantity, setCurrentQuantity] = useState(12)
@@ -91,7 +92,6 @@ export default function ComponentsShowcase () {
                             <NavCard to="/test" title="Recettes" image={NavPicture}/>
                         </div>
                     </div>
-
                 </div>
             </div>
             <MultipleLoader count={4}/>
@@ -118,6 +118,9 @@ export default function ComponentsShowcase () {
                 </div>
                 <div className="col-md-4">
                     <FilterGroup title="Catégories" items={filterItems} onFilter={onFilter} activeFilters={activeFilters}/>
+                </div>
+                <div className="col-12">
+                    <SelectedFiltersList items={filterItems} activeFilters={activeFilters} onFilter={onFilter} />
                 </div>
                 <div className="col-md-8">
                     <h2 className="mt-5">Ingrédients</h2>

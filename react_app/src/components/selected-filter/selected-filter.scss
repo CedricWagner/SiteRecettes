@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.selected-filter {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-transform: capitalize;
+    &__cross {
+        width: 18px;
+        margin-left: 5px;
+    }
+}

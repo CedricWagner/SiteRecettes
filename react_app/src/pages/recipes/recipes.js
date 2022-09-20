@@ -8,6 +8,7 @@ import FilterGroup from '../../components/filter-group/filter-group';
 import PropTypes from 'prop-types';
 import OrderBySelector from '../../components/order-by-selector/order-by-selector';
 import { useSearchParams } from 'react-router-dom';
+import SelectedFiltersList from '../../blocks/selected-filters-list/selected-filters-list';
 
 const Recipes = ({filterTitle, filters, filterField}) => {
   
@@ -75,7 +76,14 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 			<h1>Toutes les recettes</h1>
 			<div className="row">
 				<div className="col-lg-9 recipes__items-column">
-					<OrderBySelector orderBys={orderBys} orderBy={orderBy} align="right" onChange={onUpdateOrder}/>
+					<div className="row">
+						<div className="col">
+							<SelectedFiltersList activeFilters={activeFilters} onFilter={onFilter} items={filters} />
+						</div>
+						<div className="col-auto">
+							<OrderBySelector orderBys={orderBys} orderBy={orderBy} align="right" onChange={onUpdateOrder}/>
+						</div>
+					</div>
 					<div className="row">
 						{!recipes && 
 							<MultipleLoader count={3} />
