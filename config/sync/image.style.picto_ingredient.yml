@@ -5,11 +5,11 @@ dependencies: {  }
 name: picto_ingredient
 label: 'Picto ingrédient'
 effects:
-  31c2b134-079c-4c2e-ae05-a6c9d900f0dd:
-    uuid: 31c2b134-079c-4c2e-ae05-a6c9d900f0dd
-    id: image_scale_and_crop
-    weight: 1
+  0f4813b7-4810-442d-9db4-82b61a98cfa7:
+    uuid: 0f4813b7-4810-442d-9db4-82b61a98cfa7
+    id: image_scale
+    weight: 2
     data:
       width: 30
       height: 30
-      anchor: center-center
+      upscale: false
