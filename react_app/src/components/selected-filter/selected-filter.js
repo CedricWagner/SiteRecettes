@@ -10,7 +10,11 @@ const SelectedFilter = ({title, id, onRemove}) => (
   </div>
 );
 
-SelectedFilter.propTypes = {};
+SelectedFilter.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  onRemove: PropTypes.func.isRequired
+};
 
 SelectedFilter.defaultProps = {};
 
