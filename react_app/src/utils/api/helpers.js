@@ -64,12 +64,16 @@ export function parseRecipe(item) {
  * @return object
  */
 export function parseRecipeFromSearchApi(item) {
-    console.log(item)
     return {
-        title: item.title[0].value,
-        image: item.field_image[0] ? item.field_image[0].url : null,
-        to: item.field_path[0].value,
-        taxonomies: []
+        title: item.title,
+        image: item.field_image,
+        to: item.field_path,
+        taxonomies: item.field_categories ? item.field_categories.map((term) => {
+            return {
+                title: term.name,
+                to: '/categories?filters=' + term.id
+            }
+        }) : []
     }
 }
 
