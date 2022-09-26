@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function SearchBar (props) {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState(props.value)
 
     function changeValue(_value) {
         setValue(_value)
@@ -33,7 +33,8 @@ function SearchBar (props) {
 }
 
 SearchBar.propTypes = {
-    onSearch: PropTypes.func.isRequired
+    onSearch: PropTypes.func.isRequired,
+    value: PropTypes.string,
 };
   
 SearchBar.defaultProps = {};

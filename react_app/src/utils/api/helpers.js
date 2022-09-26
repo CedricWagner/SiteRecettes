@@ -58,6 +58,22 @@ export function parseRecipe(item) {
 }
 
 /** 
+ * Parse the recipe from the drupal api into an object
+ * 
+ * @param object item
+ * @return object
+ */
+export function parseRecipeFromSearchApi(item) {
+    console.log(item)
+    return {
+        title: item.title[0].value,
+        image: item.field_image[0] ? item.field_image[0].url : null,
+        to: item.field_path[0].value,
+        taxonomies: []
+    }
+}
+
+/** 
  * Parse the recipe from the drupal api into an full object
  * 
  * @param object item
