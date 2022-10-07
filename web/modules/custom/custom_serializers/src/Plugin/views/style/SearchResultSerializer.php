@@ -33,8 +33,6 @@ class SearchResultSerializer extends Serializer {
             $style = ImageStyle::load('card');
             $image_uri = $entity->field_image[0]->target_id ? File::load($entity->field_image[0]->target_id)->getFileUri() : null;
 
-            // dump($entity->field_categories->__get('list')); die();
-
             $rows[] = [
                 'title' => $entity->title->value,
                 'field_path' => $entity->field_path->value,
