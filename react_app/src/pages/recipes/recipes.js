@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './recipes.scss';
 import getRecipes from './recipes.api';
 import { parseRecipe } from '../../utils/api/helpers';
-import MultipleLoader from '../../components/multiple-loader/multiple-loader';
-import Card from '../../components/card/card';
 import FilterGroup from '../../components/filter-group/filter-group';
 import PropTypes from 'prop-types';
 import OrderBySelector from '../../components/order-by-selector/order-by-selector';
 import { useSearchParams } from 'react-router-dom';
 import SelectedFiltersList from '../../blocks/selected-filters-list/selected-filters-list';
+import ListWrapper from '../../blocks/list-wrapper/list-wrapper';
 
 const Recipes = ({filterTitle, filters, filterField}) => {
   
@@ -84,19 +83,7 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 							<OrderBySelector orderBys={orderBys} orderBy={orderBy} align="right" onChange={onUpdateOrder}/>
 						</div>
 					</div>
-					<div className="row">
-						{!recipes && 
-							<MultipleLoader count={3} />
-						}
-						{recipes.length === 0 && 
-							<p>Aucun résultat...</p>
-						}
-						{recipes && recipes.map((item, key) => 
-							<div className="col-md-4 mb-4" key={key}>
-								<Card title={item.title} image={item.image} to={item.to} taxonomies={item.taxonomies}/>						
-							</div>
-						)}
-					</div>
+					<ListWrapper items={recipes} />
 					{displayLoadMore && 
 						<div className="list-link">
 							<button className="list-link__link btn btn-link" onClick={loadMore}>Voir plus</button>

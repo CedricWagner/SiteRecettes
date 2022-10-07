@@ -20,7 +20,7 @@ const Home = () => {
         <NavCardsContainer />
       </div> 
       <div className="container-small mt-5 mb-6">
-        <SearchBar onSearch={redirectToSearchPage} />
+        <SearchBar onSearch={redirectToSearchPage} value="" />
       </div>
       <div className="container">
         <CardsGroupWrapper title="Recettes de saison" link="/categories">
