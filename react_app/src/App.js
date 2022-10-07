@@ -16,6 +16,7 @@ import RecipesByTag from './pages/recipes-by-tag/recipes-by-tag';
 import NotFoundPage from './pages/not-found-page/not-found-page';
 import { Fragment } from 'react';
 import ScrollToTop from './utils/hooks/ScrollToTop';
+import SearchResult from './pages/search-result/search-result';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
               <Route path="/categories" element={<RecipesByCategory/>}/>
               <Route path="/tags" element={<RecipesByTag/>}/>
               <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
+              <Route path="/recherche" element={<SearchResult/>}/>
               <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <GoToTopButton />
