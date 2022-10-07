@@ -1,0 +1,23 @@
+@import '../../styles/_variables.scss';
+
+.search-filter {
+    &__title {
+        font-weight: normal;
+        font-size: $font-size-lg;
+        margin-bottom: 20px;
+    }
+    &__box {
+        background-color: $terciary;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        padding: 7px;
+        margin: 0;
+        list-style: none;
+    }
+    &__item {
+        cursor: pointer;
+        &--selected {
+            font-weight: bold;
+        }
+    }
+}
