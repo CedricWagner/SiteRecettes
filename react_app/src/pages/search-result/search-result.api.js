@@ -8,10 +8,10 @@ export function getSearchResults(text, filters) {
     api.addParam("search_api_fulltext", text);
     
     if (filters) {
-        for (const [key, value] of Object.entries(filters)) {
-            if (value && value.length) {
-                api.addParam(key, value);
-            }
+        for (const [key, values] of Object.entries(filters)) {
+            values.map((value) => {
+                return api.addParam(key + '[]', value);
+            })
         }
     }
     

@@ -24,8 +24,8 @@ class SearchResultSerializer extends Serializer {
     public function render() {
         $rows = [];
 
-        foreach ($this->view->result as $row_index => $row) {
-            $row_render = $this->view->rowPlugin->render($row);
+        foreach ($this->view->result as $row) {
+            $this->view->rowPlugin->render($row);
             
             $entity = $row->_entity;
 
@@ -42,8 +42,8 @@ class SearchResultSerializer extends Serializer {
                     return [
                         'name' => $term->name->value,
                         'id' => $term->uuid->value
-                    ];   
-                }, iterator_to_array($entity->field_categories->getIterator()))
+                    ];
+                }, $entity->field_categories ? iterator_to_array($entity->field_categories->getIterator()): [])
             ];
         }
 
