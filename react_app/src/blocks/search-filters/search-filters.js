@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './search-filters.scss';
 import SearchFilter from '../../components/search-filter/search-filter';
 
-const SearchFilters = () => {
+const SearchFilters = ({updateSelectedFilters}) => {
     
     const [selectedValues, setSelectedValues] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";
@@ -16,6 +16,11 @@ const SearchFilters = () => {
         _values[filterSlug] = values;
         setSelectedValues(_values);
     }
+
+    useEffect(() => {
+        updateSelectedFilters(selectedValues);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectedValues])
 
     return (
         <div className="search-filters">

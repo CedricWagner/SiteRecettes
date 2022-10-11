@@ -12,20 +12,21 @@ const SearchResult = () => {
     const [items, setItems] = useState(false);
     const [searchParams] = useSearchParams();
     const [textSearch, setTextSearch] = useState(searchParams.get("text") ? searchParams.get("text") : '');
+    const [selectedFilters, setSelectedFilters] = useState();
 
     function updateTextSearch(value) {
         setTextSearch(value);
     }
 
     useEffect(() => {
-        getSearchResults(textSearch).then((items) => 
+        getSearchResults(textSearch, selectedFilters).then((items) => 
             setItems(items
                 .map((item) => {
                     return parseRecipeFromSearchApi(item)
                 }
             ))
         );
-    }, [textSearch])
+    }, [textSearch, selectedFilters]);
 
     return (    
         <div className="search-result">
@@ -33,7 +34,7 @@ const SearchResult = () => {
                 <SearchBar value={textSearch} onSearch={updateTextSearch}/>
             </div>
             <div className="container">
-                <SearchFilters />
+                <SearchFilters updateSelectedFilters={setSelectedFilters}/>
             </div>
             <div className="container">
                 <ListWrapper displaySearchBar={true} textSearch={textSearch} updateTextSearch={updateTextSearch} items={items} />
