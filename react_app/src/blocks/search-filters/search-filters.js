@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './search-filters.scss';
 import SearchFilter from '../../components/search-filter/search-filter';
+import { getCategories } from '../../utils/api/common.api';
 
 const SearchFilters = ({updateSelectedFilters}) => {
     
     const [selectedValues, setSelectedValues] = useState([]); 
+    const [categoryFilters, setCategoryFilters] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";
     
     function getFilterSelectedValues(filterSlug) {
@@ -18,9 +20,20 @@ const SearchFilters = ({updateSelectedFilters}) => {
     }
 
     useEffect(() => {
+        getCategories().then((items) => 
+            setCategoryFilters(items.map((item) => {
+                return {
+                    title: item.name,
+                    id: item.id
+                }}
+            ))
+        );
+    }, []);
+
+    useEffect(() => {
         updateSelectedFilters(selectedValues);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedValues])
+    }, [selectedValues]);
 
     return (
         <div className="search-filters">
@@ -30,6 +43,9 @@ const SearchFilters = ({updateSelectedFilters}) => {
                         {id: 'recipe', title: "Recettes"},
                         {id: 'article', title: "Articles"}
                     ]} onChange={setFilterSelectedValues} />
+                </div>
+                <div className={colClasses}>
+                    <SearchFilter title='Catégories' slug='field_categories' selectedValues={getFilterSelectedValues('field_categories')} items={categoryFilters} onChange={setFilterSelectedValues} />
                 </div>
             </div>
         </div>

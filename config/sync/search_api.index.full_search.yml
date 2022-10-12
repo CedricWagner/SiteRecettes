@@ -3,13 +3,13 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.body
     - field.storage.node.field_categories
+    - field.storage.node.body
+    - field.storage.node.field_steps
     - field.storage.node.field_ingredient_groups
     - field.storage.paragraph.field_ingredient
     - field.storage.paragraph.field_ingredient_lines
     - field.storage.node.field_seasons
-    - field.storage.node.field_steps
     - field.storage.node.field_tags
     - search_api.server.local
   module:
@@ -126,6 +126,16 @@ field_settings:
     dependencies:
       module:
         - node
+  uuid:
+    label: 'Catégories » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
 datasource_settings:
   'entity:node':
     bundles:
@@ -173,6 +183,7 @@ processor_settings:
       - tag_name
       - title
       - type
+      - uuid
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:

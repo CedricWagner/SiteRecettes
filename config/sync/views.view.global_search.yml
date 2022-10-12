@@ -15,7 +15,6 @@ dependencies:
     - search_api
     - serialization
     - svg_image
-    - taxonomy
     - text
 id: global_search
 label: 'Recherche globale'
@@ -248,6 +247,74 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
+        uuid:
+          id: uuid
+          table: search_api_index_full_search
+          field: uuid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_string
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uuid_op
+            label: 'Catégories » Terme de taxonomie » Identifiant universel unique (UUID)'
+            description: ''
+            use_operator: false
+            operator: uuid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_categories
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Catégories » Terme de taxonomie » Identifiant universel unique (UUID)'
+            description: ''
+            identifier: uuid
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              2:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
       style:
         type: grid
       row:
@@ -533,18 +600,7 @@ display:
       defaults:
         relationships: false
         fields: false
-      relationships:
-        field_categories:
-          id: field_categories
-          table: search_api_datasource_full_search_entity_node
-          field: field_categories
-          relationship: none
-          group_type: group
-          admin_label: 'Catégories : Terme de taxonomie'
-          entity_type: node
-          plugin_id: search_api
-          required: false
-          skip_access: false
+      relationships: {  }
       display_extenders: {  }
       path: api/global-search
       auth:
