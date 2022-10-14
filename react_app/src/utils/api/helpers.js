@@ -44,6 +44,7 @@ export function qtyWithRatio(initialQty, initialShares, currentShares) {
  * @return object
  */
 export function parseRecipe(item) {
+    
     return {
         title: item.title,
         image: item.field_image.image_style_uri ? item.field_image.image_style_uri.card : null,

@@ -40,6 +40,16 @@ field_settings:
         - field.storage.node.field_categories
       module:
         - taxonomy
+  category_uuid:
+    label: 'Catégories » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
   ingredient_title:
     label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Titre'
     datasource_id: 'entity:node'
@@ -126,16 +136,6 @@ field_settings:
     dependencies:
       module:
         - node
-  uuid:
-    label: 'Catégories » Terme de taxonomie » Identifiant universel unique (UUID)'
-    datasource_id: 'entity:node'
-    property_path: 'field_categories:entity:uuid'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_categories
-      module:
-        - taxonomy
 datasource_settings:
   'entity:node':
     bundles:
@@ -177,13 +177,13 @@ processor_settings:
     fields:
       - body
       - category_name
+      - category_uuid
       - ingredient_title
       - season_name
       - steps
       - tag_name
       - title
       - type
-      - uuid
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:

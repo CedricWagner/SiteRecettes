@@ -1,17 +1,19 @@
-import SearchApi from "../../utils/api/searchapi";
+// import SearchApi from "../../utils/api/searchapi";
+import JsonApi from "../../utils/api/jsonapi";
 
-export const searchUrl = "/api/global-search";
+export const searchUrl = "/index/full_search";
 
 export function getSearchResults(text, filters) {
-    const api = new SearchApi();
+    const api = new JsonApi();
     
-    api.addParam("search_api_fulltext", text);
-    
+    api.params.addFilter('fulltext', text);
+    api.params.addInclude(['field_image']);
+
     if (filters) {
         for (const [key, values] of Object.entries(filters)) {
-            values.map((value) => {
-                return api.addParam(key + '[]', value);
-            })
+            if (values.length) {
+                api.params.addFilter(key, values, 'IN');
+            }
         }
     }
     

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './search-result.scss';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchResults } from './search-result.api';
-import { parseRecipeFromSearchApi } from '../../utils/api/helpers';
+import { parseRecipe, parseRecipeDetails, parseRecipeFromSearchApi } from '../../utils/api/helpers';
 import ListWrapper from '../../blocks/list-wrapper/list-wrapper';
 import SearchBar from '../../components/search-bar/search-bar';
 import SearchFilters from '../../blocks/search-filters/search-filters';
@@ -22,7 +22,7 @@ const SearchResult = () => {
         getSearchResults(textSearch, selectedFilters).then((items) => 
             setItems(items
                 .map((item) => {
-                    return parseRecipeFromSearchApi(item)
+                    return parseRecipe(item)
                 }
             ))
         );

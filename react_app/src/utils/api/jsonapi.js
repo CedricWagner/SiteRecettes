@@ -17,7 +17,8 @@ export default class JsonApi extends Api{
             '/jsonapi' + 
             ressource +
             '?' +
-            this.params.getQueryString()
+            this.params.getQueryString() +
+            '&jsonapi_include=1'
         ).then(res => res.json()).then(res => res.data);
     };
 }

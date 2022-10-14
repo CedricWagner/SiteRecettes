@@ -45,7 +45,7 @@ const SearchFilters = ({updateSelectedFilters}) => {
                     ]} onChange={setFilterSelectedValues} />
                 </div>
                 <div className={colClasses}>
-                    <SearchFilter title='Catégories' slug='field_categories' selectedValues={getFilterSelectedValues('field_categories')} items={categoryFilters} onChange={setFilterSelectedValues} />
+                    <SearchFilter title='Catégories' slug='category_uuid' selectedValues={getFilterSelectedValues('category_uuid')} items={categoryFilters} onChange={setFilterSelectedValues} />
                 </div>
             </div>
         </div>
