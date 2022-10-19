@@ -11,6 +11,7 @@ dependencies:
     - field.storage.paragraph.field_ingredient_lines
     - field.storage.node.field_seasons
     - field.storage.node.field_tags
+    - field.storage.node.field_cooking_types
     - search_api.server.local
   module:
     - taxonomy
@@ -48,6 +49,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_categories
+      module:
+        - taxonomy
+  cooking_type_uuid:
+    label: 'Type(s) de cuisson » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_cooking_types:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_cooking_types
       module:
         - taxonomy
   ingredient_title:
@@ -178,6 +189,7 @@ processor_settings:
       - body
       - category_name
       - category_uuid
+      - cooking_type_uuid
       - ingredient_title
       - season_name
       - steps
