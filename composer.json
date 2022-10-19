@@ -36,6 +36,7 @@
         "drupal/jsonapi_image_styles": "^3.0",
         "drupal/jsonapi_include": "^1.4",
         "drupal/jsonapi_menu_items": "^1.2",
+        "drupal/jsonapi_search_api": "^1.0@RC",
         "drupal/menu_item_extras": "^2.17",
         "drupal/paragraphs": "^1.14",
         "drupal/pathauto": "^1.10",
@@ -118,7 +119,11 @@
         "patches": {
             "drupal/core": {
               "fix error on REST Views": "https://www.drupal.org/files/issues/2858814-13.patch",
-              "enable to ignore destination redirect": "https://www.drupal.org/files/issues/2021-12-07/2950883-43.patch"
+              "enable to ignore destination redirect": "https://www.drupal.org/files/issues/2021-12-07/2950883-43.patch",
+              "fix total count for search api": "https://git.drupalcode.org/project/drupal/-/merge_requests/1308.patch"
+            },
+            "drupal/jsonapi_include": {
+                "apply includes to all endoints": "https://www.drupal.org/files/issues/2020-09-24/jsonapi_resources-3172870-2.patch"
             }
         }
     },
