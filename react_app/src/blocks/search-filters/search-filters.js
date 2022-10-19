@@ -9,24 +9,25 @@ const SearchFilters = ({updateSelectedFilters}) => {
     const [categoryFilters, setCategoryFilters] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";
     
-    function getFilterSelectedValues(filterSlug) {
-        return typeof selectedValues[filterSlug] === 'undefined' ? [] : selectedValues[filterSlug];
+    function getFilterSelectedValuesBySlug(slug) {
+        return typeof selectedValues[slug] === 'undefined' ? [] : selectedValues[slug];
     }
 
     function setFilterSelectedValues(filterSlug, values) {
-        let _values = [...selectedValues];
+        let _values = {...selectedValues};
         _values[filterSlug] = values;
         setSelectedValues(_values);
     }
 
     useEffect(() => {
         getCategories().then((items) => 
-            setCategoryFilters(items.map((item) => {
-                return {
-                    title: item.name,
-                    id: item.id
-                }}
-            ))
+            {
+                setCategoryFilters(items.map((item) => {
+                    return {
+                        title: item.name,
+                        id: item.id
+                    }}
+            ))}
         );
     }, []);
 
@@ -39,13 +40,13 @@ const SearchFilters = ({updateSelectedFilters}) => {
         <div className="search-filters">
             <div className="row">
                 <div className={colClasses}>
-                    <SearchFilter title='Contenu' slug='type' selectedValues={getFilterSelectedValues('type')} items={[
+                    <SearchFilter title='Contenu' slug='type' selectedValues={getFilterSelectedValuesBySlug('type')} items={[
                         {id: 'recipe', title: "Recettes"},
                         {id: 'article', title: "Articles"}
                     ]} onChange={setFilterSelectedValues} />
                 </div>
                 <div className={colClasses}>
-                    <SearchFilter title='Catégories' slug='category_uuid' selectedValues={getFilterSelectedValues('category_uuid')} items={categoryFilters} onChange={setFilterSelectedValues} />
+                    <SearchFilter title='Catégories' slug='category_uuid' selectedValues={getFilterSelectedValuesBySlug('category_uuid')} items={categoryFilters} onChange={setFilterSelectedValues} />
                 </div>
             </div>
         </div>

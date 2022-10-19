@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './search-result.scss';
 import { useSearchParams } from 'react-router-dom';
 import { getSearchResults } from './search-result.api';
-import { parseRecipe, parseRecipeDetails, parseRecipeFromSearchApi } from '../../utils/api/helpers';
+import { parseRecipe } from '../../utils/api/helpers';
 import ListWrapper from '../../blocks/list-wrapper/list-wrapper';
 import SearchBar from '../../components/search-bar/search-bar';
 import SearchFilters from '../../blocks/search-filters/search-filters';
