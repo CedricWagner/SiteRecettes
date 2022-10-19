@@ -5,4 +5,7 @@ export const filtersConfig = {
     category_uuid: {
         operator: 'AND'
     },
+    cooking_type_uuid: {
+        operator: 'OR'
+    },
 }

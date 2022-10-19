@@ -5,14 +5,20 @@ import {rest} from "msw";
 import {setupServer} from "msw/node";
 import { mockCategoriesData } from '../menu/menu.data';
 import { categoriesUrl } from '../../utils/api/common.api';
+import { cookingTypesUrl } from '../../utils/api/common.api';
 import { BrowserRouter } from 'react-router-dom';
+import { emptyResponse } from '../../utils/api/mocks/emptyResponse';
 
 // TODO: factorise this (doubloon with menu.test)
 const categoriesResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsonapi' + categoriesUrl, (req, res, ctx) => {
     return res(ctx.json(mockCategoriesData))
 })
 
-const server = new setupServer(categoriesResponse);
+const cookingTypesResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsonapi' + cookingTypesUrl, (req, res, ctx) => {
+    return res(ctx.json(emptyResponse))
+})
+
+const server = new setupServer(categoriesResponse, cookingTypesResponse);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
@@ -52,7 +58,6 @@ test("it should have 2 values selected when 2 values are selected across differe
 
     fireEvent.click(sansGlutenFilter);
     fireEvent.click(recetteFilter);
-    console.log(filters)
 
     await waitFor(() => expect(filters).toEqual({
         "category_uuid": ["5d58e163-fd22-4dac-9d2c-bbf649426d55"], 
