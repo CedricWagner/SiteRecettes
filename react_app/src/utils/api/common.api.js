@@ -11,13 +11,6 @@ export function getCategories() {
     return api.get(categoriesUrl);
 }
 
-export function getCookingTypes() {
-    const api = new JsonApi();
-    api.params.addSort('weight')
-    api.params.addSort('name')
-    return api.get(cookingTypesUrl);
-}
-
 export function getTags() {
     const api = new JsonApi();
     api.params.addSort('weight')
