@@ -4,6 +4,7 @@ import SearchFilter from '../../components/search-filter/search-filter';
 import FilterConfigList from '../../utils/filter-config/FilterConfigList';
 import TaxonomyFilterConfig from '../../utils/filter-config/TaxonomyFilterConfig';
 import CustomFilterConfig from '../../utils/filter-config/CustomFilterConfig';
+import ValueListFilterConfig from '../../utils/filter-config/ValueListFilterConfig';
 
 const SearchFilters = ({updateSelectedFilters}) => {
     
@@ -16,6 +17,8 @@ const SearchFilters = ({updateSelectedFilters}) => {
     }))
     filterList.add(new TaxonomyFilterConfig("Catégories", "category_uuid", useState([]), "recipe_category"))
     filterList.add(new TaxonomyFilterConfig("Types de cuisson", "cooking_type_uuid", useState([]), "cooking_type"))
+    filterList.add(new ValueListFilterConfig("Difficulté", "field_difficulty", useState([])))
+    filterList.add(new ValueListFilterConfig("Prix", "field_price_indicator", useState([])))
 
     const [selectedValues, setSelectedValues] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";

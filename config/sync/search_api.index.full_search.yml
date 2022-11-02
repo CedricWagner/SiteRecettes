@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_categories
     - field.storage.node.body
+    - field.storage.node.field_difficulty
     - field.storage.node.field_steps
     - field.storage.node.field_ingredient_groups
     - field.storage.paragraph.field_ingredient
     - field.storage.paragraph.field_ingredient_lines
+    - field.storage.node.field_price_indicator
     - field.storage.node.field_seasons
     - field.storage.node.field_tags
     - field.storage.node.field_cooking_types
@@ -61,6 +63,22 @@ field_settings:
         - field.storage.node.field_cooking_types
       module:
         - taxonomy
+  field_difficulty:
+    label: Difficulté
+    datasource_id: 'entity:node'
+    property_path: field_difficulty
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_difficulty
+  field_price_indicator:
+    label: 'Indicateur de prix'
+    datasource_id: 'entity:node'
+    property_path: field_price_indicator
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_price_indicator
   ingredient_title:
     label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Titre'
     datasource_id: 'entity:node'

@@ -1,4 +1,4 @@
-import AbstractFilterConfig from "./AbstractFilterConfig"; // eslint-disable-line no-unused-vars
+import AbstractFilterConfig from "./AbstractFilterConfig"; 
 
 export default class FilterConfigList {
 
@@ -11,7 +11,11 @@ export default class FilterConfigList {
      * @param {AbstractFilterConfig} filter 
      */
     add(filter) {
-        this.filters.push(filter);
+        if (filter instanceof AbstractFilterConfig === true) {
+            this.filters.push(filter);
+        } else {
+            throw new TypeError("Filter should be an instance of AbstractFilterConfig");
+        }
     }
 
     /**
