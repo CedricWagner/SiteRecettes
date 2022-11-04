@@ -14,4 +14,7 @@ export const filtersConfig = {
     field_price_indicator: {
         operator: 'OR'
     },
+    season_uuid: {
+        operator: 'AND'
+    },
 }

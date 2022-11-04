@@ -110,6 +110,16 @@ field_settings:
         - field.storage.node.field_seasons
       module:
         - taxonomy
+  season_uuid:
+    label: 'Saisons » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_seasons:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_seasons
+      module:
+        - taxonomy
   status:
     label: status
     datasource_id: 'entity:node'
@@ -210,6 +220,7 @@ processor_settings:
       - cooking_type_uuid
       - ingredient_title
       - season_name
+      - season_uuid
       - steps
       - tag_name
       - title

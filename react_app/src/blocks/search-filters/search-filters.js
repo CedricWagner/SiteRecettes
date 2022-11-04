@@ -19,6 +19,7 @@ const SearchFilters = ({updateSelectedFilters}) => {
     filterList.add(new TaxonomyFilterConfig("Types de cuisson", "cooking_type_uuid", useState([]), "cooking_type"))
     filterList.add(new ValueListFilterConfig("Difficulté", "field_difficulty", useState([])))
     filterList.add(new ValueListFilterConfig("Prix", "field_price_indicator", useState([])))
+    filterList.add(new TaxonomyFilterConfig("Saison", "season_uuid", useState([]), "season"))
 
     const [selectedValues, setSelectedValues] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";
