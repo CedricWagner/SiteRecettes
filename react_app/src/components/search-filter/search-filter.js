@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './search-filter.scss';
+import { capitalizeFirstLetter } from '../../utils/helpers/text';
 
 const SearchFilter = ({title, slug, items, selectedValues, onChange}) => {
 
@@ -29,7 +30,7 @@ const SearchFilter = ({title, slug, items, selectedValues, onChange}) => {
                 </li>
                 {items && items.map((item, key) => 
                     <li key={key} className={"search-filter__item " + (selectedValues.includes(item.id) ? "search-filter__item--selected" : "")} data-id={item.id} role={"option"} aria-selected={selectedValues.includes(item.id)} onClick={updateFilter}>
-                        {item.title}
+                        {capitalizeFirstLetter(item.title)}
                     </li>
                 )}
             </ul>
