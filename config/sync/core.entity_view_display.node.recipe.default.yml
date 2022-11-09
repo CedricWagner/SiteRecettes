@@ -17,8 +17,10 @@ dependencies:
     - field.field.node.recipe.field_path
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_price_indicator
+    - field.field.node.recipe.field_production_time_slice
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
+    - field.field.node.recipe.field_resting_time_slice
     - field.field.node.recipe.field_seasons
     - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
@@ -162,6 +164,13 @@ content:
     third_party_settings: {  }
     weight: 17
     region: content
+  field_production_time_slice:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
   field_related_articles:
     type: entity_reference_label
     label: above
@@ -178,6 +187,13 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_resting_time_slice:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
     region: content
   field_seasons:
     type: entity_reference_label

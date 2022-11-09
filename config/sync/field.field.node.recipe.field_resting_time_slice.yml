@@ -1,0 +1,21 @@
+uuid: 8f55a802-7815-433b-b215-80c468f1c426
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resting_time_slice
+    - node.type.recipe
+  module:
+    - options
+id: node.recipe.field_resting_time_slice
+field_name: field_resting_time_slice
+entity_type: node
+bundle: recipe
+label: 'Temps de repos (tranche)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

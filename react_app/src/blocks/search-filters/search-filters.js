@@ -20,6 +20,8 @@ const SearchFilters = ({updateSelectedFilters}) => {
     filterList.add(new ValueListFilterConfig("Difficulté", "field_difficulty", useState([])))
     filterList.add(new ValueListFilterConfig("Prix", "field_price_indicator", useState([])))
     filterList.add(new TaxonomyFilterConfig("Saison", "season_uuid", useState([]), "season"))
+    filterList.add(new ValueListFilterConfig("Temps de réalisation", "field_production_time_slice", useState([])))
+    filterList.add(new ValueListFilterConfig("Temps de repos", "field_resting_time_slice", useState([])))
 
     const [selectedValues, setSelectedValues] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";

@@ -5,12 +5,12 @@ namespace Drupal\admin_tweaks\Access;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\field\FieldConfigAccessControlHandler;
+use Drupal\field\FieldStorageConfigAccessControlHandler;
 
 /**
  * Defines the access control handler for the menu link content entity type.
  */
-class CustomFieldConfigAccessControlHandler extends FieldConfigAccessControlHandler  {
+class CustomFieldConfigAccessControlHandler extends FieldStorageConfigAccessControlHandler  {
 
     /**
      * {@inheritdoc}

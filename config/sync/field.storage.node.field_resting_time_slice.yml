@@ -1,0 +1,33 @@
+uuid: 927b7c0b-ffc9-4f71-aa8a-f5eed584ae26
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_resting_time_slice
+field_name: field_resting_time_slice
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '15'
+      label: '< 15 Min'
+    -
+      value: '30'
+      label: '< 30 Min'
+    -
+      value: '60'
+      label: '< 1 h'
+    -
+      value: '120'
+      label: '< 2 h'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

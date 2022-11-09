@@ -17,4 +17,10 @@ export const filtersConfig = {
     season_uuid: {
         operator: 'AND'
     },
+    field_production_time_slice: {
+        operator: 'OR'
+    },
+    field_resting_time_slice: {
+        operator: 'OR'
+    },
 }

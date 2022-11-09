@@ -13,6 +13,8 @@ dependencies:
     - field.storage.node.field_price_indicator
     - field.storage.node.field_seasons
     - field.storage.node.field_tags
+    - field.storage.node.field_resting_time_slice
+    - field.storage.node.field_production_time_slice
     - field.storage.node.field_cooking_types
     - search_api.server.local
   module:
@@ -79,6 +81,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_price_indicator
+  field_production_time_slice:
+    label: 'Temps de réalisation (tranche)'
+    datasource_id: 'entity:node'
+    property_path: field_production_time_slice
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_production_time_slice
+  field_resting_time_slice:
+    label: 'Temps de repos (tranche)'
+    datasource_id: 'entity:node'
+    property_path: field_resting_time_slice
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_resting_time_slice
   ingredient_title:
     label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Titre'
     datasource_id: 'entity:node'
@@ -218,6 +236,7 @@ processor_settings:
       - category_name
       - category_uuid
       - cooking_type_uuid
+      - field_production_time_slice
       - ingredient_title
       - season_name
       - season_uuid
