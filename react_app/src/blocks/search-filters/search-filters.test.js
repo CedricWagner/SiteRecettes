@@ -4,7 +4,7 @@ import SearchFilters from "./search-filters";
 import {rest} from "msw";
 import {setupServer} from "msw/node";
 import { mockCategoriesData } from '../menu/menu.data';
-import { categoriesUrl } from '../../utils/api/common.api';
+import { categoriesUrl, fieldConfigUrl, seasonsUrl } from '../../utils/api/common.api';
 import { cookingTypesUrl } from '../../utils/api/common.api';
 import { BrowserRouter } from 'react-router-dom';
 import { emptyResponse } from '../../utils/api/mocks/emptyResponse';
@@ -18,7 +18,15 @@ const cookingTypesResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jso
     return res(ctx.json(emptyResponse))
 })
 
-const server = new setupServer(categoriesResponse, cookingTypesResponse);
+const seasonsResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsonapi' + seasonsUrl, (req, res, ctx) => {
+    return res(ctx.json(emptyResponse))
+})
+
+const fieldConfigResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsonapi' + fieldConfigUrl, (req, res, ctx) => {
+    return res(ctx.json(emptyResponse))
+})
+
+const server = new setupServer(categoriesResponse, cookingTypesResponse, seasonsResponse, fieldConfigResponse);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());

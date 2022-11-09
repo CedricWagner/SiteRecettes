@@ -18,8 +18,10 @@ dependencies:
     - field.field.node.recipe.field_path
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_price_indicator
+    - field.field.node.recipe.field_production_time_slice
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
+    - field.field.node.recipe.field_resting_time_slice
     - field.field.node.recipe.field_seasons
     - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
@@ -68,8 +70,10 @@ hidden:
   field_path: true
   field_preparation_time: true
   field_price_indicator: true
+  field_production_time_slice: true
   field_related_articles: true
   field_resting_time: true
+  field_resting_time_slice: true
   field_seasons: true
   field_share_type: true
   field_steps: true

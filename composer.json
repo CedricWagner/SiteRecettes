@@ -27,6 +27,7 @@
         "drupal/ckeditorheight": "^1.8",
         "drupal/console": "^1.9",
         "drupal/core-composer-scaffold": "^9.3",
+        "drupal/core-dev": "^9.4",
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
         "drupal/field_group": "^3.2",
@@ -57,7 +58,8 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "drupal/console-extend-plugin": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
@@ -128,6 +130,8 @@
         }
     },
     "require-dev": {
+        "phpspec/prophecy-phpunit": "^2",
+        "phpunit/phpunit": "^9.5",
         "tiz/envoiz": "dev-release/3.0.0"
     }
 }

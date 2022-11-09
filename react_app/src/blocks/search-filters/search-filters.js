@@ -1,14 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import './search-filters.scss';
 import SearchFilter from '../../components/search-filter/search-filter';
-import { getCategories } from '../../utils/api/common.api';
-import { getCookingTypes } from '../../utils/api/common.api';
+import FilterConfigList from '../../utils/filter-config/FilterConfigList';
+import TaxonomyFilterConfig from '../../utils/filter-config/TaxonomyFilterConfig';
+import CustomFilterConfig from '../../utils/filter-config/CustomFilterConfig';
+import ValueListFilterConfig from '../../utils/filter-config/ValueListFilterConfig';
 
 const SearchFilters = ({updateSelectedFilters}) => {
     
+    let filterList = new FilterConfigList();
+    filterList.add(new CustomFilterConfig("Contenu", "type", useState([]), () => {
+        return (
+            [{id: 'recipe', title: "Recettes"},
+            {id: 'article', title: "Articles"}]
+        )                        
+    }))
+    filterList.add(new TaxonomyFilterConfig("Catégories", "category_uuid", useState([]), "recipe_category"))
+    filterList.add(new TaxonomyFilterConfig("Types de cuisson", "cooking_type_uuid", useState([]), "cooking_type"))
+    filterList.add(new ValueListFilterConfig("Difficulté", "field_difficulty", useState([])))
+    filterList.add(new ValueListFilterConfig("Prix", "field_price_indicator", useState([])))
+    filterList.add(new TaxonomyFilterConfig("Saison", "season_uuid", useState([]), "season"))
+    filterList.add(new ValueListFilterConfig("Temps de réalisation", "field_production_time_slice", useState([])))
+    filterList.add(new ValueListFilterConfig("Temps de repos", "field_resting_time_slice", useState([])))
+
     const [selectedValues, setSelectedValues] = useState([]); 
-    const [categoryFilters, setCategoryFilters] = useState([]); 
-    const [cookingTypesFilters, setCookingTypesFilters] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";
     
     function getFilterSelectedValuesBySlug(slug) {
@@ -22,24 +37,10 @@ const SearchFilters = ({updateSelectedFilters}) => {
     }
 
     useEffect(() => {
-        getCategories().then((items) => 
-            {
-                setCategoryFilters(items.map((item) => {
-                    return {
-                        title: item.name,
-                        id: item.id
-                    }}
-            ))}
-        );
-        getCookingTypes().then((items) => 
-            {
-                setCookingTypesFilters(items.map((item) => {
-                    return {
-                        title: item.name,
-                        id: item.id
-                    }}
-            ))}
-        );
+        filterList.getFilters().map((filter) => {
+            return filter.fetchValues();
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -50,18 +51,11 @@ const SearchFilters = ({updateSelectedFilters}) => {
     return (
         <div className="search-filters">
             <div className="row">
-                <div className={colClasses}>
-                    <SearchFilter title='Contenu' slug='type' selectedValues={getFilterSelectedValuesBySlug('type')} items={[
-                        {id: 'recipe', title: "Recettes"},
-                        {id: 'article', title: "Articles"}
-                    ]} onChange={setFilterSelectedValues} />
-                </div>
-                <div className={colClasses}>
-                    <SearchFilter title='Catégories' slug='category_uuid' selectedValues={getFilterSelectedValuesBySlug('category_uuid')} items={categoryFilters} onChange={setFilterSelectedValues} />
-                </div>
-                <div className={colClasses}>
-                    <SearchFilter title='Types de cuisson' slug='cooking_type_uuid' selectedValues={getFilterSelectedValuesBySlug('cooking_type_uuid')} items={cookingTypesFilters} onChange={setFilterSelectedValues} />
-                </div>
+                {filterList.getFilters().map((filter, key) => 
+                    <div className={colClasses} key={key}>
+                        <SearchFilter title={filter.title} slug={filter.slug} selectedValues={getFilterSelectedValuesBySlug(filter.slug)} items={filter.values} onChange={setFilterSelectedValues} />
+                    </div>
+                )}
             </div>
         </div>
 )};

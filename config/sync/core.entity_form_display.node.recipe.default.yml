@@ -17,8 +17,10 @@ dependencies:
     - field.field.node.recipe.field_path
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_price_indicator
+    - field.field.node.recipe.field_production_time_slice
     - field.field.node.recipe.field_related_articles
     - field.field.node.recipe.field_resting_time
+    - field.field.node.recipe.field_resting_time_slice
     - field.field.node.recipe.field_seasons
     - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
@@ -330,5 +332,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_path: true
+  field_production_time_slice: true
+  field_resting_time_slice: true
   promote: true
   sticky: true
