@@ -131,7 +131,6 @@
     },
     "require-dev": {
         "phpspec/prophecy-phpunit": "^2",
-        "phpunit/phpunit": "^9.5",
         "tiz/envoiz": "dev-release/3.0.0"
     }
 }
