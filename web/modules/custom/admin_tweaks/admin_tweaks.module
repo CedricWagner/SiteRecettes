@@ -84,7 +84,7 @@ function admin_tweaks_entity_presave (EntityInterface $entity) {
     if (sizeof($resting_time) >= 1) {
       $resting_time_slices = $to_time_slices->fromIntegerRange(
         $resting_time[0]['value'], 
-        $resting_time[1] ? $resting_time[1]['value'] : $resting_time[0]['value'], 
+        isset($resting_time[1]) ? $resting_time[1]['value'] : $resting_time[0]['value'], 
         _get_field_values($entity, 'field_resting_time_slice')
       );
       $entity->set('field_resting_time_slice', array_keys($resting_time_slices));
@@ -92,10 +92,10 @@ function admin_tweaks_entity_presave (EntityInterface $entity) {
     
     $preparation_time = $entity->field_preparation_time->getValue();
     $cooking_time = $entity->field_cooking_time->getValue();
-    $min_cooking_time = $preparation_time[0] ? $preparation_time[0]['value'] : 0;
-    $min_preparation_time = $preparation_time[0] ? $preparation_time[0]['value'] : 0;
-    $max_cooking_time = $cooking_time[1] ? $cooking_time[1]['value'] : $min_cooking_time;
-    $max_preparation_time = $preparation_time[1] ? $preparation_time[1]['value'] : $min_preparation_time;
+    $min_cooking_time = isset($preparation_time[0]) ? $preparation_time[0]['value'] : 0;
+    $min_preparation_time = isset($preparation_time[0]) ? $preparation_time[0]['value'] : 0;
+    $max_cooking_time = isset($cooking_time[1]) ? $cooking_time[1]['value'] : $min_cooking_time;
+    $max_preparation_time = isset($preparation_time[1]) ? $preparation_time[1]['value'] : $min_preparation_time;
     if (sizeof($resting_time) >= 1) {
       $production_time_slices = $to_time_slices->fromIntegerRange(
         $min_cooking_time + $min_preparation_time,
