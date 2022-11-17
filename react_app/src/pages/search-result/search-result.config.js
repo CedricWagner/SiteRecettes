@@ -23,4 +23,7 @@ export const filtersConfig = {
     field_resting_time_slice: {
         operator: 'OR'
     },
+    field_tags: {
+        operator: 'AND'
+    },
 }

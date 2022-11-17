@@ -97,6 +97,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_resting_time_slice
+  field_tags:
+    label: 'Tags » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
   ingredient_title:
     label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Titre'
     datasource_id: 'entity:node'
@@ -237,6 +247,7 @@ processor_settings:
       - category_uuid
       - cooking_type_uuid
       - field_production_time_slice
+      - field_tags
       - ingredient_title
       - season_name
       - season_uuid
