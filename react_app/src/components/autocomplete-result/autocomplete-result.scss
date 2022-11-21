@@ -1,1 +1,15 @@
-.autocomplete-result {}
+@import '../../styles/_variables.scss';
+
+.autocomplete-result {
+    padding: 0;
+    list-style-type: none;
+    border: solid thin $gray-500;
+    &__item {
+        background-color: $white;
+        padding: 5px;
+        &:hover {
+            background-color: $terciary;
+            cursor: pointer;
+        }
+    }
+}

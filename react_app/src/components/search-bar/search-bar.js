@@ -2,14 +2,11 @@ import './search-bar.scss'
 import {ReactComponent as IconSearch} from '../../images/icons/svg/icon_search.svg';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import SearchInput from '../search-input/search-input';
 
 function SearchBar (props) {
 
     const [value, setValue] = useState(props.value)
-
-    function changeValue(_value) {
-        setValue(_value)
-    }
 
     function onSubmit(e) {
         e.preventDefault();
@@ -18,23 +15,14 @@ function SearchBar (props) {
 
     return (
         <form className="searchbar" onSubmit={onSubmit}>
-            <input 
-                type="text" 
-                value={value} 
-                className="searchbar__input" 
-                name="value" 
-                placeholder="Rechercher" 
-                required
-                onChange={(e) => changeValue(e.target.value)}
-                />
-            <button type='submit' className="searchbar__icon"><IconSearch /></button>
+            <SearchInput modifier={"large"} value={value} onChange={setValue}/>
         </form>
     );
 }
 
 SearchBar.propTypes = {
     onSearch: PropTypes.func.isRequired,
-    value: PropTypes.string,
+    value: PropTypes.string
 };
   
 SearchBar.defaultProps = {};

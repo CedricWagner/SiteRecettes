@@ -4,6 +4,7 @@ import './autocomplete-search-filter.scss';
 import SelectedFilter from '../selected-filter/selected-filter';
 import { updateSearchFilter } from '../search-filter/search-filter';
 import AutocompleteResult from '../autocomplete-result/autocomplete-result';
+import SearchInput from '../search-input/search-input';
 
 const AutocompleteSearchFilter = ({title, slug, ressource, callback, selectedValues, onChange}) => {
 	
@@ -28,10 +29,8 @@ const AutocompleteSearchFilter = ({title, slug, ressource, callback, selectedVal
 		setPreviouslySelectedValues(_selectedValues.concat(_selectedValue));
     }
 
-	function updateAutocompleteText(e) {
-		const text = e.target.value;
-
-		setAutocompleteText(text);
+	function updateAutocompleteText(value) {
+		setAutocompleteText(value);
 	}
 
 	useEffect(() => {
@@ -42,13 +41,16 @@ const AutocompleteSearchFilter = ({title, slug, ressource, callback, selectedVal
 		} else {
 			setAutocompleteResults([]);
 		}
-	}, [autocompleteText, callback, ressource])
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [autocompleteText])
 	
 	useEffect(() => {
 		let _selectedValues = previouslySelectedValues;
 		setPreviouslySelectedValues(_selectedValues.filter((item) => {
 			return selectedValues.filter((id) => id === item.id).length >= 1;
 		}));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selectedValues]);
 
 	return (
@@ -58,10 +60,8 @@ const AutocompleteSearchFilter = ({title, slug, ressource, callback, selectedVal
 				{previouslySelectedValues.map((item, index) => 
 					<SelectedFilter title={item.title} id={item.id} key={index} onRemove={updateFilter} />
 				)}
-				<li className="autocomplete-search-filter__input-container">
-					<input type="text" value={autocompleteText} className='autocomplete-search-filter__input-container' onChange={updateAutocompleteText}/>
-				</li>
 			</ul>
+			<SearchInput onChange={updateAutocompleteText} modifier="small" defaultValue={autocompleteText}/>
 			<AutocompleteResult onSelect={updateFilter} items={autocompleteResults} />
 		</div>
 )};
