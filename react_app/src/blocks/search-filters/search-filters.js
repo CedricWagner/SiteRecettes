@@ -6,6 +6,7 @@ import TaxonomyFilterConfig from '../../utils/filter-config/TaxonomyFilterConfig
 import CustomFilterConfig from '../../utils/filter-config/CustomFilterConfig';
 import ValueListFilterConfig from '../../utils/filter-config/ValueListFilterConfig';
 import AutocompleteTaxonomyFilterConfig from '../../utils/filter-config/AutocompleteTaxonomyFilterConfig';
+import AutocompleteContentFilterConfig from '../../utils/filter-config/AutocompleteContentFilterConfig';
 import AutocompleteSearchFilter from '../../components/autocomplete-search-filter/autocomplete-search-filter';
 
 const SearchFilters = ({updateSelectedFilters}) => {
@@ -25,6 +26,7 @@ const SearchFilters = ({updateSelectedFilters}) => {
     filterList.add(new ValueListFilterConfig("Temps de réalisation", "field_production_time_slice", useState([])))
     filterList.add(new ValueListFilterConfig("Temps de repos", "field_resting_time_slice", useState([])))
     filterList.add(new AutocompleteTaxonomyFilterConfig("Tag", "field_tags", useState([]), 'tags'))
+    filterList.add(new AutocompleteContentFilterConfig("Ingrédients", "ingredient_uuid", useState([]), 'ingredient'))
 
     const [selectedValues, setSelectedValues] = useState([]); 
     const colClasses = "col-md-2 col-sm-3 col mb-4";

@@ -26,4 +26,7 @@ export const filtersConfig = {
     field_tags: {
         operator: 'AND'
     },
+    ingredient_uuid: {
+        operator: 'AND'
+    },
 }
