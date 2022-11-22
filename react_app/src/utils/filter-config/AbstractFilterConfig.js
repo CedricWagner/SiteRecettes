@@ -20,4 +20,8 @@ export default class AbstractFilterConfig {
         throw new Error('You must implement this function');
     }
 
+    isAutocomplete() {
+        return false;
+    }
+
 }

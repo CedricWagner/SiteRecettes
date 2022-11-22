@@ -9,13 +9,17 @@ const AutocompleteResult = ({items, onSelect}) => {
   }
 
   return (
-    <ul className="autocomplete-result">
-      {items.map((item, key) => 
-        <li className="autocomplete-result__item" key={key} data-id={item.id} onClick={handleClick}>
-          {item.title}
-        </li>
-      )}
-    </ul>
+    <>
+      {items && items.length > 0 && 
+        <ul className="autocomplete-result">
+          {items.map((item, key) => 
+            <li className="autocomplete-result__item" key={key} data-id={item.id} onClick={handleClick}>
+              {item.title}
+            </li>
+          )}
+        </ul>
+      }
+    </>
 )};
 
 AutocompleteResult.propTypes = {

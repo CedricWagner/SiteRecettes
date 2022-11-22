@@ -11,12 +11,8 @@ const SearchFilter = ({title, slug, items, selectedValues, onChange}) => {
 
     function updateFilter(e) {
         const id = e.target.dataset.id;
-        let values = selectedValues;
-        if (selectedValues.includes(id)) {
-            values = selectedValues.filter((item) => item !== id);
-        } else {
-            values.push(id);
-        }
+        
+        const values = updateSearchFilter(id, selectedValues);
 
         onChange(slug, values);
     }
@@ -36,6 +32,17 @@ const SearchFilter = ({title, slug, items, selectedValues, onChange}) => {
             </ul>
         </div>
 )};
+
+export function updateSearchFilter(id, selectedValues) {
+    let values = selectedValues;
+    if (selectedValues.includes(id)) {
+        values = selectedValues.filter((item) => item !== id);
+    } else {
+        values.push(id);
+    }
+
+    return values;
+}
 
 SearchFilter.propTypes = {
     title: PropTypes.string.isRequired,
