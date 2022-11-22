@@ -121,6 +121,19 @@ field_settings:
       module:
         - node
         - paragraphs
+  ingredient_uuid:
+    label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_ingredient_groups:entity:field_ingredient_lines:entity:field_ingredient:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_ingredient_groups
+        - field.storage.paragraph.field_ingredient
+        - field.storage.paragraph.field_ingredient_lines
+      module:
+        - node
+        - paragraphs
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -249,6 +262,7 @@ processor_settings:
       - field_production_time_slice
       - field_tags
       - ingredient_title
+      - ingredient_uuid
       - season_name
       - season_uuid
       - steps
