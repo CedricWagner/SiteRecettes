@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 .autocomplete-search-filter {
+    min-width: 6.25rem;
     &__selected-items {
         list-style-type: none;
         margin: 0;

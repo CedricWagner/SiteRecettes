@@ -10,7 +10,7 @@ export default class AutocompleteTaxonomyFilterConfig extends AbstractAutocomple
     autocompleteCallback(ressource, text="") {
         const api = new JsonApi();
         api.params.addSort('title')
-        api.params.addFilter('title', text, 'STARTS_WITH')
+        api.params.addFilter('title', text, 'CONTAINS')
         api.params.addPageLimit(10)
         return api.get("/node/" + ressource).then((items) => 
         {
