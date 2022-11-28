@@ -1,5 +1,4 @@
-import './search-bar.scss'
-import {ReactComponent as IconSearch} from '../../images/icons/svg/icon_search.svg';
+import './search-bar.scss';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import SearchInput from '../search-input/search-input';
@@ -15,7 +14,7 @@ function SearchBar (props) {
 
     return (
         <form className="searchbar" onSubmit={onSubmit}>
-            <SearchInput modifier={"large"} value={value} onChange={setValue}/>
+            <SearchInput modifier={"large"} defaultValue={value} onChange={setValue}/>
         </form>
     );
 }
