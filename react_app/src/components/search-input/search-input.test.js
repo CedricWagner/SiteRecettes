@@ -22,7 +22,6 @@ test("it should erase the input value on click on the erase button", async () =>
     render(<SearchInput onChange={mockOnChange} defaultValue={value} displayEraseButton={true}/>);
 
     const eraseButton = screen.getAllByRole("button")[0];
-    console.log(eraseButton.className);
     fireEvent.click(eraseButton);
 
     expect(value).toBe("");

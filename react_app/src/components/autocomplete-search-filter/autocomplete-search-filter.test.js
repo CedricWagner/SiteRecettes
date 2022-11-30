@@ -1,4 +1,4 @@
-import  {fireEvent, render, screen, act } from '@testing-library/react';
+import  {fireEvent, render, screen } from '@testing-library/react';
 import AutocompleteSearchFilter from './autocomplete-search-filter';
 
 test("should trigger onChange on select", async () => {
