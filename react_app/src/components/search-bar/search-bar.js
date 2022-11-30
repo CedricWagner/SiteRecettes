@@ -14,7 +14,7 @@ function SearchBar (props) {
 
     return (
         <form className="searchbar" onSubmit={onSubmit}>
-            <SearchInput modifier={"large"} defaultValue={value} onChange={setValue}/>
+            <SearchInput modifier={"large"} defaultValue={value} onChange={setValue} displayEraseButton={true}/>
         </form>
     );
 }

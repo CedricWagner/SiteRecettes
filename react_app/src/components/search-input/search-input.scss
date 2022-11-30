@@ -30,8 +30,6 @@
 
     &__icon {
         position: absolute;
-        right: 10px;
-        top: 0px;
         cursor: pointer;
         background-color: transparent;
         border: none;
@@ -55,6 +53,16 @@
             svg {
                 width: 25px;
             }
+        }
+
+        &--search {
+            right: 10px;
+            top: 0px;
+        }
+
+        &--erase {
+            right: 70px;
+            top: 0px;
         }
     }
 }
