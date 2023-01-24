@@ -29,7 +29,7 @@ const SearchFilters = ({updateSelectedFilters}) => {
     filterList.add(new AutocompleteContentFilterConfig("Ingrédients", "ingredient_uuid", useState([]), 'ingredient'))
 
     const [selectedValues, setSelectedValues] = useState([]); 
-    const colClasses = "col-md-2 col-sm-3 col mb-4";
+    const colClasses = "col-lg-2 col-sm-3 col mb-4";
     
     function getFilterSelectedValuesBySlug(slug) {
         return typeof selectedValues[slug] === 'undefined' ? [] : selectedValues[slug];
