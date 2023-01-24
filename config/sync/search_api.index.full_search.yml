@@ -3,14 +3,19 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.body
     - field.storage.node.field_categories
+    - field.storage.node.body
+    - field.storage.node.field_difficulty
+    - field.storage.node.field_steps
     - field.storage.node.field_ingredient_groups
     - field.storage.paragraph.field_ingredient
     - field.storage.paragraph.field_ingredient_lines
+    - field.storage.node.field_price_indicator
     - field.storage.node.field_seasons
-    - field.storage.node.field_steps
     - field.storage.node.field_tags
+    - field.storage.node.field_resting_time_slice
+    - field.storage.node.field_production_time_slice
+    - field.storage.node.field_cooking_types
     - search_api.server.local
   module:
     - taxonomy
@@ -40,12 +45,87 @@ field_settings:
         - field.storage.node.field_categories
       module:
         - taxonomy
+  category_uuid:
+    label: 'Catégories » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  cooking_type_uuid:
+    label: 'Type(s) de cuisson » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_cooking_types:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_cooking_types
+      module:
+        - taxonomy
+  field_difficulty:
+    label: Difficulté
+    datasource_id: 'entity:node'
+    property_path: field_difficulty
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_difficulty
+  field_price_indicator:
+    label: 'Indicateur de prix'
+    datasource_id: 'entity:node'
+    property_path: field_price_indicator
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_price_indicator
+  field_production_time_slice:
+    label: 'Temps de réalisation (tranche)'
+    datasource_id: 'entity:node'
+    property_path: field_production_time_slice
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_production_time_slice
+  field_resting_time_slice:
+    label: 'Temps de repos (tranche)'
+    datasource_id: 'entity:node'
+    property_path: field_resting_time_slice
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_resting_time_slice
+  field_tags:
+    label: 'Tags » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
   ingredient_title:
     label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Titre'
     datasource_id: 'entity:node'
     property_path: 'field_ingredient_groups:entity:field_ingredient_lines:entity:field_ingredient:entity:title'
     type: text
     boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.field_ingredient_groups
+        - field.storage.paragraph.field_ingredient
+        - field.storage.paragraph.field_ingredient_lines
+      module:
+        - node
+        - paragraphs
+  ingredient_uuid:
+    label: 'Groupes d''ingrédient » Paragraph » Lignes d''ingrédient » Paragraph » Ingrédient » Contenu » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_ingredient_groups:entity:field_ingredient_lines:entity:field_ingredient:entity:uuid'
+    type: string
     dependencies:
       config:
         - field.storage.node.field_ingredient_groups
@@ -66,6 +146,16 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: 'field_seasons:entity:name'
     type: text
+    dependencies:
+      config:
+        - field.storage.node.field_seasons
+      module:
+        - taxonomy
+  season_uuid:
+    label: 'Saisons » Terme de taxonomie » Identifiant universel unique (UUID)'
+    datasource_id: 'entity:node'
+    property_path: 'field_seasons:entity:uuid'
+    type: string
     dependencies:
       config:
         - field.storage.node.field_seasons
@@ -167,8 +257,14 @@ processor_settings:
     fields:
       - body
       - category_name
+      - category_uuid
+      - cooking_type_uuid
+      - field_production_time_slice
+      - field_tags
       - ingredient_title
+      - ingredient_uuid
       - season_name
+      - season_uuid
       - steps
       - tag_name
       - title

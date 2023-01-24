@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.autocomplete-search-filter {
+    min-width: 6.25rem;
+    &__selected-items {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__input {
+        background-color: $terciary;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        border: none;
+        padding: 7px;
+        margin: 0;
+    }
+    &__selected-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        & > * {
+            margin-right: 0px;
+            margin-bottom: 5px;
+        }
+    }
+}

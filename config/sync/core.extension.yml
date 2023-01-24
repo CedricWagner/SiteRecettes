@@ -36,6 +36,8 @@ module:
   jsonapi: 0
   jsonapi_image_styles: 0
   jsonapi_include: 0
+  jsonapi_resources: 0
+  jsonapi_search_api: 0
   language: 0
   link: 0
   locale: 0
@@ -65,6 +67,7 @@ module:
   toolbar: 0
   tour: 0
   units: 0
+  update: 0
   user: 0
   views_ui: 0
   pathauto: 1

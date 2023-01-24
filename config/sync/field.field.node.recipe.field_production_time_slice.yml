@@ -1,0 +1,21 @@
+uuid: ef238855-50ce-434a-a4b7-4e9f3f1ad689
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_production_time_slice
+    - node.type.recipe
+  module:
+    - options
+id: node.recipe.field_production_time_slice
+field_name: field_production_time_slice
+entity_type: node
+bundle: recipe
+label: 'Temps de réalisation (tranche)'
+description: 'Temps de réalisation = temps de prépapration + temps de cuisson'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

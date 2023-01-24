@@ -17,6 +17,15 @@
                 // font-size: $font-size-sm;
             }
         }
+        &--small {
+            background-color: $terciary;
+            box-shadow: $box-shadow;
+            border-radius: $border-radius;
+            border: none;
+            padding: 7px;
+            margin: 0;;
+            font-size: $font-size-base;
+        }
     }
 
     &__icon {
@@ -39,6 +48,12 @@
         &:focus {
             svg * {
                 fill: $primary;
+            }
+        }
+
+        &--small {
+            svg {
+                width: 25px;
             }
         }
     }

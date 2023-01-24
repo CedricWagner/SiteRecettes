@@ -8,7 +8,7 @@ test('should trigger "onSearch" function on submit', async () => {
     
     const valueInput = screen.getByPlaceholderText(/Rechercher/i);
     fireEvent.change(valueInput, { target: { value: "Ma recherche" } });
-    fireEvent.click(screen.getByRole("button"))
+    fireEvent.click(screen.getAllByRole("button")[1])
 
     expect(onSearch).toHaveBeenCalled();
 });
@@ -24,7 +24,7 @@ test('should return the correct value on submit', async () => {
     
     const valueInput = screen.getByPlaceholderText(/Rechercher/i);
     fireEvent.change(valueInput, { target: { value: "Ma recherche" } });
-    fireEvent.click(screen.getByRole("button"))
+    fireEvent.click(screen.getAllByRole("button")[1])
 
     expect(value).toBe("Ma recherche");
 });

@@ -1,3 +1,3 @@
-access menu items:
-  title: 'Access menu items'
-  description: 'Access all menu items (read only)'
+access field config:
+  title: 'Access field config'
+  description: 'Access all field config data (read only)'

@@ -10,7 +10,7 @@ all:
   # "remote" will run "npm run prod" on the remote
   npm_mode: remote
   # the directory of the application, relative to root_path
-  app_path: /
+  app_path: ./
   # the public directory, relative to root_path
   public_path: web
   # the directory where package.json is set, relative to root_path

@@ -1,0 +1,72 @@
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+
+.search-input {
+    border: solid 1px $black;
+    padding: 14px 60px 14px 14px;
+    width: 100%;
+    font-size: $font-size-lg;
+    &::placeholder {
+        color: $primary;
+        font-style: italic;
+        @include media-breakpoint-down(md) {
+            // font-size: $font-size-sm;
+        }
+    }
+    &--small {
+        background-color: $terciary;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        border: none;
+        padding: 7px;
+        margin: 0;;
+        font-size: $font-size-base;
+    }
+
+    &__container {
+        position: relative;
+        width: 100%;
+    }
+
+    &__icon {
+        position: absolute;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        svg {
+            width: 40px;
+            height: 100%;
+        }
+        
+        &:focus {
+            svg * {
+                fill: $primary;
+            }
+        }
+
+        &--small {
+            svg {
+                width: 25px;
+            }
+        }
+
+        &--search {
+            right: 10px;
+            top: 0px;
+        }
+
+        &--erase {
+            right: 70px;
+            top: 0px;
+
+            svg {
+                width: 20px;
+            }
+        }
+    }
+}

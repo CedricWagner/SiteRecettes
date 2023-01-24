@@ -12,7 +12,7 @@ import ListWrapper from '../../blocks/list-wrapper/list-wrapper';
 const Recipes = ({filterTitle, filters, filterField}) => {
   
 	const [searchParams, setSearchParams] = useSearchParams();
-	const [recipes, setRecipes] = useState(false)
+	const [recipes, setRecipes] = useState(false);
 	const [page, setPage] = useState(0);
     const [activeFilters, setActiveFilters] = useState(searchParams.getAll('filters'));
     const [orderBy, setOrderBy] = useState('-created');
