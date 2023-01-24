@@ -9,9 +9,11 @@ import { parseRecipe } from '../../utils/api/helpers';
 const SeasonalRecipes = (props) => {
   
 	const [recipes, setRecipes] = useState([]);
+	const date = new Date();
+	const month = date.getMonth() + 1; // 0 = january
 
 	useEffect(() => {
-		getSeasonalRecipes(8, props.count).then((items) => 
+		getSeasonalRecipes(month, props.count).then((items) => 
 			setRecipes(items
 				.filter(item => item.status)
 				.map((item) => {
@@ -19,7 +21,7 @@ const SeasonalRecipes = (props) => {
 				}
 			))
 		);
-	}, [props.count])
+	}, [props.count, month])
 
 	return (
 		<div className="seasonal-recipes row">
