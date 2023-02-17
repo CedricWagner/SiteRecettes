@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: lvdd-app-prod
+    image: lvdd-react
+    build:
+      context: .
+      target: production
