@@ -1,9 +1,16 @@
-version: "3.8"
+version: '3.7'
 
 services:
-  app:
+
+  lvdd-react-prod:
     container_name: lvdd-app-prod
-    image: lvdd-react
     build:
       context: .
-      target: production
+      dockerfile: Dockerfile
+    ports:
+      - '1337:80'
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
