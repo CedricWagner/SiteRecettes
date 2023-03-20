@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f851c3e2baf002a69b455ffc3df468dc",
+    "content-hash": "7ee6734bbb1168675b94ff1ee88c28dd",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1084,26 +1084,26 @@
         },
         {
             "name": "drupal/bootstrap5",
-            "version": "1.1.5",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap5.git",
-                "reference": "1.1.5"
+                "reference": "3.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap5-1.1.5.zip",
-                "reference": "1.1.5",
-                "shasum": "1bc0570b879e24523d537aee4cc5cc619f6966a7"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap5-3.0.5.zip",
+                "reference": "3.0.5",
+                "shasum": "c4a4c01b7dd292e3fe1031be1c6b0224e1f4ee1d"
             },
             "require": {
-                "drupal/core": "^8.9 || ^9"
+                "drupal/core": "^9.4 || ^10"
             },
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "1.1.5",
-                    "datestamp": "1659419678",
+                    "version": "3.0.5",
+                    "datestamp": "1677943395",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
