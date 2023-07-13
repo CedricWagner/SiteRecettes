@@ -31,4 +31,5 @@ stage:
   # path of the composer.phar that should be used
   composer_path: /usr/bin/composer
   docker_container_name: lvdd_php
+  docker_container_working_dir: /var/www/html/repo
   branch: staging

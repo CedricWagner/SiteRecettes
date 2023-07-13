@@ -20,10 +20,10 @@
     echo "=> Start deployment..."
     cd {{ absPath($config, 'app_path') }}
     {{-- set maintenance mode --}}
-    docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal site:maintenance on
+    docker exec {{ $config['docker_container_name'] }} vendor/bin/drupal site:maintenance on
     {{-- dump database --}}
     @if ($dump)
-        docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal database:dump --file={{ $config['root_path'] }}/{{ $dump_name }}
+        docker exec {{ $config['docker_container_name'] }} vendor/bin/drupal database:dump --file=/var/www/html/{{ $dump_name }}
     @endif
 @endtask
 
@@ -43,7 +43,7 @@
 @task('hook_composer_before', ['on' => 'web'])
     echo "=> Start composer"
     cd {{ absPath($config, 'app_path') }}
-    docker exec -it {{ $config['root_path'] }} composer install
+    docker exec {{ $config['docker_container_name'] }} composer install
 @endtask
 
 @task('hook_composer_after', ['on' => 'web'])
@@ -55,23 +55,22 @@
     echo "=> Start NPM"
     cd {{ absPath($config, 'npm_path') }}
     npm install
+    npm run prod
 @endtask
     
 @task('hook_npm_after', ['on' => 'web'])
     echo "<= End NPM"
-    cd {{ absPath($config, 'npm_path') }}
-    npm run prod
 @endtask
 
 {{-- complete --}}
 @task('hook_complete', ['on' => 'web'])
     cd {{ absPath($config, 'app_path') }}
     {{-- import config --}}
-    docker exec -it {{ $config['root_path'] }} drush config:import --source={{ absPath($config, 'app_path') }}/config/sync -y
+    docker exec {{ $config['docker_container_name'] }} drush config:import --source={{ $config['docker_container_working_dir'] }}/config/sync -y
     {{-- unset maintenance mode --}}
-    docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal site:maintenance off
+    docker exec {{ $config['docker_container_name'] }} vendor/bin/drupal site:maintenance off
     {{-- reload caches --}}
-    docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal cr
+    docker exec {{ $config['docker_container_name'] }} vendor/bin/drupal cr
     echo "<== Deployment completed successfully :)"
 @endtask
 
