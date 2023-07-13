@@ -20,10 +20,10 @@
     echo "=> Start deployment..."
     cd {{ absPath($config, 'app_path') }}
     {{-- set maintenance mode --}}
-    vendor/bin/drupal site:maintenance on
+    docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal site:maintenance on
     {{-- dump database --}}
     @if ($dump)
-        vendor/bin/drupal database:dump --file={{ $config['root_path'] }}/{{ $dump_name }}
+        docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal database:dump --file={{ $config['root_path'] }}/{{ $dump_name }}
     @endif
 @endtask
 
@@ -42,6 +42,8 @@
 {{-- composer --}}
 @task('hook_composer_before', ['on' => 'web'])
     echo "=> Start composer"
+    cd {{ absPath($config, 'app_path') }}
+    docker exec -it {{ $config['root_path'] }} composer install
 @endtask
 
 @task('hook_composer_after', ['on' => 'web'])
@@ -51,21 +53,25 @@
 {{-- npm --}}
 @task('hook_npm_before', ['on' => 'web'])
     echo "=> Start NPM"
+    cd {{ absPath($config, 'npm_path') }}
+    npm install
 @endtask
-
+    
 @task('hook_npm_after', ['on' => 'web'])
     echo "<= End NPM"
+    cd {{ absPath($config, 'npm_path') }}
+    npm run prod
 @endtask
 
 {{-- complete --}}
 @task('hook_complete', ['on' => 'web'])
     cd {{ absPath($config, 'app_path') }}
     {{-- import config --}}
-    drush config:import --source={{ absPath($config, 'app_path') }}/config/sync -y
+    docker exec -it {{ $config['root_path'] }} drush config:import --source={{ absPath($config, 'app_path') }}/config/sync -y
     {{-- unset maintenance mode --}}
-    vendor/bin/drupal site:maintenance off
+    docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal site:maintenance off
     {{-- reload caches --}}
-    vendor/bin/drupal cr
+    docker exec -it {{ $config['root_path'] }} repo/vendor/bin/drupal cr
     echo "<== Deployment completed successfully :)"
 @endtask
 
