@@ -3,8 +3,8 @@ all:
   git_repository: git@github.com:CedricWagner/SiteRecettes.git
   project_code: SiteRecettes
   # set to false to not fire those tasks
-  use_composer: true
-  use_npm: true
+  use_composer: false
+  use_npm: false
   # the npm deployment method. "local"|"remote" (default:"remote")
   # "local" will send your local files to the remote
   # "remote" will run "npm run prod" on the remote
@@ -27,7 +27,9 @@ stage:
   # Optionnal use this only if php is not ok
   # php_path: /usr/local/php7.2/bin/php
   # the root dir of the project
-  root_path: /var/www/subdomains/les-veganeries-de-dodo
+  root_path: /var/www/domains/les-veganeries-de-dodo/repo
   # path of the composer.phar that should be used
   composer_path: /usr/bin/composer
+  docker_container_name: lvdd_php
+  docker_container_working_dir: /var/www/html/repo
   branch: staging
