@@ -53,9 +53,13 @@
 {{-- npm --}}
 @task('hook_npm_before', ['on' => 'web'])
     echo "=> Start NPM"
+    echo "- Compile sources"
     cd {{ absPath($config, 'npm_path') }}
     npm install
     npm run prod
+    echo "- Restart container"
+    docker compose -f docker-compose.prod.yml down
+    docker compose -f docker-compose.prod.yml up -d
 @endtask
     
 @task('hook_npm_after', ['on' => 'web'])
