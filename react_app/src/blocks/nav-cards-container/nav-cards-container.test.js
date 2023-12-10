@@ -11,7 +11,7 @@ const menuResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsonapi' + 
     return res(ctx.json(mockNavCardsMenuData))
 })
 
-const server = new setupServer(menuResponse);
+const server = setupServer(menuResponse);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());

@@ -18,7 +18,7 @@ const categoriesResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/jsona
     return res(ctx.json(mockCategoriesData))
 })
 
-const server = new setupServer(recipesResponse, categoriesResponse);
+const server = setupServer(recipesResponse, categoriesResponse);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());

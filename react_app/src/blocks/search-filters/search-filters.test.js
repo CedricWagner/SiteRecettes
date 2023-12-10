@@ -26,7 +26,7 @@ const fieldConfigResponse = rest.get(process.env.REACT_APP_API_ENDPOINT + '/json
     return res(ctx.json(emptyResponse))
 })
 
-const server = new setupServer(categoriesResponse, cookingTypesResponse, seasonsResponse, fieldConfigResponse);
+const server = setupServer(categoriesResponse, cookingTypesResponse, seasonsResponse, fieldConfigResponse);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
