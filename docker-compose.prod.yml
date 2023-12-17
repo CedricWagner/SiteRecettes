@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+  lvdd-pp-mariadb:
+    image: wodby/mariadb:10.11-3.28.0
+    container_name: "lvdd_pp_mariadb"
+    stop_grace_period: 30s
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+
+  lvdd-pp-php:
+    image: wodby/drupal-php:8.1-dev-4.37.1
+    container_name: "lvdd_pp_php"
+    environment:
+      SSMTP_MAILHUB: mailhog:1025
+      PHP_SENDMAIL_PATH: '"/usr/bin/dos2unix -u | /usr/sbin/ssmtp -t -f"'
+      PHP_FPM_USER: wodby
+      PHP_FPM_GROUP: wodby
+    volumes:
+    - ./:/var/www/html:cached
+
+  lvdd-pp-nginx:
+    image: wodby/nginx:1.21-5.23.0
+    container_name: "lvdd_pp_nginx"
+    depends_on:
+    - lvdd-pp-php
+    environment:
+      NGINX_STATIC_OPEN_FILE_CACHE: "off"
+      NGINX_ERROR_LOG_LEVEL: debug
+      NGINX_BACKEND_HOST: php
+      NGINX_SERVER_ROOT: /var/www/html/web
+      NGINX_VHOST_PRESET: drupal9
+    volumes:
+    - ./:/var/www/html:cached
+
+volumes:
+  dbdata:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
