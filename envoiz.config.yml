@@ -4,11 +4,11 @@ all:
   project_code: SiteRecettes
   # set to false to not fire those tasks
   use_composer: false
-  use_npm: false
+  use_npm: true
   # the npm deployment method. "local"|"remote" (default:"remote")
   # "local" will send your local files to the remote
   # "remote" will run "npm run prod" on the remote
-  npm_mode: remote
+  npm_mode: local
   # the directory of the application, relative to root_path
   app_path: ./
   # the public directory, relative to root_path
@@ -17,8 +17,8 @@ all:
   npm_path: react_app/
   # (only if npm_mode="local") 
   # the list of folders that will be sent to remote 
-  # npm_dist_path: 
-  #   - relative/path/to/dist
+  npm_dist_path: 
+    - react_app/build
 
 stage:
   host: 51.254.102.71
