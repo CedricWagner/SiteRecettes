@@ -128,7 +128,7 @@
         }
     },
     "require-dev": {
-        "tiz/envoiz": "dev-release/3.0.0",
-        "drush/drush": "^8"
+        "drush/drush": "^10",
+        "tiz/envoiz": "dev-release/3.0.0"
     }
 }

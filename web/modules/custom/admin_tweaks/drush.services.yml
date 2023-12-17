@@ -1,0 +1,7 @@
+services:
+  admin_tweaks.commands:
+    class: Drupal\admin_tweaks\Commands\RecipesCommands
+    arguments:
+      - '@entity_type.manager'
+    tags:
+      -  { name: drush.command }

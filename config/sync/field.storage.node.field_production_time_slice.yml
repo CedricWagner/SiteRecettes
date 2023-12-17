@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: '0'
+      label: Non
+    -
       value: '15'
       label: '< 15 Min'
     -
