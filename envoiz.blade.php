@@ -9,6 +9,8 @@
 {{-- local tasks --}}
 @task('hook_local_tasks_before', ['on' => 'localhost'])
     echo "=> Start local tasks..."
+    cd react_app
+    npm run build
 @endtask
 
 @task('hook_local_tasks_after', ['on' => 'localhost'])
@@ -53,10 +55,7 @@
 {{-- npm --}}
 @task('hook_npm_before', ['on' => 'web'])
     echo "=> Start NPM"
-    echo "- Compile sources"
     cd {{ absPath($config, 'npm_path') }}
-    npm install
-    npm run prod
     echo "- Restart container"
     docker compose -f docker-compose.prod.yml down
     docker compose -f docker-compose.prod.yml up -d
