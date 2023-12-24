@@ -26,7 +26,7 @@ class RecipesCommands extends DrushCommands {
    * @usage drush recipes:save-all
    * @aliases rsa
    */
-  public function fkezfhelkfhzlfhzlefz() {
+  public function saveAll() {
 
     $recipes = $this->entityTypeManager->getStorage('node')->loadByProperties([
       'type' => 'recipe'
@@ -36,7 +36,7 @@ class RecipesCommands extends DrushCommands {
       $recipe->save();
     }
 
-    $this->output(t('@nb recipes have been saved.', [
+    $this->io()->success(t('@nb recipes have been saved.', [
       '@nb' => count($recipes)
     ]));
 
