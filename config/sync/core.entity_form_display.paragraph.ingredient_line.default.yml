@@ -43,7 +43,7 @@ content:
       min_length: 0
       delimiter: ''
       not_found_message_allow: false
-      not_found_message: 'L''ingrédient ''@term'' sera créé'
+      not_found_message: "L'ingrédient '@term' sera créé"
       new_terms: true
       no_empty_message: 'Saisissez un ingrédient existant'
     third_party_settings: {  }

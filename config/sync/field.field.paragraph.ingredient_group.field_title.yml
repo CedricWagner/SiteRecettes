@@ -10,7 +10,7 @@ field_name: field_title
 entity_type: paragraph
 bundle: ingredient_group
 label: Titre
-description: 'Laisser vide si il s''agit du seul groupe'
+description: "Laisser vide si il s'agit du seul groupe"
 required: false
 translatable: false
 default_value: {  }
