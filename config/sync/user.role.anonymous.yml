@@ -4,13 +4,11 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
-    - rest.resource.rest_menu_item
   module:
     - admin_tweaks
     - comment
     - contact
     - filter
-    - rest
     - search
     - system
     - taxonomy
@@ -25,9 +23,9 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access field config'
+  - 'access menu items'
   - 'access site-wide contact form'
   - 'access taxonomy overview'
-  - 'restful get rest_menu_item'
   - 'search content'
   - 'use text format restricted_html'
   - 'view published unit entities'

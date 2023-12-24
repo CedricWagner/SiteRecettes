@@ -121,7 +121,8 @@
         },
         "patches": {
             "drupal/core": {
-              "fix error on REST Views": "https://www.drupal.org/files/issues/2858814-13.patch"
+              "fix error on REST Views": "https://www.drupal.org/files/issues/2858814-13.patch",
+              "(tmp) remove json api resource validation" : "web/patch/remove-jsonapi-validator.patch"
             }
         }
     },
