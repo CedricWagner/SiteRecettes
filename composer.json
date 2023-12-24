@@ -131,7 +131,6 @@
     },
     "require-dev": {
         "drupal/coder": "^8.3",
-        "squizlabs/php_codesniffer": "*",
-        "tiz/envoiz": "dev-release/3.0.0"
+        "squizlabs/php_codesniffer": "*"
     }
 }
