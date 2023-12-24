@@ -4,6 +4,10 @@
 .step {
     @include listitem-hover;
 
+    > *::first-letter {
+        text-transform: capitalize;
+    }
+
     &--checked {
         color: $primary;
         text-decoration: line-through;
