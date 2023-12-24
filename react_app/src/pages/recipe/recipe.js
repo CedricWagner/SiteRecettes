@@ -91,7 +91,7 @@ const Recipe = () => {
 								<IngredientsList ingredients={recipe.ingredientGroups} />
 							</div>
 							<div className="col-md-8">
-								<h2>Etapes</h2>
+								<h2>Étapes</h2>
 								<ol className="recipe__steps">
 									{recipe.steps.map((step, key) =>
 										<Step key={key} text={step}/>
