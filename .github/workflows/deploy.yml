@@ -93,7 +93,9 @@ jobs:
             make stop-prod
             make up-prod
             sleep 3
-            make drush "updb -y" && make drush "cim -y" && make drush cr
+            docker compose exec -it lvdd-pp-php drush updb -y
+            docker compose exec -it lvdd-pp-php drush cim -y
+            docker compose exec -it lvdd-pp-php drush cr
             cd react_app
             docker compose -f docker-compose.prod.yml down 
             docker compose -f docker-compose.prod.yml up -d 
