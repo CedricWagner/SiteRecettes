@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: home-nav-cards
 label: 'Navigation accueil'
-description: 'Liens avec images affichés sur la page d''accueil'
+description: "Liens avec images affichés sur la page d'accueil"
 locked: false
