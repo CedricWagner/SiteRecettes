@@ -25,7 +25,6 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access field config'
-  - 'access menu items'
   - 'access site-wide contact form'
   - 'access taxonomy overview'
   - 'restful get rest_menu_item'

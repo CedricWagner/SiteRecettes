@@ -12,10 +12,6 @@
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        "tiz": {
-            "type": "composer",
-            "url": "https://packages.tiz.fr"
         }
     },
     "require": {
@@ -44,7 +40,8 @@
         "drupal/rest_menu_items": "^3.0",
         "drupal/restui": "^1.20",
         "drupal/search_api": "^1.23",
-        "drupal/svg_image": "^1.16",
+        "drupal/svg_image": "^3.0",
+        "drupal/upgrade_status": "^4.0",
         "drush/drush": "^10"
     },
     "conflict": {
