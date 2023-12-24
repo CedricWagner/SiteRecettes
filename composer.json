@@ -12,10 +12,6 @@
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        "tiz": {
-            "type": "composer",
-            "url": "https://packages.tiz.fr"
         }
     },
     "require": {
@@ -25,10 +21,9 @@
         "drupal/autocomplete_deluxe": "^2.0",
         "drupal/bootstrap5": "^3.0",
         "drupal/ckeditorheight": "^1.8",
-        "drupal/console": "^1.9",
-        "drupal/core-composer-scaffold": "^9.3",
-        "drupal/core-project-message": "^9.3",
-        "drupal/core-recommended": "^9.3",
+        "drupal/core-composer-scaffold": "^10.2",
+        "drupal/core-project-message": "^10.2",
+        "drupal/core-recommended": "^10.2",
         "drupal/dotenv": "^1.1",
         "drupal/field_group": "^3.2",
         "drupal/fieldable_path": "^1.0@RC",
@@ -44,8 +39,8 @@
         "drupal/rest_menu_items": "^3.0",
         "drupal/restui": "^1.20",
         "drupal/search_api": "^1.23",
-        "drupal/svg_image": "^1.16",
-        "drush/drush": "^10"
+        "drupal/svg_image": "^3.0",
+        "drush/drush": "^12"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -60,7 +55,9 @@
             "drupal/core-project-message": true,
             "drupal/console-extend-plugin": true,
             "cweagans/composer-patches": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         }
     },    
     "autoload": {
@@ -125,12 +122,13 @@
         "patches": {
             "drupal/core": {
               "fix error on REST Views": "https://www.drupal.org/files/issues/2858814-13.patch",
-              "enable to ignore destination redirect": "https://www.drupal.org/files/issues/2021-12-07/2950883-43.patch"
+              "(tmp) remove json api resource validation" : "web/patch/remove-jsonapi-validator.patch"
             }
         }
     },
     "require-dev": {
         "drupal/coder": "^8.3",
+        "drupal/core-dev": "^10",
         "squizlabs/php_codesniffer": "*"
     }
 }

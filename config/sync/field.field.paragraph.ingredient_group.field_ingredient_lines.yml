@@ -12,7 +12,7 @@ id: paragraph.ingredient_group.field_ingredient_lines
 field_name: field_ingredient_lines
 entity_type: paragraph
 bundle: ingredient_group
-label: 'Lignes d''ingrédient'
+label: "Lignes d'ingrédient"
 description: ''
 required: false
 translatable: false

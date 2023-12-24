@@ -12,7 +12,7 @@ id: node.recipe.field_ingredient_groups
 field_name: field_ingredient_groups
 entity_type: node
 bundle: recipe
-label: 'Groupes d''ingrédient'
+label: "Groupes d'ingrédient"
 description: ''
 required: false
 translatable: false

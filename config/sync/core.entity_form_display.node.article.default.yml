@@ -66,7 +66,7 @@ content:
       min_length: 0
       delimiter: ''
       not_found_message_allow: false
-      not_found_message: 'Le tag ''@term'' sera ajouté'
+      not_found_message: "Le tag '@term' sera ajouté"
       new_terms: true
       no_empty_message: 'Saisir un tag'
     third_party_settings: {  }

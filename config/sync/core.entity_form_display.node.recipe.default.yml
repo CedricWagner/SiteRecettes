@@ -142,7 +142,7 @@ content:
       min_length: 0
       delimiter: ''
       not_found_message_allow: true
-      not_found_message: 'La catégorie ''@term'' sera ajoutée'
+      not_found_message: "La catégorie '@term' sera ajoutée"
       new_terms: true
       no_empty_message: 'Saisissez une valeur'
     third_party_settings: {  }
@@ -267,7 +267,7 @@ content:
       min_length: 0
       delimiter: ''
       not_found_message_allow: false
-      not_found_message: 'Le type ''@term'' sera ajouté'
+      not_found_message: "Le type '@term' sera ajouté"
       new_terms: true
       no_empty_message: 'Saisissez une valeur'
     third_party_settings: {  }
@@ -292,7 +292,7 @@ content:
       min_length: 0
       delimiter: ''
       not_found_message_allow: true
-      not_found_message: 'Le tag ''@term'' sera ajouté'
+      not_found_message: "Le tag '@term' sera ajouté"
       new_terms: true
       no_empty_message: 'Saisissez une valeur'
     third_party_settings: {  }
