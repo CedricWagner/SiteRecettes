@@ -6,5 +6,6 @@ dependencies:
     - units
 id: unit.token
 label: Token
+description: ''
 targetEntityType: unit
 cache: true

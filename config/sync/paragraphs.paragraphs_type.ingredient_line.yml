@@ -3,7 +3,7 @@ langcode: fr
 status: true
 dependencies: {  }
 id: ingredient_line
-label: 'Ligne d''ingrédient'
+label: "Ligne d'ingrédient"
 icon_uuid: null
 icon_default: null
 description: ''

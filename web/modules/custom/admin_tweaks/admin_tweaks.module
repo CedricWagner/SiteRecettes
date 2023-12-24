@@ -7,9 +7,7 @@
 
 use Drupal\admin_tweaks\Access\CustomFieldConfigAccessControlHandler;
 use Drupal\admin_tweaks\Access\CustomMenuLinkContentAccessControlHandler;
-use Drupal\admin_tweaks\ToTimeSlicesService;
 use Drupal\admin_tweaks\ToTimeSlicesServiceInterface;
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -56,7 +54,7 @@ function admin_tweaks_node_form_submit($form, FormStateInterface $form_state) {
   $type = $node->type->entity->get('type');
 
   // force ignoring destination (?destination=...)
-  $form_state->ignoreDestination();
+  $form_state->setIgnoreDestination();
 
   $params['query'] = [
     'type' => $type,
@@ -81,14 +79,14 @@ function admin_tweaks_entity_presave (EntityInterface $entity) {
     /** @var ToTimeSlicesServiceInterface $to_time_slices */
     $to_time_slices = \Drupal::service('admin_tweaks.to_time_slices');
     $resting_time = $entity->field_resting_time->getValue();
-    if (sizeof($resting_time) >= 1) {
-      $resting_time_slices = $to_time_slices->fromIntegerRange(
-        $resting_time[0]['value'], 
-        isset($resting_time[1]) ? $resting_time[1]['value'] : $resting_time[0]['value'], 
-        _get_field_values($entity, 'field_resting_time_slice')
-      );
-      $entity->set('field_resting_time_slice', array_keys($resting_time_slices));
-    }
+    $min_resting_time = isset($resting_time[0]) ? $resting_time[0]['value'] : 0;
+    $max_resting_time = isset($resting_time[1]) ? $resting_time[1]['value'] : $min_resting_time;
+    $resting_time_slices = $to_time_slices->fromIntegerRange(
+      $min_resting_time, 
+      $max_resting_time, 
+      _get_field_values($entity, 'field_resting_time_slice')
+    );
+    $entity->set('field_resting_time_slice', array_keys($resting_time_slices));
     
     $preparation_time = $entity->field_preparation_time->getValue();
     $cooking_time = $entity->field_cooking_time->getValue();
@@ -96,14 +94,12 @@ function admin_tweaks_entity_presave (EntityInterface $entity) {
     $min_preparation_time = isset($preparation_time[0]) ? $preparation_time[0]['value'] : 0;
     $max_cooking_time = isset($cooking_time[1]) ? $cooking_time[1]['value'] : $min_cooking_time;
     $max_preparation_time = isset($preparation_time[1]) ? $preparation_time[1]['value'] : $min_preparation_time;
-    if (sizeof($resting_time) >= 1) {
-      $production_time_slices = $to_time_slices->fromIntegerRange(
-        $min_cooking_time + $min_preparation_time,
-        $max_cooking_time + $max_preparation_time,
-        _get_field_values($entity, 'field_production_time_slice')
-      );
-      $entity->set('field_production_time_slice', array_keys($production_time_slices));
-    }
+    $production_time_slices = $to_time_slices->fromIntegerRange(
+      $min_cooking_time + $min_preparation_time,
+      $max_cooking_time + $max_preparation_time,
+      _get_field_values($entity, 'field_production_time_slice')
+    );
+    $entity->set('field_production_time_slice', array_keys($production_time_slices));
   }
 }
 

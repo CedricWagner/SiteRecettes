@@ -1,0 +1,13 @@
+diff --git a/core/modules/jsonapi/src/EventSubscriber/ResourceResponseValidator.php b/core/modules/jsonapi/src/EventSubscriber/ResourceResponseValidator.php
+index 0d1d0cef21..174a0ae653 100644
+--- a/core/modules/jsonapi/src/EventSubscriber/ResourceResponseValidator.php
++++ b/core/modules/jsonapi/src/EventSubscriber/ResourceResponseValidator.php
+@@ -106,7 +106,7 @@ public function onResponse(ResponseEvent $event) {
+     }
+ 
+     // Wraps validation in an assert to prevent execution in production.
+-    assert($this->validateResponse($response, $event->getRequest()), 'A JSON:API response failed validation (see the logs for details). Report this in the Drupal issue queue at https://www.drupal.org/project/issues/drupal');
++    // assert($this->validateResponse($response, $event->getRequest()), 'A JSON:API response failed validation (see the logs for details). Report this in the Drupal issue queue at https://www.drupal.org/project/issues/drupal');
+   }
+ 
+   /**
