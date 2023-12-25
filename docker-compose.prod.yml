@@ -12,7 +12,7 @@ services:
       MYSQL_PASSWORD: $DB_PASSWORD
 
   lvdd-pp-php:
-    image: wodby/drupal-php:8.1-dev-4.37.1
+    image: wodby/drupal-php:8.2-dev-4.51.0
     container_name: "lvdd_pp_php"
     environment:
       SSMTP_MAILHUB: mailhog:1025
@@ -23,7 +23,7 @@ services:
     - ./:/var/www/html:cached
 
   lvdd-pp-nginx:
-    image: wodby/nginx:1.21-5.23.0
+    image: wodby/nginx:1.25-5.34.0
     container_name: "lvdd_pp_nginx"
     depends_on:
     - lvdd-pp-php
