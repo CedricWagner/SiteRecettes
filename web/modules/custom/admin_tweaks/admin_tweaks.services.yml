@@ -5,3 +5,8 @@ services:
   admin_tweaks.to_time_slices:
     class: Drupal\admin_tweaks\ToTimeSlicesService
     arguments: []
+  admin_tweaks.event_subscriber:
+    class: Drupal\admin_tweaks\EventSubscriber\HomeRedirectSubscriber
+    arguments: ['@path.current', '@path.matcher', '@current_user']
+    tags:
+      - { name: event_subscriber }

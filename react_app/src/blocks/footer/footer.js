@@ -32,7 +32,7 @@ const Footer = () => {
               </Link>
           )}
           <span className="footer__menu-item footer__menu-item--copyright">
-            Les Véganeries de Dodo © 2022 - Réalisé par <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/c%C3%A9dric-wagner-573ab8129/">Cédric Wagner</a>
+            Les Véganeries de Dodo © 2023 - Site réalisé par <a target="_blank" rel="noreferrer" href="https://cedric-wagner.fr/">Cédric Wagner</a>
           </span>
         </div>
       </div>
