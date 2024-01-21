@@ -12,6 +12,8 @@ dependencies:
     - field.storage.paragraph.field_ingredient_lines
     - field.storage.node.field_price_indicator
     - field.storage.node.field_seasons
+    - field.storage.taxonomy_term.field_months
+    - field.storage.taxonomy_term.field_number
     - field.storage.node.field_tags
     - field.storage.node.field_resting_time_slice
     - field.storage.node.field_production_time_slice
@@ -97,6 +99,18 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_resting_time_slice
+  field_season_months_number:
+    label: 'Saisons » Terme de taxonomie » Mois » Terme de taxonomie » Numéro'
+    datasource_id: 'entity:node'
+    property_path: 'field_seasons:entity:field_months:entity:field_number'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_seasons
+        - field.storage.taxonomy_term.field_months
+        - field.storage.taxonomy_term.field_number
+      module:
+        - taxonomy
   field_tags:
     label: 'Tags » Terme de taxonomie » Identifiant universel unique (UUID)'
     datasource_id: 'entity:node'
@@ -232,6 +246,7 @@ processor_settings:
   content_access:
     weights:
       preprocess_query: -30
+  custom_value: {  }
   entity_type: {  }
   html_filter:
     weights:
