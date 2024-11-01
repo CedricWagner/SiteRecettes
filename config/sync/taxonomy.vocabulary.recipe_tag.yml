@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Tag de recette'
 vid: recipe_tag
-description: ''
+description: null
 weight: 0
+new_revision: false

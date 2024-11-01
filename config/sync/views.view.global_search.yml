@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_image
     - field.storage.node.field_path
-    - image.style.card
     - search_api.index.full_search
   module:
     - custom_serializers
@@ -121,6 +120,7 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset: false
             offset_label: Décalage
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -135,7 +135,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: none
+        type: search_api_none
         options: {  }
       empty: {  }
       sorts:
