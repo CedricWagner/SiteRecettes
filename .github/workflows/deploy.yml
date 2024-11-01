@@ -3,8 +3,6 @@ name: SSH Deploy
 on:
   push:
     branches: [ staging, feat/gh-ci ]
-  pull_request:
-    branches: [ staging ]
 
 jobs:
   build:

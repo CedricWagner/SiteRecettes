@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Type de part'
 vid: share_type
-description: ''
+description: null
 weight: 0
+new_revision: false
