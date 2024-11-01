@@ -1,0 +1,19 @@
+uuid: e15bfd4b-9f7e-4e00-9d8f-dc5da6b38137
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.ingredient_group
+id: paragraph.ingredient_group.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: ingredient_group
+label: Titre
+description: "Laisser vide si il s'agit du seul groupe"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

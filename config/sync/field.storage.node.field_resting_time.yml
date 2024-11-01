@@ -1,0 +1,20 @@
+uuid: 476bbffc-0480-4746-b093-569e7b15b18e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_resting_time
+field_name: field_resting_time
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

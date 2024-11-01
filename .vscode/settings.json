@@ -1,0 +1,6 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "phpSniffer.autoDetect": true,
+    "phpSniffer.executablesFolder": "vendor/squizlabs/php_codesniffer/bin",
+    "phpSniffer.standard": ""
+}

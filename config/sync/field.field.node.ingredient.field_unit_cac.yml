@@ -1,0 +1,23 @@
+uuid: d829d8b3-d429-4f39-85d0-706f04180ac0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit_cac
+    - node.type.ingredient
+id: node.ingredient.field_unit_cac
+field_name: field_unit_cac
+entity_type: node
+bundle: ingredient
+label: 'Unité - c.a.c'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: cac
+field_type: decimal

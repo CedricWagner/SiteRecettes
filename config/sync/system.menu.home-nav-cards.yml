@@ -1,0 +1,8 @@
+uuid: a7be2e1e-424c-455d-ba14-4a7c801e36b0
+langcode: fr
+status: true
+dependencies: {  }
+id: home-nav-cards
+label: 'Navigation accueil'
+description: "Liens avec images affichés sur la page d'accueil"
+locked: false

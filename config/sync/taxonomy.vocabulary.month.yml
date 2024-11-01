@@ -1,0 +1,9 @@
+uuid: f995359a-edc5-49cc-a21f-4e3b283d919a
+langcode: fr
+status: true
+dependencies: {  }
+name: "Mois de l'année"
+vid: month
+description: null
+weight: 0
+new_revision: false

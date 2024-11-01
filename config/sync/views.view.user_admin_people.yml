@@ -82,7 +82,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: 'Nom d''utilisateur'
+          label: "Nom d'utilisateur"
           exclude: false
           alter:
             alter_text: false
@@ -134,7 +134,7 @@ display:
           entity_type: user
           entity_field: status
           plugin_id: field
-          label: État
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -479,6 +479,7 @@ display:
             offset: false
             offset_label: Décalage
           quantity: 9
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -505,7 +506,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'Personne n''est disponible.'
+          content: "Personne n'est disponible."
           tokenize: false
       sorts:
         created:
@@ -600,7 +601,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: État
+            label: Status
             description: ''
             identifier: status
             optional: true

@@ -454,6 +454,7 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset: false
             offset_label: Décalage
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -478,10 +479,10 @@ display:
           field: area_text_custom
           relationship: none
           group_type: group
-          admin_label: 'Aucune entrée du journal n''est disponible.'
+          admin_label: "Aucune entrée du journal n'est disponible."
           plugin_id: text_custom
           empty: true
-          content: 'Aucune entrée du journal n''est disponible.'
+          content: "Aucune entrée du journal n'est disponible."
           tokenize: false
       sorts:
         wid:

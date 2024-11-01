@@ -1,0 +1,38 @@
+uuid: 631677fa-b230-4d3c-a83c-9aa3e7ec9c0f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_image
+    - system.menu.home-nav-cards
+  module:
+    - image
+id: menu_link_content.home-nav-cards.field_image
+field_name: field_image
+entity_type: menu_link_content
+bundle: home-nav-cards
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'nav_cards/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 685x213
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

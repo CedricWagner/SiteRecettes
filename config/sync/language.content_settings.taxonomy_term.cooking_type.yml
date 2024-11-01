@@ -1,0 +1,11 @@
+uuid: 49ad23f1-fe01-4ccd-8031-981ea92fac49
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cooking_type
+id: taxonomy_term.cooking_type
+target_entity_type_id: taxonomy_term
+target_bundle: cooking_type
+default_langcode: site_default
+language_alterable: false

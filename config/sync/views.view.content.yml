@@ -150,7 +150,7 @@ display:
           entity_type: node
           entity_field: status
           plugin_id: field
-          label: État
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -187,6 +187,15 @@ display:
             date_format: short
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
         operations:
           id: operations
           table: node
@@ -236,7 +245,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          destination: true
+          destination: false
       pager:
         type: full
         options:
@@ -246,6 +255,7 @@ display:
             previous: '‹ Précédent'
             first: '« Premier'
             last: 'Dernier »'
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -374,7 +384,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: État
+            label: Status
             description: ''
             use_operator: false
             operator: status_op

@@ -1,0 +1,77 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/breakpoints';
+
+.card {
+    @include card-hover-animation;
+    position: relative;
+    box-shadow: $box-shadow;
+    background-color: rgba($color: $white, $alpha: 0.5);
+    height: 100%;
+    
+    &__upper {
+        position: relative;
+    }
+
+    &__image {
+        position: relative;
+        max-width: 100%;
+        z-index: 0;
+        cursor: pointer;
+    }
+    
+    &__taxonomies {
+        position: absolute;
+        z-index: 1;
+        bottom: 0px;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+        background: $card-title-bg;
+        
+        padding: 10px;
+        text-align: center;
+        @include media-breakpoint-down(lg) {
+            font-size: 0.875rem;
+            line-height: 1rem;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: $font-size-sm;
+        }
+    }
+    
+    &__term {
+        display: inline-block;
+        font-weight: bold;
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+        .separator {
+            color: $white;
+        }
+        &:last-child .separator {
+            display: none;
+        }
+    }
+    
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        min-height: 90px;
+        max-height: 98px;
+        font-size: $font-size-base * 1.25;
+        line-height: 26px;
+        cursor: pointer;
+        @include media-breakpoint-down(lg) {
+            font-size: 1.125rem;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: $font-size-base;
+        }
+    }
+}

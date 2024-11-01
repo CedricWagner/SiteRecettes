@@ -1,0 +1,15 @@
+uuid: 9b0d19f9-1cf7-47af-becb-70b1ab76bd09
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: local
+name: Local
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: prefix
+  phrase: disabled

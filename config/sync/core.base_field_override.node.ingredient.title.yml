@@ -1,0 +1,18 @@
+uuid: 76ed64d7-6002-43eb-9157-b65a7182224c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.ingredient
+id: node.ingredient.title
+field_name: title
+entity_type: node
+bundle: ingredient
+label: Nom
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

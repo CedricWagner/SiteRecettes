@@ -1,0 +1,23 @@
+uuid: c33912f4-bcec-45b1-a4e2-aa4864c71598
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.recipe
+  module:
+    - text
+id: node.recipe.body
+field_name: body
+entity_type: node
+bundle: recipe
+label: Remarque
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,23 @@
+uuid: 66e31921-3b2f-4296-ae73-613ca873c7f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resting_time
+    - node.type.recipe
+id: node.recipe.field_resting_time
+field_name: field_resting_time
+entity_type: node
+bundle: recipe
+label: 'Temps de repos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: minutes
+field_type: integer

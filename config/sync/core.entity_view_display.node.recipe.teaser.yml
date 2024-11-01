@@ -1,0 +1,82 @@
+uuid: c0b09da1-a93a-4529-bd03-56b1fe88fa32
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.recipe.body
+    - field.field.node.recipe.field_categories
+    - field.field.node.recipe.field_cooking_time
+    - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_description
+    - field.field.node.recipe.field_difficulty
+    - field.field.node.recipe.field_heat
+    - field.field.node.recipe.field_image
+    - field.field.node.recipe.field_images
+    - field.field.node.recipe.field_ingredient_groups
+    - field.field.node.recipe.field_number_of_parts
+    - field.field.node.recipe.field_path
+    - field.field.node.recipe.field_preparation_time
+    - field.field.node.recipe.field_price_indicator
+    - field.field.node.recipe.field_production_time_slice
+    - field.field.node.recipe.field_related_articles
+    - field.field.node.recipe.field_resting_time
+    - field.field.node.recipe.field_resting_time_slice
+    - field.field.node.recipe.field_seasons
+    - field.field.node.recipe.field_share_type
+    - field.field.node.recipe.field_steps
+    - field.field.node.recipe.field_tags
+    - image.style.medium
+    - node.type.recipe
+  module:
+    - svg_image
+    - user
+id: node.recipe.teaser
+targetEntityType: node
+bundle: recipe
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_categories: true
+  field_cooking_time: true
+  field_cooking_types: true
+  field_description: true
+  field_difficulty: true
+  field_heat: true
+  field_images: true
+  field_ingredient_groups: true
+  field_number_of_parts: true
+  field_path: true
+  field_preparation_time: true
+  field_price_indicator: true
+  field_production_time_slice: true
+  field_related_articles: true
+  field_resting_time: true
+  field_resting_time_slice: true
+  field_seasons: true
+  field_share_type: true
+  field_steps: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

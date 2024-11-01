@@ -1,0 +1,27 @@
+system.admin_content_article:
+  title: Articles
+  description: 'Gestion des articles'
+  route_name: system.admin_content
+  parent: system.admin_content
+  weight: -10
+  options:
+    query:
+      type: 'article'
+system.admin_content_recipe:
+  title: Recettes
+  description: 'Gestion des recettes'
+  route_name: system.admin_content
+  parent: system.admin_content
+  weight: -8
+  options:
+    query:
+      type: 'recipe'
+system.admin_content_ingredient:
+  title: Ingrédients
+  description: 'Gestion des ingrédients'
+  route_name: system.admin_content
+  parent: system.admin_content
+  weight: -6
+  options:
+    query:
+      type: 'ingredient'

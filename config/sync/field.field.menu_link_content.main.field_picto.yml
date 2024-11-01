@@ -1,0 +1,38 @@
+uuid: 61ac95e5-0f17-4c57-8b7a-b34cef3e84f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_picto
+    - system.menu.main
+  module:
+    - image
+id: menu_link_content.main.field_picto
+field_name: field_picto
+entity_type: menu_link_content
+bundle: main
+label: Picto
+description: "(optionnel) picto à afficher sous certains formats d'écran"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: menu-picto
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

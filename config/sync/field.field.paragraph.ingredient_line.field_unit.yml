@@ -1,0 +1,26 @@
+uuid: 411a6a37-1c31-4316-af3c-6054385eba63
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_unit
+    - paragraphs.paragraphs_type.ingredient_line
+id: paragraph.ingredient_line.field_unit
+field_name: field_unit
+entity_type: paragraph
+bundle: ingredient_line
+label: Unité
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:unit'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: true
+field_type: entity_reference

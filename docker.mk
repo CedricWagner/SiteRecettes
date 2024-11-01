@@ -22,6 +22,13 @@ up:
 	docker-compose pull
 	docker-compose up -d --remove-orphans
 
+## up-prod	:	Start up containers.
+.PHONY: up-prod
+up-prod:
+	@echo "Starting up containers for for $(PROJECT_NAME)..."
+	docker-compose -f docker-compose.prod.yml pull
+	docker-compose -f docker-compose.prod.yml up -d --remove-orphans
+
 .PHONY: mutagen
 mutagen:
 	mutagen-compose up
@@ -41,6 +48,12 @@ start:
 stop:
 	@echo "Stopping containers for $(PROJECT_NAME)..."
 	@docker-compose stop
+
+## stop-prod	:	Stop prod containers.
+.PHONY: stop-prod
+stop-prod:
+	@echo "Stopping containers for $(PROJECT_NAME)..."
+	@docker-compose -f docker-compose.prod.yml stop
 
 ## prune	:	Remove containers and their volumes.
 ##		You can optionally pass an argument with the service name to prune single container

@@ -1,0 +1,11 @@
+uuid: 4dc19a14-1b97-4b93-823e-4401fdfca3ee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.share_type
+id: taxonomy_term.share_type
+target_entity_type_id: taxonomy_term
+target_bundle: share_type
+default_langcode: site_default
+language_alterable: false

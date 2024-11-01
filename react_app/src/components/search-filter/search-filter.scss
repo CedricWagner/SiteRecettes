@@ -1,0 +1,58 @@
+@import '../../styles/_variables.scss';
+
+.search-filter {
+    $base: &;
+    min-width: 6.25rem;
+    &__title {
+        font-weight: normal;
+        font-size: $font-size-lg;
+        margin-bottom: 20px;
+    }
+    &__box {
+        background-color: $terciary;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        padding: 7px;
+        margin: 0;
+        list-style: none;
+    }
+    &__item {
+        cursor: pointer;
+        height: 24px;
+        transition: height 0.25s;
+        &--selected {
+            font-weight: bold;
+        }
+    }
+    &__box-container {
+        position: relative;
+    }
+    &__caret {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        rotate: 180deg;
+        transition: all 0.5s;
+        &:hover {
+            rotate: 170deg;
+        }
+        &--open {
+            top: 5px;
+            rotate: 0deg;
+            &:hover {
+                rotate: 10deg;
+            }
+        }
+        svg {
+            width: 1.5625rem;
+            height: auto;
+        }
+    }
+    &--closed {
+        #{$base}__item:not(#{$base}__item--selected) {
+            // display: none;
+            height: 0px;
+            overflow: hidden;
+        }
+    }
+}

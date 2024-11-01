@@ -155,13 +155,13 @@ $settings['skip_permissions_hardening'] = TRUE;
 # $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy'];
 
 $databases['default']['default'] = array (
-  'database' => 'drupal',
-  'username' => 'drupal',
-  'password' => 'drupal',
+  'database' => $_ENV['DB_NAME'],
+  'username' => $_ENV['DB_USER'],
+  'password' => $_ENV['DB_PASSWORD'],
   'prefix' => '',
-  'host' => 'mariadb',
-  'port' => '3306',
+  'host' => $_ENV['DB_HOST'],
+  'port' => $_ENV['DB_PORT'] ?? 3306,
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
+  'driver' => $_ENV['DB_DRIVER'] ?? 'mysql',
 );
 $settings['config_sync_directory'] = '../config/sync';

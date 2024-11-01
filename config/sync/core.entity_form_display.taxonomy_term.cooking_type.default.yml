@@ -1,0 +1,54 @@
+uuid: 821b06a3-c914-4eed-84a3-2d1b96dba172
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cooking_type.field_picto
+    - image.style.thumbnail
+    - taxonomy.vocabulary.cooking_type
+  module:
+    - path
+    - svg_image
+id: taxonomy_term.cooking_type.default
+targetEntityType: taxonomy_term
+bundle: cooking_type
+mode: default
+content:
+  field_picto:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true

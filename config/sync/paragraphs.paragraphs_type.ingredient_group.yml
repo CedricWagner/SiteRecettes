@@ -1,0 +1,10 @@
+uuid: 0b92506a-2ca7-40a9-84ba-31e4c71a5e81
+langcode: fr
+status: true
+dependencies: {  }
+id: ingredient_group
+label: "Groupe d'ingrédient"
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

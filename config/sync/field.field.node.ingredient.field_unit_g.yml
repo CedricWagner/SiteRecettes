@@ -1,0 +1,23 @@
+uuid: 95a70839-d052-42d3-84c4-8783e81a5d64
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unit_g
+    - node.type.ingredient
+id: node.ingredient.field_unit_g
+field_name: field_unit_g
+entity_type: node
+bundle: ingredient
+label: 'Unité - gramme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: g
+field_type: decimal

@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/breakpoints';
+
+.nav-card {
+    @include card-hover-animation;
+    padding: 80px 45px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: $box-shadow;
+    @include media-breakpoint-down(md) {
+        padding: 60px 30px;
+    }
+    &__title {
+        text-align: center;
+        background-color: $card-title-bg;
+        width: 100%;
+        display: block;
+        padding: 12px;
+        color: $white;
+        text-transform: uppercase;
+        font-size: $font-size-xl;
+        font-weight: bold;
+        text-decoration: none;
+        @include media-breakpoint-down(lg) {
+            font-size: $font-size-lg;
+        }
+        &:hover {
+            color: $white;
+        }
+    }
+}

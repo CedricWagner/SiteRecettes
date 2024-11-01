@@ -5,11 +5,14 @@ dependencies:
   config:
     - filter.format.restricted_html
   module:
+    - admin_tweaks
     - comment
     - contact
     - filter
     - search
     - system
+    - taxonomy
+    - units
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
@@ -19,6 +22,10 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access field config'
+  - 'access menu items'
   - 'access site-wide contact form'
+  - 'access taxonomy overview'
   - 'search content'
   - 'use text format restricted_html'
+  - 'view published unit entities'

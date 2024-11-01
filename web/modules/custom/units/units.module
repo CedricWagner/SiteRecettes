@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains units.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function units_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the units module.
+    case 'help.page.units':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manages the Units entities') . '</p>';
+      return $output;
+
+    default:
+  }
+}

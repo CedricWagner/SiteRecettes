@@ -1,0 +1,23 @@
+uuid: 5722fd9b-1bf1-43a9-8eff-0c17e135c4e2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_parts
+    - node.type.recipe
+id: node.recipe.field_number_of_parts
+field_name: field_number_of_parts
+entity_type: node
+bundle: recipe
+label: 'Nombre de parts'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

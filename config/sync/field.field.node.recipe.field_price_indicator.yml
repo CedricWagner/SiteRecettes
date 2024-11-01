@@ -1,0 +1,21 @@
+uuid: b06c02c5-555f-4189-acd9-0ce35a981ae4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price_indicator
+    - node.type.recipe
+  module:
+    - options
+id: node.recipe.field_price_indicator
+field_name: field_price_indicator
+entity_type: node
+bundle: recipe
+label: 'Indicateur de prix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

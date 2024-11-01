@@ -1,0 +1,11 @@
+uuid: 6ce66b24-f64f-40e9-8c9e-eddcc0fd2c55
+langcode: fr
+status: true
+dependencies:
+  module:
+    - units
+id: unit.token
+label: Token
+description: ''
+targetEntityType: unit
+cache: true

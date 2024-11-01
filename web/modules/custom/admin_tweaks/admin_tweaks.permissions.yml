@@ -1,0 +1,6 @@
+access field config:
+  title: 'Access field config'
+  description: 'Access all field config data (read only)'
+access menu items:
+  title: 'Access menu items'
+  description: 'Access menu items (read only)'

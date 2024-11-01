@@ -1,0 +1,18 @@
+h1 {
+    text-transform: uppercase;
+    color: $secondary;
+    @include media-breakpoint-down(lg) {
+        text-align: center;
+    }
+    @include media-breakpoint-down(sm) {
+        // font-size: $font-size-lg;
+    }
+}
+
+h2 {
+    color: $secondary;
+}
+
+ol {
+    padding-left: 1.5rem;
+}

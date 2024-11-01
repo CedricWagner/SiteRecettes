@@ -1,0 +1,236 @@
+uuid: 0e6f22fe-436a-4a07-a244-f8845eed9ba2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.recipe.body
+    - field.field.node.recipe.field_categories
+    - field.field.node.recipe.field_cooking_time
+    - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_description
+    - field.field.node.recipe.field_difficulty
+    - field.field.node.recipe.field_heat
+    - field.field.node.recipe.field_image
+    - field.field.node.recipe.field_images
+    - field.field.node.recipe.field_ingredient_groups
+    - field.field.node.recipe.field_number_of_parts
+    - field.field.node.recipe.field_path
+    - field.field.node.recipe.field_preparation_time
+    - field.field.node.recipe.field_price_indicator
+    - field.field.node.recipe.field_production_time_slice
+    - field.field.node.recipe.field_related_articles
+    - field.field.node.recipe.field_resting_time
+    - field.field.node.recipe.field_resting_time_slice
+    - field.field.node.recipe.field_seasons
+    - field.field.node.recipe.field_share_type
+    - field.field.node.recipe.field_steps
+    - field.field.node.recipe.field_tags
+    - node.type.recipe
+  module:
+    - entity_reference_revisions
+    - fieldable_path
+    - options
+    - svg_image
+    - text
+    - user
+id: node.recipe.default
+targetEntityType: node
+bundle: recipe
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_categories:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cooking_time:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_cooking_types:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_difficulty:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_heat:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_images:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_ingredient_groups:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_number_of_parts:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_path:
+    type: fieldable_path_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_preparation_time:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_price_indicator:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_production_time_slice:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_related_articles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_resting_time:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_resting_time_slice:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_seasons:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_share_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_steps:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

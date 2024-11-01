@@ -1,0 +1,137 @@
+uuid: 38717d79-f075-4e6a-a10f-1fa735e2ece3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.ingredient.body
+    - field.field.node.ingredient.field_path
+    - field.field.node.ingredient.field_picto
+    - field.field.node.ingredient.field_seasonality
+    - field.field.node.ingredient.field_unit
+    - field.field.node.ingredient.field_unit_cac
+    - field.field.node.ingredient.field_unit_cas
+    - field.field.node.ingredient.field_unit_cl
+    - field.field.node.ingredient.field_unit_cup
+    - field.field.node.ingredient.field_unit_g
+    - node.type.ingredient
+  module:
+    - fieldable_path
+    - svg_image
+    - text
+    - user
+id: node.ingredient.default
+targetEntityType: node
+bundle: ingredient
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_path:
+    type: fieldable_path_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_picto:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_seasonality:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_unit:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_unit_cac:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_unit_cas:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_unit_cl:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_unit_cup:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_unit_g:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

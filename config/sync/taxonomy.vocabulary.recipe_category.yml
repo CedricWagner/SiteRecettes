@@ -1,0 +1,9 @@
+uuid: 9b4bf70a-71ea-40ae-b8fd-5177d8ece85b
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Catégorie de recette'
+vid: recipe_category
+description: null
+weight: 0
+new_revision: false

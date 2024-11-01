@@ -1,0 +1,338 @@
+uuid: c490a3ab-fcb5-4b2c-beda-edddc2996496
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.recipe.body
+    - field.field.node.recipe.field_categories
+    - field.field.node.recipe.field_cooking_time
+    - field.field.node.recipe.field_cooking_types
+    - field.field.node.recipe.field_description
+    - field.field.node.recipe.field_difficulty
+    - field.field.node.recipe.field_heat
+    - field.field.node.recipe.field_image
+    - field.field.node.recipe.field_images
+    - field.field.node.recipe.field_ingredient_groups
+    - field.field.node.recipe.field_number_of_parts
+    - field.field.node.recipe.field_path
+    - field.field.node.recipe.field_preparation_time
+    - field.field.node.recipe.field_price_indicator
+    - field.field.node.recipe.field_production_time_slice
+    - field.field.node.recipe.field_related_articles
+    - field.field.node.recipe.field_resting_time
+    - field.field.node.recipe.field_resting_time_slice
+    - field.field.node.recipe.field_seasons
+    - field.field.node.recipe.field_share_type
+    - field.field.node.recipe.field_steps
+    - field.field.node.recipe.field_tags
+    - image.style.thumbnail
+    - node.type.recipe
+  module:
+    - autocomplete_deluxe
+    - field_group
+    - paragraphs
+    - path
+    - svg_image
+    - text
+third_party_settings:
+  field_group:
+    group_categorization:
+      children:
+        - field_categories
+        - field_seasons
+        - field_tags
+      label: Catégorisation
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+    group_pictures:
+      children:
+        - field_image
+        - field_images
+      label: Photos
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+    group_durations:
+      children:
+        - field_preparation_time
+        - field_resting_time
+        - field_cooking_time
+        - field_heat
+        - field_cooking_types
+      label: Durées
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+    group_indicators:
+      children:
+        - field_difficulty
+        - field_price_indicator
+      label: Indicateurs
+      region: content
+      parent_name: ''
+      weight: 13
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+id: node.recipe.default
+targetEntityType: node
+bundle: recipe
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 15
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_categories:
+    type: autocomplete_deluxe
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      autocomplete_route_name: autocomplete_deluxe.autocomplete
+      size: 60
+      selection_handler: default
+      match_limit: 10
+      min_length: 0
+      delimiter: ''
+      not_found_message_allow: true
+      not_found_message: "La catégorie '@term' sera ajoutée"
+      new_terms: true
+      no_empty_message: 'Saisissez une valeur'
+    third_party_settings: {  }
+  field_cooking_time:
+    type: number
+    weight: 15
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_cooking_types:
+    type: options_buttons
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_difficulty:
+    type: options_select
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heat:
+    type: number
+    weight: 16
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 10
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_images:
+    type: image_image
+    weight: 11
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_ingredient_groups:
+    type: paragraphs
+    weight: 11
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ingredient_group
+      features:
+        add_above: add_above
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+    third_party_settings: {  }
+  field_number_of_parts:
+    type: number
+    weight: 9
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_preparation_time:
+    type: number
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_price_indicator:
+    type: options_select
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_related_articles:
+    type: options_buttons
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_resting_time:
+    type: number
+    weight: 14
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_seasons:
+    type: options_buttons
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_share_type:
+    type: autocomplete_deluxe
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      autocomplete_route_name: autocomplete_deluxe.autocomplete
+      size: 60
+      selection_handler: default
+      match_limit: 10
+      min_length: 0
+      delimiter: ''
+      not_found_message_allow: false
+      not_found_message: "Le type '@term' sera ajouté"
+      new_terms: true
+      no_empty_message: 'Saisissez une valeur'
+    third_party_settings: {  }
+  field_steps:
+    type: text_textarea
+    weight: 14
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: autocomplete_deluxe
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      autocomplete_route_name: autocomplete_deluxe.autocomplete
+      size: 60
+      selection_handler: default
+      match_limit: 10
+      min_length: 0
+      delimiter: ''
+      not_found_message_allow: true
+      not_found_message: "Le tag '@term' sera ajouté"
+      new_terms: true
+      no_empty_message: 'Saisissez une valeur'
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_path: true
+  field_production_time_slice: true
+  field_resting_time_slice: true
+  promote: true
+  sticky: true

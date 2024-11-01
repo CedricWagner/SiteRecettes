@@ -1,0 +1,32 @@
+uuid: 492531c4-cf0c-48b8-930f-9fd48d475816
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.season.field_months
+    - taxonomy.vocabulary.season
+  module:
+    - text
+id: taxonomy_term.season.default
+targetEntityType: taxonomy_term
+bundle: season
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_months:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

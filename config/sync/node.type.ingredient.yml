@@ -1,0 +1,17 @@
+uuid: bd1ecd2f-1bc4-4c83-b77f-0f10f04df52b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Ingrédient
+type: ingredient
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

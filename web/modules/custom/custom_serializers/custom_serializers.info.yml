@@ -1,0 +1,5 @@
+name: 'Custom Serializers'
+type: module
+description: 'Add new serializers for contents'
+core_version_requirement: ^8.8.0 || ^9.0 || ^10.0
+package: 'Custom'

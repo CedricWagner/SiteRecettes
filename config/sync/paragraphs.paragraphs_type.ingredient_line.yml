@@ -1,0 +1,10 @@
+uuid: 718042e1-c7e0-4c5c-b76e-ec27678c82fc
+langcode: fr
+status: true
+dependencies: {  }
+id: ingredient_line
+label: "Ligne d'ingrédient"
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

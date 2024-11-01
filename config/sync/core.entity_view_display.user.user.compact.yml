@@ -22,9 +22,16 @@ content:
     settings:
       image_link: content
       image_style: thumbnail
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   langcode: true
   member_for: true
+  search_api_excerpt: true

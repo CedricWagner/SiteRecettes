@@ -1,0 +1,15 @@
+uuid: f5e516c8-6ed8-4a41-b456-bff60eaa3ca6
+langcode: fr
+status: true
+dependencies: {  }
+name: picto_ingredient
+label: 'Picto ingrédient'
+effects:
+  0f4813b7-4810-442d-9db4-82b61a98cfa7:
+    uuid: 0f4813b7-4810-442d-9db4-82b61a98cfa7
+    id: image_scale
+    weight: 2
+    data:
+      width: 30
+      height: 30
+      upscale: false

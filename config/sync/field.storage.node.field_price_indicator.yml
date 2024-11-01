@@ -1,0 +1,30 @@
+uuid: 1597333e-2459-45f5-b414-bd6b9608d1f4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_price_indicator
+field_name: field_price_indicator
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 1
+      label: Economique
+    -
+      value: 2
+      label: Moyen
+    -
+      value: 3
+      label: Cher
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

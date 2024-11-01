@@ -1,0 +1,37 @@
+uuid: cbd1272d-1a0f-4780-9b91-06fe8d956cfb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.home-nav-cards.field_image
+    - system.menu.home-nav-cards
+  module:
+    - svg_image
+id: menu_link_content.home-nav-cards.default
+targetEntityType: menu_link_content
+bundle: home-nav-cards
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
