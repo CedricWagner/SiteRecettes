@@ -3,27 +3,26 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_categories
     - field.storage.node.body
+    - field.storage.node.field_categories
+    - field.storage.node.field_cooking_types
     - field.storage.node.field_difficulty
-    - field.storage.node.field_steps
     - field.storage.node.field_ingredient_groups
+    - field.storage.node.field_price_indicator
+    - field.storage.node.field_production_time_slice
+    - field.storage.node.field_resting_time_slice
+    - field.storage.node.field_seasons
+    - field.storage.node.field_steps
+    - field.storage.node.field_tags
     - field.storage.paragraph.field_ingredient
     - field.storage.paragraph.field_ingredient_lines
-    - field.storage.node.field_price_indicator
-    - field.storage.node.field_seasons
     - field.storage.taxonomy_term.field_months
     - field.storage.taxonomy_term.field_number
-    - field.storage.node.field_tags
-    - field.storage.node.field_resting_time_slice
-    - field.storage.node.field_production_time_slice
-    - field.storage.node.field_cooking_types
     - search_api.server.local
   module:
-    - taxonomy
     - node
     - paragraphs
-    - search_api
+    - taxonomy
 id: full_search
 name: 'Recherche recettes et articles'
 description: ''

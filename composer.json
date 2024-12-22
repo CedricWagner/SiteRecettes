@@ -27,7 +27,7 @@
         "drupal/dotenv": "^1.1",
         "drupal/field_group": "^3.2",
         "drupal/fieldable_path": "^1.0@RC",
-        "drupal/gin": "^3.0@beta",
+        "drupal/gin": "^3.0",
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/jsonapi_image_styles": "^3.0",
         "drupal/jsonapi_include": "^1.4",
@@ -38,8 +38,8 @@
         "drupal/pathauto": "^1.10",
         "drupal/rest_menu_items": "^3.0",
         "drupal/restui": "^1.20",
-        "drupal/search_api": "^1.23",
-        "drupal/svg_image": "^3.0",
+        "drupal/search_api": "^1.37",
+        "drupal/svg_image": "^3.2",
         "drush/drush": "^12"
     },
     "conflict": {
