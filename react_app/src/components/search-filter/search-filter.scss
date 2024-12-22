@@ -15,9 +15,12 @@
         padding: 7px;
         margin: 0;
         list-style: none;
+        padding-right: 30px;
     }
     &__item {
         cursor: pointer;
+        height: 24px;
+        transition: height 0.25s;
         &--selected {
             font-weight: bold;
         }
@@ -48,7 +51,9 @@
     }
     &--closed {
         #{$base}__item:not(#{$base}__item--selected) {
-            display: none;
+            // display: none;
+            height: 0px;
+            overflow: hidden;
         }
     }
 }
