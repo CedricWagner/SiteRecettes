@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './card.scss'
 import PropTypes from 'prop-types';
 import { linkShape } from '../../utils/shapes/link-shape';
@@ -7,11 +7,6 @@ import missingImage2 from '../../images/missing-picture--recipe--02.jpg';
 import missingImage3 from '../../images/missing-picture--recipe--03.jpg';
 
 function Card (props) {
-    let navigate = useNavigate();
-
-    function onCardClick () {
-        navigate(props.to);
-    }
     
     function getMissingImage() {
         const images = [
