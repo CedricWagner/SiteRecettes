@@ -73,5 +73,15 @@
         @include media-breakpoint-down(md) {
             font-size: $font-size-base;
         }
+        a {
+            text-decoration: none;
+            color: $body-color;;
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                z-index: 4;
+            }
+        }
     }
 }

@@ -24,7 +24,7 @@ function Card (props) {
     }
 
     return (
-        <div className="card" onClick={onCardClick} role="article">
+        <div className="card" role="article">
             <div className="card__upper">
                 <img className={"card__image " + (props.image ? '' : 'card__image--missing')} src={props.image ? props.image : getMissingImage()} alt={props.title}/>
                 {props.taxonomies && props.taxonomies.length !== 0 && (
@@ -40,8 +40,8 @@ function Card (props) {
                     </div>
                 )}
             </div>
-            <div className="card__title" onClick={onCardClick}>
-                {props.title.length > 40 ? props.title.substring(0, 40) + '...' : props.title}
+            <div className="card__title">
+                <Link to={props.to}>{props.title.length > 40 ? props.title.substring(0, 40) + '...' : props.title}</Link>
             </div>
         </div>
     )
