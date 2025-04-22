@@ -8,6 +8,7 @@ import OrderBySelector from '../../components/order-by-selector/order-by-selecto
 import { useSearchParams } from 'react-router-dom';
 import SelectedFiltersList from '../../blocks/selected-filters-list/selected-filters-list';
 import ListWrapper from '../../blocks/list-wrapper/list-wrapper';
+import { usePageTitle } from '../../utils/hooks/usePageTitle';
 
 const Recipes = ({filterTitle, filters, filterField}) => {
   
@@ -17,6 +18,7 @@ const Recipes = ({filterTitle, filters, filterField}) => {
     const [activeFilters, setActiveFilters] = useState(searchParams.getAll('filters'));
     const [orderBy, setOrderBy] = useState('-created');
     const [displayLoadMore, setDisplayLoadMore] = useState(true);
+    const setPageTitle = usePageTitle();
 	const orderBys = [
 		{value: '-created',
 		name: 'Plus récent'},
@@ -53,7 +55,8 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 
 	useEffect(() => {
 		setActiveFilters(searchParams.getAll('filters'));
-	}, [searchParams])
+		setPageTitle("Toutes les recettes");
+	}, [searchParams, setPageTitle])
 
 
 	function loadMore() {

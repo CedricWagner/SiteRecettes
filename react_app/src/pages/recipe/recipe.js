@@ -12,11 +12,13 @@ import { parseRecipeDetails } from '../../utils/api/helpers';
 import { QuantityContext } from '../../utils/contexts/quantity';
 import getRecipeByAlias from './recipe.api';
 import './recipe.scss';
+import { usePageTitle } from '../../utils/hooks/usePageTitle';
 
 
 const Recipe = () => {
 	
 	let params = useParams();
+	const setPageTitle = usePageTitle();
 	const [recipe, setRecipe] = useState(false);
 	const [isNotFound, setNotFound] = useState(false);
 	const [quantity, setQuantity] = useState({
@@ -46,11 +48,12 @@ const Recipe = () => {
 	useEffect(() => {
 		// init quantity
 		const numberOfParts = recipe.numberOfParts ? recipe.numberOfParts : 1;
+		setPageTitle(recipe.title);
 		setQuantity({
 			initial: numberOfParts,
 			current: numberOfParts,
 		});
-	}, [recipe])
+	}, [recipe, setPageTitle])
 
 	return (
 		<div className="container">
