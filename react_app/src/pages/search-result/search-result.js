@@ -29,7 +29,7 @@ const SearchResult = () => {
             ))
         );
         setPageTitle("Recherche");
-    }, [textSearch, selectedFilters]);
+    }, [textSearch, selectedFilters, setPageTitle]);
 
     return (    
         <div className="search-result">
