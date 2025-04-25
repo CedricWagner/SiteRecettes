@@ -27,16 +27,18 @@ function App() {
           <ScrollToTop />
           <Logo/>
           <Menu/>
-          <Routes>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/components" element={<ComponentsShowcase/>}/>
-              <Route path="/categories" element={<RecipesByCategory/>}/>
-              <Route path="/tags" element={<RecipesByTag/>}/>
-              <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
-              <Route path="/recherche" element={<SearchResult/>}/>
-              <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-          <GoToTopButton />
+          <div className="body">
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/components" element={<ComponentsShowcase/>}/>
+                <Route path="/categories" element={<RecipesByCategory/>}/>
+                <Route path="/tags" element={<RecipesByTag/>}/>
+                <Route path="/recette/:recipeSlug" element={<Recipe/>}/>
+                <Route path="/recherche" element={<SearchResult/>}/>
+                <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+            <GoToTopButton />
+          </div>
           <Footer/>
         </Fragment>
       </BrowserRouter>
