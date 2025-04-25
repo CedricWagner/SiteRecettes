@@ -14,6 +14,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeForm;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_help().
@@ -100,6 +101,9 @@ function admin_tweaks_entity_presave (EntityInterface $entity) {
       _get_field_values($entity, 'field_production_time_slice')
     );
     $entity->set('field_production_time_slice', array_keys($production_time_slices));
+  }
+  if ($entity->getEntityTypeId() === 'node' && $entity->getType() == 'ingredient' && !$entity->id()) {
+    $entity->setOwnerId(\Drupal::currentUser()->id());
   }
 }
 
