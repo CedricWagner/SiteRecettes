@@ -3,7 +3,8 @@
 .menu {
     box-shadow: 0px 0px 20px $gray-600;
     margin-bottom: 60px;
-
+    position: relative;
+    z-index: 2;
 
     @include media-breakpoint-down(md) {
         display: flex;
