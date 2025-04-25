@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './no-sleep.scss';
 import { ReactComponent as IconChecked} from '../../images/icons/svg/icon_checked.svg';
