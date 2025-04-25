@@ -56,12 +56,12 @@ const AutocompleteSearchFilter = ({title, slug, ressource, callback, selectedVal
 	return (
 		<div className="autocomplete-search-filter">
 			<h3 className="search-filter__title">{title}</h3>
+			<SearchInput onChange={updateAutocompleteText} modifier="small" defaultValue={autocompleteText}/>
 			<ul className="autocomplete-search-filter__selected-items" role={"listbox"}>
 				{previouslySelectedValues.map((item, index) => 
 					<SelectedFilter title={item.title} id={item.id} key={index} onRemove={updateFilter} />
 				)}
 			</ul>
-			<SearchInput onChange={updateAutocompleteText} modifier="small" defaultValue={autocompleteText}/>
 			<AutocompleteResult onSelect={updateFilter} items={autocompleteResults} />
 		</div>
 )};
