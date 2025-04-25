@@ -6,6 +6,7 @@ import { parseRecipe } from '../../utils/api/helpers';
 import ListWrapper from '../../blocks/list-wrapper/list-wrapper';
 import SearchBar from '../../components/search-bar/search-bar';
 import SearchFilters from '../../blocks/search-filters/search-filters';
+import { usePageTitle } from '../../utils/hooks/usePageTitle';
 
 const SearchResult = () => {
     
@@ -13,6 +14,7 @@ const SearchResult = () => {
     const [searchParams] = useSearchParams();
     const [textSearch, setTextSearch] = useState(searchParams.get("text") ? searchParams.get("text") : '');
     const [selectedFilters, setSelectedFilters] = useState();
+    const setPageTitle = usePageTitle();
 
     function updateTextSearch(value) {
         setTextSearch(value);
@@ -26,7 +28,8 @@ const SearchResult = () => {
                 }
             ))
         );
-    }, [textSearch, selectedFilters]);
+        setPageTitle("Recherche");
+    }, [textSearch, selectedFilters, setPageTitle]);
 
     return (    
         <div className="search-result">
