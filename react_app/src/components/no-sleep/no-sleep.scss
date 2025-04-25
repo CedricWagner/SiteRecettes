@@ -1,8 +1,8 @@
 @import '../../styles/variables';
 
 .no-sleep {
-    &__container.btn {
-        text-decoration: none;
+    &__container {
+        cursor: pointer;
     }
     &__picto-container svg {
         width: $font-size-lg;

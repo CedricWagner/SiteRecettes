@@ -19,7 +19,7 @@ const NoSleepToggle = (props) => {
   }
 
   return (
-    <div className="no-sleep__container btn btn-link" onClick={toggleNoSleep}>
+    <div className="no-sleep__container" onClick={toggleNoSleep} role="button" aria-label={props.isActive ? 'Ne plus empêcher la mise en veille' : 'Empêcher la mise en veille de l\'écran'}>
       <span className="no-sleep__picto-container" >{props.isActive && <IconChecked />}{!props.isActive && <IconUnchecked />}</span>
       <span className="no-sleep__text">Empêcher la mise en veille de l'écran</span>
     </div>

@@ -75,7 +75,7 @@ const Recipe = () => {
 								<div className="recipe__description" dangerouslySetInnerHTML={{ __html: recipe.description }}></div>
 
 								<RecipeFeaturesList recipe={recipe}/>
-								<div className="recipe__no-sleep-container mt-4">
+								<div className="recipe__no-sleep-container mt-4 mb-4 pl-4">
 									<NoSleepToggle onToggle={toggleNoSleep} isActive={isNoSleepActive}/>
 								</div>
 							</div>
