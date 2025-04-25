@@ -1,4 +1,5 @@
 @import '../../styles/breakpoints';
+@import '../../styles/variables';
 
 .recipe {
     &__head {
@@ -22,5 +23,8 @@
                 margin-top: 1.25rem !important;
             }
         }
+    }
+    &__no-sleep-container {
+        margin-left: $grid-gutter-width / 2;
     }
 }
