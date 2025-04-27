@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+
+.pagination-item {
+    cursor: pointer;
+    text-decoration: none !important;
+    margin: 0px $grid-gutter-width / 2;
+}

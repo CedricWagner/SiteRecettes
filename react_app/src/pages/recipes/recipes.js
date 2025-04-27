@@ -9,15 +9,16 @@ import { useSearchParams } from 'react-router-dom';
 import SelectedFiltersList from '../../blocks/selected-filters-list/selected-filters-list';
 import ListWrapper from '../../blocks/list-wrapper/list-wrapper';
 import { usePageTitle } from '../../utils/hooks/usePageTitle';
+import Pagination from '../../components/pagination/pagination';
 
 const Recipes = ({filterTitle, filters, filterField}) => {
   
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [recipes, setRecipes] = useState(false);
-	const [page, setPage] = useState(0);
+	const [page, setPage] = useState(1);
+	const [resultCount, setResultCount] = useState(false);
     const [activeFilters, setActiveFilters] = useState(searchParams.getAll('filters'));
     const [orderBy, setOrderBy] = useState('-created');
-    const [displayLoadMore, setDisplayLoadMore] = useState(true);
     const setPageTitle = usePageTitle();
 	const orderBys = [
 		{value: '-created',
@@ -29,24 +30,18 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 		{value: '-title',
 		name: 'Alphabétique inversé'}
 	];
-	const count = 12;
+	const countByPage = 20;
 
 	useEffect(() => {
-		getRecipes(orderBy, count, page*count, activeFilters, filterField).then((items) => 
+		getRecipes(orderBy, countByPage, (page - 1)*countByPage, activeFilters, filterField).then((res) => 
 			{
-				const newRecipes = items
+				const newRecipes = res.data
 					.map((item) => {
 						return parseRecipe(item);
 					}
 				)
-				if (page === 0) {
-					setRecipes([...newRecipes]);
-				} else {
-					const oldRecipes = recipes ? recipes : [];
-					setRecipes([...oldRecipes, ...newRecipes]);
-				}
-
-				setDisplayLoadMore(newRecipes.length === count);
+				setRecipes([...newRecipes]);
+				setResultCount(res.meta.count);
 				setSearchParams({filters: activeFilters});
 			}
 		);
@@ -58,20 +53,21 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 		setPageTitle("Toutes les recettes");
 	}, [searchParams, setPageTitle])
 
-
-	function loadMore() {
-		setPage(page + 1);
-	}
-
     function onFilter(_activeFilters) {
-		setPage(0);
+		setPage(1);
         setActiveFilters([..._activeFilters]);
     }
 
 	function onUpdateOrder(order) {
-		setPage(0);
+		setPage(1);
 		setOrderBy(order);
 	}
+
+	function changePagination(pageNum) {
+		setPage(pageNum);
+	}
+
+	const numberOfPages = Math.ceil(resultCount / countByPage);
 
 	return (
 		<div className="container recipes">
@@ -87,11 +83,6 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 						</div>
 					</div>
 					<ListWrapper items={recipes} />
-					{displayLoadMore && 
-						<div className="list-link">
-							<button className="list-link__link btn btn-link" onClick={loadMore}>Voir plus</button>
-						</div>
-					}
 				</div>
 				<div className="col-lg-3 recipes__filters-column">
 					<div className="recipes__filters-toggle">
@@ -105,6 +96,13 @@ const Recipes = ({filterTitle, filters, filterField}) => {
 					</div>
 				</div>
 			</div>
+			{numberOfPages > 1 && 
+				<div className="row">
+					<div className="col mt-5">
+						<Pagination current={page} max={numberOfPages} onPaginate={changePagination} />
+					</div>
+				</div>
+			}
 		</div>
 )};
 
