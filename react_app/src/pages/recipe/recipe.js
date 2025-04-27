@@ -13,6 +13,7 @@ import { QuantityContext } from '../../utils/contexts/quantity';
 import getRecipeByAlias from './recipe.api';
 import './recipe.scss';
 import { usePageTitle } from '../../utils/hooks/usePageTitle';
+import NoSleepToggle from '../../components/no-sleep/no-sleep';
 
 
 const Recipe = () => {
@@ -21,6 +22,7 @@ const Recipe = () => {
 	const setPageTitle = usePageTitle();
 	const [recipe, setRecipe] = useState(false);
 	const [isNotFound, setNotFound] = useState(false);
+	const [isNoSleepActive, setNoSleepActive] = useState(false);
 	const [quantity, setQuantity] = useState({
 		initial: 0,
 		current: 0
@@ -31,6 +33,10 @@ const Recipe = () => {
 			initial: quantity.initial,
 			current: newValue
 		});
+	}
+
+	function toggleNoSleep() {
+		setNoSleepActive(!isNoSleepActive);
 	}
   
 	useEffect(() => {
@@ -69,6 +75,9 @@ const Recipe = () => {
 								<div className="recipe__description" dangerouslySetInnerHTML={{ __html: recipe.description }}></div>
 
 								<RecipeFeaturesList recipe={recipe}/>
+								<div className="recipe__no-sleep-container mt-4 mb-4 pl-4">
+									<NoSleepToggle onToggle={toggleNoSleep} isActive={isNoSleepActive}/>
+								</div>
 							</div>
 							{recipe.image && 
 								<div className="col-lg-4 col-md-6 text-center">
