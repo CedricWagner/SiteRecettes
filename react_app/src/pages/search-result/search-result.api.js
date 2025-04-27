@@ -4,10 +4,12 @@ import { filtersConfig } from "./search-result.config";
 
 export const searchUrl = "/index/full_search";
 
-export function getSearchResults(text, filters) {
+export function getSearchResults(text, filters, count=20, offset=0) {
     const api = new JsonApi();
     
     api.params.addFilter('fulltext', text);
+    api.params.addPageLimit(count);
+    api.params.addPageOffset(offset);
     api.params.addInclude(['field_image']);
 
     if (filters) {
@@ -24,5 +26,5 @@ export function getSearchResults(text, filters) {
         }
     }
     
-    return api.get(searchUrl);
+    return api.fetch(searchUrl);
 }

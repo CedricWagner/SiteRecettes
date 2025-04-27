@@ -23,6 +23,21 @@ export default class JsonApi extends Api{
     };
 
     /**
+     * @param {string} ressource - The ressource to fetch 
+     * @returns 
+     */
+    fetch = (ressource) => {
+        return fetch(
+            this.api_url + 
+            '/jsonapi' + 
+            ressource +
+            '?' +
+            this.params.getQueryString() +
+            '&jsonapi_include=1'
+        ).then(res => res.json());
+    };
+
+    /**
      * 
      * @param {string} key - the key of the field to query 
      * @param {string[]} values - the values as array
