@@ -16,7 +16,7 @@ const Pagination = (props) => {
         <ArrowUp className="rotate-right"/>
       </PaginationItem>
       {Array.from({length: props.max}, (_, i) => i + 1).map((num) => (
-        <PaginationItem target={num} isActive={props.current == num} onSelect={props.onPaginate}>
+        <PaginationItem target={num} isActive={props.current === num} onSelect={props.onPaginate}>
           {num}
         </PaginationItem>
       ))}
