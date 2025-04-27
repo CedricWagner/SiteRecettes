@@ -101,6 +101,9 @@ function admin_tweaks_entity_presave (EntityInterface $entity) {
     );
     $entity->set('field_production_time_slice', array_keys($production_time_slices));
   }
+  if ($entity->getEntityTypeId() === 'node' && $entity->getType() == 'ingredient' && !$entity->id()) {
+    $entity->setOwnerId(\Drupal::currentUser()->id());
+  }
 }
 
 function _get_field_values (EntityInterface $entity, string $field_name) {
