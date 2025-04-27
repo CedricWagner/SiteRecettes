@@ -1,0 +1,54 @@
+uuid: e471375c-ea1f-41fb-8c15-511454f36eab
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.utensil.field_picto
+    - image.style.thumbnail
+    - taxonomy.vocabulary.utensil
+  module:
+    - path
+    - svg_image
+id: taxonomy_term.utensil.default
+targetEntityType: taxonomy_term
+bundle: utensil
+mode: default
+content:
+  field_picto:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
