@@ -1,0 +1,11 @@
+uuid: d4495647-c33e-4dbf-b665-55a81174abc7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.utensil
+id: taxonomy_term.utensil
+target_entity_type_id: taxonomy_term
+target_bundle: utensil
+default_langcode: site_default
+language_alterable: false

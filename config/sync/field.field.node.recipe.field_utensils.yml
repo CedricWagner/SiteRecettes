@@ -1,0 +1,29 @@
+uuid: ce3052b4-aa7e-4ff0-a0cc-9b02a78dc767
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_utensils
+    - node.type.recipe
+    - taxonomy.vocabulary.utensil
+id: node.recipe.field_utensils
+field_name: field_utensils
+entity_type: node
+bundle: recipe
+label: Ustensiles
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      utensil: utensil
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
