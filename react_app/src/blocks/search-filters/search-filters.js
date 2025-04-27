@@ -19,14 +19,14 @@ const SearchFilters = ({updateSelectedFilters}) => {
         )                        
     }))
     filterList.add(new TaxonomyFilterConfig("Catégories", "category_uuid", useState([]), "recipe_category"))
+    filterList.add(new ValueListFilterConfig("Temps de réalisation", "field_production_time_slice", useState([])))
     filterList.add(new TaxonomyFilterConfig("Types de cuisson", "cooking_type_uuid", useState([]), "cooking_type"))
+    filterList.add(new ValueListFilterConfig("Repos", "field_resting_time_slice", useState([])))
+    filterList.add(new TaxonomyFilterConfig("Saison", "season_uuid", useState([]), "season"))
     filterList.add(new ValueListFilterConfig("Difficulté", "field_difficulty", useState([])))
     filterList.add(new ValueListFilterConfig("Prix", "field_price_indicator", useState([])))
-    filterList.add(new TaxonomyFilterConfig("Saison", "season_uuid", useState([]), "season"))
-    filterList.add(new ValueListFilterConfig("Temps de réalisation", "field_production_time_slice", useState([])))
-    filterList.add(new ValueListFilterConfig("Temps de repos", "field_resting_time_slice", useState([])))
-    filterList.add(new AutocompleteTaxonomyFilterConfig("Tag", "field_tags", useState([]), 'tags'))
     filterList.add(new AutocompleteContentFilterConfig("Ingrédients", "ingredient_uuid", useState([]), 'ingredient'))
+    filterList.add(new AutocompleteTaxonomyFilterConfig("Tag", "field_tags", useState([]), 'tags'))
 
     const [selectedValues, setSelectedValues] = useState([]); 
     const colClasses = "col-lg-2 col-sm-4 col-6 mb-4";

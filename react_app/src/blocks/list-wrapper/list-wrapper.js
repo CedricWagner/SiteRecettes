@@ -10,7 +10,7 @@ const ListWrapper = ({items}) => (
             <MultipleLoader count={4} />
         }
         {items.length === 0 && 
-            <p>Aucun résultat...</p>
+            <p className='list-wrapper__no-result'>Aucun résultat.</p>
         }
         {items && items.map((item, key) => 
             <div className="col-md-3 mb-4" key={key}>
