@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    svg {
+        max-width: $font-size-lg;
+        max-height: $font-size-lg;
+    }
+}

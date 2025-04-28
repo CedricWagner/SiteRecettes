@@ -2,7 +2,7 @@ import JsonApi from "../../utils/api/jsonapi";
 
 export const recipesUrl = "/node/recipe";
 
-export default function getRecipes(sort="-created", count=12, offset=0, activeFilters=[], fieldName="field_categories") {
+export default function getRecipes(sort="-created", count=20, offset=0, activeFilters=[], fieldName="field_categories") {
     const api = new JsonApi();
 
     api.params.addSort(sort);
@@ -16,5 +16,5 @@ export default function getRecipes(sort="-created", count=12, offset=0, activeFi
         api.params.addFilter(fieldName + '.id', id, 'IN', fieldName + '-' + index);
     })
 
-    return api.get(recipesUrl);
+    return api.fetch(recipesUrl);
 }
