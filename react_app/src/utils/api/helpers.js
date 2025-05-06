@@ -98,6 +98,12 @@ export function parseRecipeDetails(item) {
             picto: process.env.REACT_APP_API_ENDPOINT + term.field_picto.uri.url
         }});
     }
+    if (Array.isArray(item.field_utensils)) {
+        recipe.utensils = item.field_utensils.map(term => { return {
+            title: term.name,
+            picto: process.env.REACT_APP_API_ENDPOINT + term.field_picto.uri.url
+        }});
+    }
     recipe.heat = item.field_heat;
     if (item.field_difficulty) {
         switch (item.field_difficulty) {

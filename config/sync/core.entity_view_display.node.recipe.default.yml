@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
     - field.field.node.recipe.field_tags
+    - field.field.node.recipe.field_utensils
     - node.type.recipe
   module:
     - entity_reference_revisions
@@ -99,12 +100,12 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 4
     region: content
@@ -114,12 +115,12 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 11
     region: content
@@ -225,6 +226,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_utensils:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 24
     region: content
   links:
     settings: {  }

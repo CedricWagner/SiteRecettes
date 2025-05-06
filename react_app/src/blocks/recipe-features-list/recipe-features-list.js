@@ -43,6 +43,11 @@ const RecipeFeaturesList = (props) => {
 					<RecipeFeature items={[{title: 'Température', picto: HeatIcon}]} value={props.recipe.heat + '°C'} />
 				</div>
 			}
+			{props.recipe.utensils && 
+				<div className={colClasses}>
+					<RecipeFeature items={props.recipe.utensils} />
+				</div>
+			}
 			{props.recipe.difficulty && 
 				<div className={colClasses}>
 					<RecipeFeature items={[{title: 'Difficultée ' + props.recipe.difficulty.title, picto: props.recipe.difficulty.picto}]} value={props.recipe.difficulty.title} />
