@@ -26,7 +26,8 @@ const RecipeFeaturesList = (props) => {
 		const parsedTimes = times.map((time) => {
 			if (time >= 60) {
 				const nbHours = Math.floor(time / 60);
-				return nbHours + ' h ' + (time - nbHours * 60); 
+				const nbMinutes = time % 60;
+				return nbHours + ' h ' + (nbMinutes > 0 ? nbMinutes : '');
 			} else {
 				return time + ' min';
 			}
