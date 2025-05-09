@@ -13,6 +13,28 @@ const RecipeFeaturesList = (props) => {
 	
 	const colClasses = "col-lg-3 col-6";
 
+	/**
+	 * Display times as string (in minutes or hours)
+	 * 
+	 * @param {Array} times 
+	 */
+	function timesToString(times) {
+		if (!times.length) {
+			return;
+		}
+		
+		const parsedTimes = times.map((time) => {
+			if (time >= 60) {
+				const nbHours = Math.floor(time / 60);
+				return nbHours + ' h ' + (time - nbHours * 60); 
+			} else {
+				return time + ' min';
+			}
+		});
+		
+		return parsedTimes.join(' à ');
+	}
+
 	return (
 		<div className="row recipe__features">
 			<div className={colClasses}>
@@ -20,17 +42,17 @@ const RecipeFeaturesList = (props) => {
 			</div>
 			{props.recipe.preparationTime.length !== 0 && 
 				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Temps de préparation', picto: CuttingIcon}]} value={props.recipe.preparationTime.join('-') + ' min'} />
+					<RecipeFeature items={[{title: 'Temps de préparation', picto: CuttingIcon}]} value={timesToString(props.recipe.preparationTime)} />
 				</div>
 			}
 			{props.recipe.cookingTime.length !== 0 && 
 				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Temps de cuisson', picto: TimerIcon}]} value={props.recipe.cookingTime.join('-') + ' min'} />
+					<RecipeFeature items={[{title: 'Temps de cuisson', picto: TimerIcon}]} value={timesToString(props.recipe.cookingTime)} />
 				</div>
 			}
 			{props.recipe.restingTime.length !== 0 && 
 				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Temps de repos', picto: HourglassWaitIcon}]} value={props.recipe.restingTime.join('-') + ' min'} />
+					<RecipeFeature items={[{title: 'Temps de repos', picto: HourglassWaitIcon}]} value={timesToString(props.recipe.restingTime)} />
 				</div>
 			}
 			{props.recipe.cookingTypes && 
