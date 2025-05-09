@@ -29,6 +29,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.recipe
   module:
+    - admin_tweaks
     - autocomplete_deluxe
     - field_group
     - paragraphs
@@ -181,7 +182,7 @@ content:
       no_empty_message: 'Saisissez une valeur'
     third_party_settings: {  }
   field_cooking_time:
-    type: number
+    type: admin_tweaks_duration_selector
     weight: 15
     region: content
     settings:
@@ -257,7 +258,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_preparation_time:
-    type: number
+    type: admin_tweaks_duration_selector
     weight: 13
     region: content
     settings:
@@ -276,7 +277,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_resting_time:
-    type: number
+    type: admin_tweaks_duration_selector
     weight: 14
     region: content
     settings:
