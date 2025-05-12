@@ -1,0 +1,9 @@
+uuid: 1df8a3f7-575a-40c5-8cfd-5fdfaff987f9
+langcode: fr
+status: true
+dependencies: {  }
+name: Ustensile
+vid: utensil
+description: null
+weight: 0
+new_revision: false

@@ -13,6 +13,8 @@ export default function getRecipeByAlias(alias) {
         'field_share_type', 
         'field_cooking_types', 
         'field_cooking_types.field_picto',
+        'field_utensils', 
+        'field_utensils.field_picto',
         'field_ingredient_groups',
         'field_ingredient_groups.field_ingredient_lines',
         'field_ingredient_groups.field_ingredient_lines.field_ingredient',

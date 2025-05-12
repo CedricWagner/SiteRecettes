@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.recipe.field_share_type
     - field.field.node.recipe.field_steps
     - field.field.node.recipe.field_tags
+    - field.field.node.recipe.field_utensils
     - image.style.medium
     - node.type.recipe
   module:
@@ -42,12 +43,12 @@ content:
     settings:
       image_link: ''
       image_style: medium
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
@@ -78,5 +79,6 @@ hidden:
   field_share_type: true
   field_steps: true
   field_tags: true
+  field_utensils: true
   langcode: true
   search_api_excerpt: true
