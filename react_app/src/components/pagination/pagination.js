@@ -1,8 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import './pagination.scss';
-import {ReactComponent as ArrowUp} from '../../images/icons/svg/icon_arrow-up.svg';
-import {ReactComponent as DoubleArrow} from '../../images/icons/svg/icon_double_arrow.svg';
+import ArrowLeft from '../../images/icons/svg/icon_arrow-left.svg';
+import ArrowRight from '../../images/icons/svg/icon_arrow-right.svg';
+import DoubleArrowLeft from '../../images/icons/svg/icon_double-arrow-left.svg';
+import DoubleArrowRight from '../../images/icons/svg/icon_double-arrow-right.svg';
 import PaginationItem from '../pagination-item/pagination-item';
 
 const Pagination = (props) => {
@@ -10,10 +11,10 @@ const Pagination = (props) => {
   return (
     <ul className="pagination">
       <PaginationItem isDisabled={props.current === 1} target={1} onSelect={props.onPaginate}>
-        <DoubleArrow />
+        <img src={DoubleArrowLeft} alt="Première page" />
       </PaginationItem>
       <PaginationItem isDisabled={props.current === 1} target={props.current - 1} onSelect={props.onPaginate}>
-        <ArrowUp className="rotate-right"/>
+        <img src={ArrowLeft} alt="Page précédente" />
       </PaginationItem>
       {Array.from({length: props.max}, (_, i) => i + 1).map((num) => (
         <PaginationItem target={num} isActive={props.current === num} onSelect={props.onPaginate}>
@@ -21,10 +22,10 @@ const Pagination = (props) => {
         </PaginationItem>
       ))}
       <PaginationItem isDisabled={props.current === props.max} target={props.current + 1} onSelect={props.onPaginate}>
-        <ArrowUp className="rotate-left" />
+        <img src={ArrowRight} alt="Page suivante" />
       </PaginationItem>
       <PaginationItem isDisabled={props.current === props.max} target={props.max} onSelect={props.onPaginate}>
-        <DoubleArrow className="reverse-x"/>
+        <img src={DoubleArrowRight} alt="Dernière page" />
       </PaginationItem>
     </ul>
   );
