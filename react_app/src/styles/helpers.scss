@@ -9,3 +9,7 @@
 .reverse-x {
     rotate: 180deg;
 }
+
+table {
+    @extend .table;
+}

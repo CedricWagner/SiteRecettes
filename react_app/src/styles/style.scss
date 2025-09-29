@@ -80,7 +80,7 @@ $utilities: map-get-multiple(
     "padding-end",
     "padding-bottom",
     "padding-start",
-    "text-align",
+    "text-align"
   )
 );
 
@@ -94,8 +94,8 @@ $utilities: map-get-multiple(
 @import '../../node_modules/bootstrap/scss/images';
 @import '../../node_modules/bootstrap/scss/modal';
 @import '../../node_modules/bootstrap/scss/helpers/visually-hidden';
+@import "../../node_modules/bootstrap/scss/tables";
 @import '../../node_modules/bootstrap/scss/reboot';
-
 
 // overrides
 @import 'overrides/btn';
