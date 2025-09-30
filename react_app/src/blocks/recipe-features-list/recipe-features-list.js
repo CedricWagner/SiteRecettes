@@ -38,49 +38,57 @@ const RecipeFeaturesList = (props) => {
 
 	return (
 		<div className="row recipe__features">
-			<div className={colClasses}>
-				<RecipeFeature items={[{title: 'Nombre de parts', picto: FlatwareIcon}]} value={props.recipe.numberOfParts + ' ' + props.recipe.shareType} />
+			<div className="row">
+				<div className={colClasses}>
+					<RecipeFeature items={[{title: 'Nombre de parts', picto: FlatwareIcon}]} value={props.recipe.numberOfParts + ' ' + props.recipe.shareType} />
+				</div>
+				{props.recipe.preparationTime.length !== 0 && 
+					<div className={colClasses}>
+						<RecipeFeature items={[{title: 'Temps de préparation', picto: CuttingIcon}]} value={timesToString(props.recipe.preparationTime)} />
+					</div>
+				}
+				{props.recipe.cookingTime.length !== 0 && 
+					<div className={colClasses}>
+						<RecipeFeature items={[{title: 'Temps de cuisson', picto: TimerIcon}]} value={timesToString(props.recipe.cookingTime)} />
+					</div>
+				}
+				{props.recipe.restingTime.length !== 0 && 
+					<div className={colClasses}>
+						<RecipeFeature items={[{title: 'Temps de repos', picto: HourglassWaitIcon}]} value={timesToString(props.recipe.restingTime)} />
+					</div>
+				}
 			</div>
-			{props.recipe.preparationTime.length !== 0 && 
-				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Temps de préparation', picto: CuttingIcon}]} value={timesToString(props.recipe.preparationTime)} />
-				</div>
-			}
-			{props.recipe.cookingTime.length !== 0 && 
-				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Temps de cuisson', picto: TimerIcon}]} value={timesToString(props.recipe.cookingTime)} />
-				</div>
-			}
-			{props.recipe.restingTime.length !== 0 && 
-				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Temps de repos', picto: HourglassWaitIcon}]} value={timesToString(props.recipe.restingTime)} />
-				</div>
-			}
-			{props.recipe.cookingTypes && 
-				<div className={colClasses}>
-					<RecipeFeature items={props.recipe.cookingTypes} />
-				</div>
-			}
-			{props.recipe.heat && 
-				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Température', picto: HeatIcon}]} value={props.recipe.heat + '°C'} />
-				</div>
-			}
-			{props.recipe.utensils && 
-				<div className={colClasses}>
-					<RecipeFeature items={props.recipe.utensils} />
-				</div>
-			}
-			{props.recipe.difficulty && 
-				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Difficultée ' + props.recipe.difficulty.title, picto: props.recipe.difficulty.picto}]} value={props.recipe.difficulty.title} />
-				</div>
-			}
-			{props.recipe.priceIndicator && 
-				<div className={colClasses}>
-					<RecipeFeature items={[{title: 'Coût ' + props.recipe.priceIndicator.title, picto: props.recipe.priceIndicator.picto}]} value={props.recipe.priceIndicator.title} />
-				</div>
-			}
+			<div className="row">
+				{props.recipe.heat && 
+					<div className={colClasses}>
+						<RecipeFeature items={[{title: 'Température', picto: HeatIcon}]} value={props.recipe.heat + '°C'} />
+					</div>
+				}
+				{props.recipe.cookingTypes && 
+					<div className={"col-auto"}>
+						<RecipeFeature items={props.recipe.cookingTypes} />
+					</div>
+				}
+			</div>
+			<div className="row">
+				{props.recipe.utensils && 
+					<div className="col-auto">
+						<RecipeFeature items={props.recipe.utensils} />
+					</div>
+				}
+			</div>
+			<div className="row">
+				{props.recipe.difficulty && 
+					<div className={colClasses}>
+						<RecipeFeature items={[{title: 'Difficultée ' + props.recipe.difficulty.title, picto: props.recipe.difficulty.picto}]} value={props.recipe.difficulty.title} />
+					</div>
+				}
+				{props.recipe.priceIndicator && 
+					<div className={colClasses}>
+						<RecipeFeature items={[{title: 'Coût ' + props.recipe.priceIndicator.title, picto: props.recipe.priceIndicator.picto}]} value={props.recipe.priceIndicator.title} />
+					</div>
+				}
+			</div>
 		</div>
 )};
 
