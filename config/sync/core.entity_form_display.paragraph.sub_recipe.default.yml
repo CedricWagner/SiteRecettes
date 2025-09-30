@@ -1,0 +1,49 @@
+uuid: 95c3ddef-cf87-4475-ac46-ebe88094f700
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sub_recipe.field_amount
+    - field.field.paragraph.sub_recipe.field_details
+    - field.field.paragraph.sub_recipe.field_recipe
+    - field.field.paragraph.sub_recipe.field_unit
+    - paragraphs.paragraphs_type.sub_recipe
+id: paragraph.sub_recipe.default
+targetEntityType: paragraph
+bundle: sub_recipe
+mode: default
+content:
+  field_amount:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_details:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_recipe:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_unit:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

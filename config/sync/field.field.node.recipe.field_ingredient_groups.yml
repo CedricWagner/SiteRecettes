@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_ingredient_groups
     - node.type.recipe
     - paragraphs.paragraphs_type.ingredient_group
+    - paragraphs.paragraphs_type.sub_recipe
   module:
     - entity_reference_revisions
 id: node.recipe.field_ingredient_groups
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       ingredient_group: ingredient_group
+      sub_recipe: sub_recipe
     negate: 0
     target_bundles_drag_drop:
       ingredient_group:
@@ -31,4 +33,7 @@ settings:
       ingredient_line:
         weight: 4
         enabled: false
+      sub_recipe:
+        weight: 4
+        enabled: true
 field_type: entity_reference_revisions

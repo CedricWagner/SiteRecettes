@@ -39,6 +39,7 @@ module:
   jsonapi_search_api: 0
   language: 0
   link: 0
+  linkit: 0
   locale: 0
   menu_item_extras: 0
   menu_link_content: 0

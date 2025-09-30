@@ -1,0 +1,19 @@
+uuid: f21f11e4-2804-437b-b50b-3c38958b632d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_details
+    - paragraphs.paragraphs_type.sub_recipe
+id: paragraph.sub_recipe.field_details
+field_name: field_details
+entity_type: paragraph
+bundle: sub_recipe
+label: Détails
+description: 'Informations additionnelles'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

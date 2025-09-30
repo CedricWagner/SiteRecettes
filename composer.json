@@ -34,6 +34,7 @@
         "drupal/jsonapi_include": "^1.4",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_search_api": "^1.0@RC",
+        "drupal/linkit": "^7.0",
         "drupal/menu_item_extras": "^3.0",
         "drupal/paragraphs": "^1.19",
         "drupal/pathauto": "^1.10",
