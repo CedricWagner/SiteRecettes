@@ -1,0 +1,29 @@
+uuid: 15a80fc7-8c46-4f1e-bcf3-17aad3a216c5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recipe
+    - node.type.recipe
+    - paragraphs.paragraphs_type.sub_recipe
+id: paragraph.sub_recipe.field_recipe
+field_name: field_recipe
+entity_type: paragraph
+bundle: sub_recipe
+label: Recette
+description: 'Recette à référencer'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      recipe: recipe
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

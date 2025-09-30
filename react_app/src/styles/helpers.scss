@@ -13,3 +13,15 @@
 table {
     @extend .table;
 }
+
+a[target="_blank"]::after {
+    content: "🗗";
+    color: currentColor;
+    text-decoration: none;
+    font-size: larger;
+    vertical-align: middle;
+    position: relative;
+    left: 1px;
+    top: -1px;
+    display: inline-block;
+}

@@ -100,6 +100,9 @@ const Recipe = () => {
 										}
 									</div>
 								</div>
+								{/* <h3>Créme de citron</h3>
+								<p><a target="_blank" href="/">Voir la recette ici</a></p>
+								<p>5 unites <small>Détail</small></p> */}
 								<IngredientsList ingredients={recipe.ingredientGroups} />
 							</div>
 							<div className="col-md-8">

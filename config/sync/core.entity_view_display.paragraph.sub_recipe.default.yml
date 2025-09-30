@@ -1,0 +1,52 @@
+uuid: 5a194d8c-0071-4bbf-97e8-86959b9918b9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sub_recipe.field_amount
+    - field.field.paragraph.sub_recipe.field_details
+    - field.field.paragraph.sub_recipe.field_recipe
+    - field.field.paragraph.sub_recipe.field_unit
+    - paragraphs.paragraphs_type.sub_recipe
+id: paragraph.sub_recipe.default
+targetEntityType: paragraph
+bundle: sub_recipe
+mode: default
+content:
+  field_amount:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_details:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_recipe:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_unit:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true
