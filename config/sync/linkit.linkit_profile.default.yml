@@ -1,0 +1,26 @@
+uuid: 83de3f13-baa9-4c6b-8ce8-b0ece54d2d4b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 0Jw_BFJCCtWk187tIYvME58VFpYwPaAdrc4eRtAyHH0
+label: 'Par défaut'
+id: default
+description: 'A default Linkit profile'
+matchers:
+  556010a3-e317-48b3-b4ed-854c10f4b950:
+    id: 'entity:node'
+    uuid: 556010a3-e317-48b3-b4ed-854c10f4b950
+    settings:
+      metadata: '[node:content-type:name] #[node:nid] - [node:published_status]'
+      bundles:
+        article: article
+        page: page
+        recipe: recipe
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 50
+      include_unpublished: true
+    weight: 0

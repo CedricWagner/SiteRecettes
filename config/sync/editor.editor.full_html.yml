@@ -11,8 +11,12 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
+      - undo
+      - redo
+      - specialCharacters
       - bold
       - italic
+      - underline
       - strikethrough
       - superscript
       - subscript
@@ -22,6 +26,9 @@ settings:
       - '|'
       - bulletedList
       - numberedList
+      - indent
+      - outdent
+      - alignment
       - '|'
       - blockQuote
       - drupalInsertImage
@@ -33,7 +40,14 @@ settings:
       - '|'
       - showBlocks
       - sourceEditing
+      - code
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
     ckeditor5_codeBlock:
       languages:
         -
@@ -94,6 +108,9 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
 image_upload:
   status: true
   scheme: public

@@ -160,7 +160,20 @@ export function parseRecipeDetails(item) {
         }
     }
     recipe.ingredientGroups = item.field_ingredient_groups.map(group => {
+        if (group.type === 'paragraph--sub_recipe') {
+            const recipe = group.field_recipe;
+            return {
+                type: 'sub_recipe',
+                title: recipe.title,
+                link: recipe.path.alias,
+                amount: group.field_amount,
+                unit: group.field_unit.name,
+                details: group.field_details,
+                ingredients: []
+            }
+        }
         return {
+            type: 'ingredient_group',
             title: group.field_title,
             ingredients: group.field_ingredient_lines.map(ingredientLine => {
                 return {
