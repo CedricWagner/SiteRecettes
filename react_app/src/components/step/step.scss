@@ -4,6 +4,10 @@
 .step {
     @include listitem-hover;
 
+    ul {
+        margin-bottom: $paragraph-margin-bottom;
+    }
+
     > *::first-letter {
         text-transform: capitalize;
     }
