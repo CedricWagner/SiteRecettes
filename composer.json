@@ -137,7 +137,7 @@
     },
     "require-dev": {
         "drupal/coder": "^8.2",
-        "drupal/core-dev": "^8.0@beta",
+        "drupal/core-dev": "^11",
         "squizlabs/php_codesniffer": "*"
     }
 }
