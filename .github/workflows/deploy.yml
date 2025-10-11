@@ -14,7 +14,7 @@ jobs:
       # Install PHP
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.2.13
+          php-version: 8.4.13
           extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring
         env:
           update: true
@@ -50,6 +50,21 @@ jobs:
       # Install NPM dependencies
       - name: Install NPM dependencies
         run: cd react_app && npm install && npm run build
+      # Remove old folders
+      - name: Executing remote ssh commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          passphrase: ''
+          script: |
+            cd ${{ secrets.REMOTE_TARGET }}
+            rm -rf config
+            rm -rf vendor
+            rm -rf web/core
+            rm -rf web/modules
+            rm -rf themes
       # Copying files and artifacts via SSH
       - name: Copying files to server
         uses: appleboy/scp-action@master
