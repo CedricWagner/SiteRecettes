@@ -177,6 +177,10 @@ parameters:
   # Note: By default the configuration is disabled.
   cors.config:
     enabled: true
+    # The maximum number of entities stored in memory. Lowering this number can
+    # reduce the amount of memory used in long-running processes like migrations,
+    # however will also increase requests to the database or entity cache backend.
+    entity.memory_cache.slots: 1000
     # Specify allowed headers, like 'x-allowed-header'.
     allowedHeaders: ['Access-Control-Allow-Origin','x-csrf-token','authorization','content-type','accept','origin','x-requested-with']
     # Specify allowed request methods, specify ['*'] to allow all possible ones.

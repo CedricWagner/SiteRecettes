@@ -19,7 +19,8 @@ class ToTimeSlicesServiceTest extends UnitTestCase {
     private ToTimeSlicesService $toTimeSlices;
     private array $sampleSlices;
 
-    public function setUp() {
+    public function setUp(): void {
+        parent::setUp();
         // Instantiate the code under test
         $this->toTimeSlices = new ToTimeSlicesService();
         $this->sampleSlices = [

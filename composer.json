@@ -19,16 +19,15 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.5",
         "drupal/autocomplete_deluxe": "^2.1",
-        "drupal/bootstrap5": "^3.0",
-        "drupal/ckeditorheight": "^1.8",
+        "drupal/bootstrap5": "^4.0",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
-        "drupal/core-recommended": "^10.2",
+        "drupal/core-recommended": "^11",
         "drupal/dotenv": "^1.1",
         "drupal/field_group": "^3.2",
-        "drupal/fieldable_path": "^1.0@RC",
-        "drupal/gin": "^3.0",
-        "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/fieldable_path": "^1.0",
+        "drupal/gin": "^5.0",
+        "drupal/gin_toolbar": "^3.0",
         "drupal/jsonapi_extras": "^3.26",
         "drupal/jsonapi_image_styles": "^3.0",
         "drupal/jsonapi_include": "^1.4",
@@ -42,7 +41,8 @@
         "drupal/restui": "^1.20",
         "drupal/search_api": "^1.38",
         "drupal/svg_image": "^3.2",
-        "drush/drush": "^12"
+        "drush/drush": "^13",
+        "mglaman/composer-drupal-lenient": "^1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -53,11 +53,12 @@
         "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
-            "drupal/console-extend-plugin": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/console-extend-plugin": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "mglaman/composer-drupal-lenient": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
             "tbachert/spi": true
@@ -124,14 +125,19 @@
         },
         "patches": {
             "drupal/core": {
-              "fix error on REST Views": "https://www.drupal.org/files/issues/2858814-13.patch",
               "(tmp) remove json api resource validation" : "web/patch/remove-jsonapi-validator.patch"
+            },
+            "drupal/fieldable_path": {
+              "d11 compatibility": "web/patch/fieldable_path/d11_compat.patch"
             }
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/fieldable_path"]
         }
     },
     "require-dev": {
-        "drupal/coder": "^8.3",
-        "drupal/core-dev": "^10",
+        "drupal/coder": "^8.2",
+        "drupal/core-dev": "^8.0@beta",
         "squizlabs/php_codesniffer": "*"
     }
 }
