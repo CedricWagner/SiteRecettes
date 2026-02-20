@@ -8,3 +8,10 @@
         }
     }
 }
+
+.modal-open {
+    #root {
+        position: relative;
+        z-index: 1051;
+    }
+}
