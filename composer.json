@@ -24,7 +24,7 @@
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
         "drupal/dotenv": "^1.1",
-        "drupal/field_group": "^3.2",
+        "drupal/field_group": "^4.0",
         "drupal/fieldable_path": "^1.0",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
@@ -35,7 +35,7 @@
         "drupal/jsonapi_search_api": "^1.0@RC",
         "drupal/linkit": "^7.0",
         "drupal/menu_item_extras": "^3.0",
-        "drupal/paragraphs": "^1.19",
+        "drupal/paragraphs": "^1.23",
         "drupal/pathauto": "^1.10",
         "drupal/rest_menu_items": "^3.0",
         "drupal/restui": "^1.20",
@@ -61,6 +61,7 @@
             "mglaman/composer-drupal-lenient": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
+            "symfony/runtime": true,
             "tbachert/spi": true
         }
     },    
@@ -124,9 +125,6 @@
             ]
         },
         "patches": {
-            "drupal/core": {
-              "(tmp) remove json api resource validation" : "web/patch/remove-jsonapi-validator.patch"
-            },
             "drupal/fieldable_path": {
               "d11 compatibility": "web/patch/fieldable_path/d11_compat.patch"
             }
