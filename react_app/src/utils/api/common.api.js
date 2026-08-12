@@ -17,5 +17,6 @@ export function getTags() {
     const api = new JsonApi();
     api.params.addSort('weight')
     api.params.addSort('name')
+    api.params.addPageLimit(200)
     return api.get(tagsUrl);
 }
