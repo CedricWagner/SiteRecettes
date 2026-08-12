@@ -75,7 +75,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
   field_seasonality:
-    type: options_select
+    type: options_buttons
     weight: 8
     region: content
     settings: {  }
