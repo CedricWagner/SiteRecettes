@@ -4,8 +4,9 @@
     display: flex;
     list-style: none;
     justify-content: center;
-    svg {
+    img {
         max-width: $font-size-lg;
         max-height: $font-size-lg;
+        height: 100%;
     }
 }

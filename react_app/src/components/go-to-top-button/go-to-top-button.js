@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactComponent as IconUp} from '../../images/icons/svg/icon_arrow-up.svg';
+import IconUp from '../../images/icons/svg/icon_arrow-up.svg';
 import './go-to-top-button.scss';
 
 const GoToTopButton = () => {
@@ -10,7 +10,7 @@ const GoToTopButton = () => {
 
   return (
     <button href="#" className="go-to-top-button btn btn-terciary" onClick={goToTop}>
-      <IconUp />
+      <img src={IconUp} alt="Retour en haut" />
     </button>
   )
 };
